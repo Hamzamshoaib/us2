@@ -7,6 +7,6 @@
 <title>	Daily Auction</title>
 </head>
 <body>
-
+Hello
 </body>
 </html>
