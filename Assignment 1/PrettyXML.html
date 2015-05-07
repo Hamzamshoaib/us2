@@ -1,0 +1,191 @@
+
+<!-- saved from url=(0071)http://www.cse.unsw.edu.au/~cs9321/15s1/assignments/AuctionItemXSD.html -->
+<html hola_ext_inject="ready"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<title>PrettyXML</title>
+	<script src="./PrettyXML_files/vkbeautify.js"></script> <!-- just to indent the xml-->
+	<!-- now we load all the styles for coloring languages-->
+	<script src="./PrettyXML_files/prettify.js"></script>
+
+	<link rel="stylesheet" href="http://www.cse.unsw.edu.au/~cs9321/15s1/assignments/prettify.css">
+	<script>
+	  // Define regexps here so that the interpreter doesn't have to create an
+	  // object each time the function containing them is called.
+	  // The language spec requires a new object created even if you don't access
+	  // the $1 members.
+		var pr_amp = /&/g;
+		var pr_lt = /</g;
+		var pr_gt = />/g;
+		var pr_quot = /\"/g;
+		/** escapest html special characters to html. */
+		function textToHtml(str) {
+		return str.replace(pr_amp, '&amp;')
+		.replace(pr_lt, '&lt;')
+		.replace(pr_gt, '&gt;');
+		};
+
+	   function updateText() {
+	   		var text = textToHtml(vkbeautify.xml(document.getElementById('xml2').innerHTML));
+	   		document.getElementById('xml').innerHTML=text;
+		}
+	</script>
+	<script type="text/xml" id="xml2">
+
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="AuctionItems">
+        <xs:complexType>
+            <xs:sequence>
+    <xs:element name="AuctionItem" maxOccurs="unbounded" minOccurs="0">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Title">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:minLength value="0"/>
+                            <xs:maxLength value="100"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="Category" type="xs:string"/>
+                <xs:element name="Picture" type="xs:anyURI"/>
+                <xs:element name="Description">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:minLength value="0"/>
+                            <xs:maxLength value="1000"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="PostalAddress">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="xs:string" name="streetAddress"/>
+                            <xs:element type="xs:string" name="city"/>
+                            <xs:element type="xs:string" name="state"/>
+                            <xs:element type="xs:string" name="country"/>
+                            <xs:element type="xs:short" name="postalCode"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="ReservePrice">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:decimal">
+                                <xs:attribute name="currency" type="currencyType"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="BiddingStartPrice">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:decimal">
+                                <xs:attribute name="currency" type="currencyType"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="BiddingIncrements" type="xs:decimal"/>
+                <xs:element name="EndTime" type="xs:date"/>
+                <xs:element name="ID" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:simpleType name="currencyType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="GBP"/>
+            <xs:enumeration value="EUR"/>
+            <xs:enumeration value="USD"/>
+            <xs:enumeration value="AUD"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
+	
+	</script>
+</head>
+<body onload="updateText(),prettyPrint()" bgcolor="white" hola-ext-player="1">
+<pre class="prettyprint" id="xml"><span class="pln">
+
+</span><span class="tag">&lt;xs:schema</span><span class="pln"> </span><span class="atn">attributeFormDefault</span><span class="pun">=</span><span class="atv">"unqualified"</span><span class="pln"> </span><span class="atn">elementFormDefault</span><span class="pun">=</span><span class="atv">"qualified"</span><span class="pln">
+    </span><span class="atn">xmlns:xs</span><span class="pun">=</span><span class="atv">"http://www.w3.org/2001/XMLSchema"</span><span class="tag">&gt;</span><span class="pln">
+    </span><span class="tag">&lt;xs:element</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"AuctionItems"</span><span class="tag">&gt;</span><span class="pln">
+        </span><span class="tag">&lt;xs:complexType&gt;</span><span class="pln">
+            </span><span class="tag">&lt;xs:sequence&gt;</span><span class="pln">
+                </span><span class="tag">&lt;xs:element</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"AuctionItem"</span><span class="pln"> </span><span class="atn">maxOccurs</span><span class="pun">=</span><span class="atv">"unbounded"</span><span class="pln"> </span><span class="atn">minOccurs</span><span class="pun">=</span><span class="atv">"0"</span><span class="tag">&gt;</span><span class="pln">
+                    </span><span class="tag">&lt;xs:complexType&gt;</span><span class="pln">
+                        </span><span class="tag">&lt;xs:sequence&gt;</span><span class="pln">
+                            </span><span class="tag">&lt;xs:element</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"Title"</span><span class="tag">&gt;</span><span class="pln">
+                                </span><span class="tag">&lt;xs:simpleType&gt;</span><span class="pln">
+                                    </span><span class="tag">&lt;xs:restriction</span><span class="pln"> </span><span class="atn">base</span><span class="pun">=</span><span class="atv">"xs:string"</span><span class="tag">&gt;</span><span class="pln">
+                                        </span><span class="tag">&lt;xs:minLength</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"0"</span><span class="tag">/&gt;</span><span class="pln">
+                                        </span><span class="tag">&lt;xs:maxLength</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"100"</span><span class="tag">/&gt;</span><span class="pln">
+                                    </span><span class="tag">&lt;/xs:restriction&gt;</span><span class="pln">
+                                </span><span class="tag">&lt;/xs:simpleType&gt;</span><span class="pln">
+                            </span><span class="tag">&lt;/xs:element&gt;</span><span class="pln">
+                            </span><span class="tag">&lt;xs:element</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"Category"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"xs:string"</span><span class="tag">/&gt;</span><span class="pln">
+                            </span><span class="tag">&lt;xs:element</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"Picture"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"xs:anyURI"</span><span class="tag">/&gt;</span><span class="pln">
+                            </span><span class="tag">&lt;xs:element</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"Description"</span><span class="tag">&gt;</span><span class="pln">
+                                </span><span class="tag">&lt;xs:simpleType&gt;</span><span class="pln">
+                                    </span><span class="tag">&lt;xs:restriction</span><span class="pln"> </span><span class="atn">base</span><span class="pun">=</span><span class="atv">"xs:string"</span><span class="tag">&gt;</span><span class="pln">
+                                        </span><span class="tag">&lt;xs:minLength</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"0"</span><span class="tag">/&gt;</span><span class="pln">
+                                        </span><span class="tag">&lt;xs:maxLength</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"1000"</span><span class="tag">/&gt;</span><span class="pln">
+                                    </span><span class="tag">&lt;/xs:restriction&gt;</span><span class="pln">
+                                </span><span class="tag">&lt;/xs:simpleType&gt;</span><span class="pln">
+                            </span><span class="tag">&lt;/xs:element&gt;</span><span class="pln">
+                            </span><span class="tag">&lt;xs:element</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"PostalAddress"</span><span class="tag">&gt;</span><span class="pln">
+                                </span><span class="tag">&lt;xs:complexType&gt;</span><span class="pln">
+                                    </span><span class="tag">&lt;xs:sequence&gt;</span><span class="pln">
+                                        </span><span class="tag">&lt;xs:element</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"xs:string"</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"streetAddress"</span><span class="tag">/&gt;</span><span class="pln">
+                                        </span><span class="tag">&lt;xs:element</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"xs:string"</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"city"</span><span class="tag">/&gt;</span><span class="pln">
+                                        </span><span class="tag">&lt;xs:element</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"xs:string"</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"state"</span><span class="tag">/&gt;</span><span class="pln">
+                                        </span><span class="tag">&lt;xs:element</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"xs:string"</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"country"</span><span class="tag">/&gt;</span><span class="pln">
+                                        </span><span class="tag">&lt;xs:element</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"xs:short"</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"postalCode"</span><span class="tag">/&gt;</span><span class="pln">
+                                    </span><span class="tag">&lt;/xs:sequence&gt;</span><span class="pln">
+                                </span><span class="tag">&lt;/xs:complexType&gt;</span><span class="pln">
+                            </span><span class="tag">&lt;/xs:element&gt;</span><span class="pln">
+                            </span><span class="tag">&lt;xs:element</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"ReservePrice"</span><span class="tag">&gt;</span><span class="pln">
+                                </span><span class="tag">&lt;xs:complexType&gt;</span><span class="pln">
+                                    </span><span class="tag">&lt;xs:simpleContent&gt;</span><span class="pln">
+                                        </span><span class="tag">&lt;xs:extension</span><span class="pln"> </span><span class="atn">base</span><span class="pun">=</span><span class="atv">"xs:decimal"</span><span class="tag">&gt;</span><span class="pln">
+                                            </span><span class="tag">&lt;xs:attribute</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"currency"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"currencyType"</span><span class="tag">/&gt;</span><span class="pln">
+                                        </span><span class="tag">&lt;/xs:extension&gt;</span><span class="pln">
+                                    </span><span class="tag">&lt;/xs:simpleContent&gt;</span><span class="pln">
+                                </span><span class="tag">&lt;/xs:complexType&gt;</span><span class="pln">
+                            </span><span class="tag">&lt;/xs:element&gt;</span><span class="pln">
+                            </span><span class="tag">&lt;xs:element</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"BiddingStartPrice"</span><span class="tag">&gt;</span><span class="pln">
+                                </span><span class="tag">&lt;xs:complexType&gt;</span><span class="pln">
+                                    </span><span class="tag">&lt;xs:simpleContent&gt;</span><span class="pln">
+                                        </span><span class="tag">&lt;xs:extension</span><span class="pln"> </span><span class="atn">base</span><span class="pun">=</span><span class="atv">"xs:decimal"</span><span class="tag">&gt;</span><span class="pln">
+                                            </span><span class="tag">&lt;xs:attribute</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"currency"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"currencyType"</span><span class="tag">/&gt;</span><span class="pln">
+                                        </span><span class="tag">&lt;/xs:extension&gt;</span><span class="pln">
+                                    </span><span class="tag">&lt;/xs:simpleContent&gt;</span><span class="pln">
+                                </span><span class="tag">&lt;/xs:complexType&gt;</span><span class="pln">
+                            </span><span class="tag">&lt;/xs:element&gt;</span><span class="pln">
+                            </span><span class="tag">&lt;xs:element</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"BiddingIncrements"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"xs:decimal"</span><span class="tag">/&gt;</span><span class="pln">
+                            </span><span class="tag">&lt;xs:element</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"EndTime"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"xs:date"</span><span class="tag">/&gt;</span><span class="pln">
+                            </span><span class="tag">&lt;xs:element</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"ID"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"xs:string"</span><span class="tag">/&gt;</span><span class="pln">
+                        </span><span class="tag">&lt;/xs:sequence&gt;</span><span class="pln">
+                    </span><span class="tag">&lt;/xs:complexType&gt;</span><span class="pln">
+                </span><span class="tag">&lt;/xs:element&gt;</span><span class="pln">
+            </span><span class="tag">&lt;/xs:sequence&gt;</span><span class="pln">
+        </span><span class="tag">&lt;/xs:complexType&gt;</span><span class="pln">
+    </span><span class="tag">&lt;/xs:element&gt;</span><span class="pln">
+    </span><span class="tag">&lt;xs:simpleType</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"currencyType"</span><span class="tag">&gt;</span><span class="pln">
+        </span><span class="tag">&lt;xs:restriction</span><span class="pln"> </span><span class="atn">base</span><span class="pun">=</span><span class="atv">"xs:string"</span><span class="tag">&gt;</span><span class="pln">
+            </span><span class="tag">&lt;xs:enumeration</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"GBP"</span><span class="tag">/&gt;</span><span class="pln">
+            </span><span class="tag">&lt;xs:enumeration</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"EUR"</span><span class="tag">/&gt;</span><span class="pln">
+            </span><span class="tag">&lt;xs:enumeration</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"USD"</span><span class="tag">/&gt;</span><span class="pln">
+            </span><span class="tag">&lt;xs:enumeration</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"AUD"</span><span class="tag">/&gt;</span><span class="pln">
+        </span><span class="tag">&lt;/xs:restriction&gt;</span><span class="pln">
+    </span><span class="tag">&lt;/xs:simpleType&gt;</span><span class="pln">
+</span><span class="tag">&lt;/xs:schema&gt;</span><span class="pln">
+	
+	</span></pre>
+
+
+</body></html>

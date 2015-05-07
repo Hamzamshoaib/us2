@@ -1,0 +1,32 @@
+DROP TABLE Users;
+DROP TABLE Items;
+DROP TABLE BiddingPrice;
+
+CREATE TABLE Users (
+	UserName VARCHAR(255) PRIMARY KEY,
+	FirstName VARCHAR(255) NOT NULL,
+	LastName VARCHAR(255) NOT NULL,
+	Email VARCHAR(255) NOT NULL,
+	Address VARCHAR(255),/*Constraint NOT NULL*/
+	DOB DATE NOT NULL
+);
+	
+CREATE TABLE Items (
+	Item_ID INT PRIMARY KEY ,
+	Name VARCHAR(255) NOT NULL,
+	Owner VARCHAR(255) REFERENCES Users(UserName),
+	Description VARCHAR(2000),
+	ReservePrice INT NOT NULL
+);
+
+CREATE TABLE BiddingPrice (
+	BidPrice INT NOT NULL,
+	UserName VARCHAR(255) REFERENCES Users(UserName),
+	Item_ID INT FOREIGN KEY Items(Item_ID),
+	PRIMARY KEY (Username, Item_ID)
+);
+	
+	
+
+
+

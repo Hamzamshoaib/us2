@@ -1,0 +1,22 @@
+DROP TABLE Users;
+DROP TABLE Items;
+
+CREATE TABLE Users (
+	UserName VARCHAR(255) PRIMARY KEY,
+	FirstName VARCHAR(255) NOT NULL,
+	LastName VARCHAR(255) NOT NULL,
+	Email VARCHAR(255) NOT NULL,
+	Address VARCHAR(255),/*Constraint NOT NULL*/
+	DOB DATE NOT NULL,
+);
+	
+CREATE TABLE Items (
+	Item_ID PRIMARY KEY,
+	Name VARCHAR(300) NOT NULL,
+	Description VARCHAR(2000),
+	ReservePrice INT NOT NULL,
+	
+	
+
+
+

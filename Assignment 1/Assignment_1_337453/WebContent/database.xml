@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<AuctionItems xmlns="http://www.nhl.com"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://www.nhl.com WebContent/schema.xsd">
+    <AuctionItem>
+        <Title>Cat Ragdoll</Title>
+        <Category>Pets</Category>
+        <Picture>https://38.media.tumblr.com/avatar_ff3111cad307_128.png</Picture>
+        <Description>He is a very friendly cat</Description>
+        <PostalAddress>
+            <streetAddress>770 Sydney St</streetAddress>
+            <city>Sydney</city>
+            <state>NSW</state>
+            <country>Australia</country>
+            <postalCode>2000</postalCode>
+        </PostalAddress>
+        <ReservePrice currency="AUD">1026.00</ReservePrice>
+        <BiddingStartPrice currency="AUD">500.00</BiddingStartPrice>
+        <BiddingIncrements>100</BiddingIncrements>
+        <EndTime>2015-05-24-06:00</EndTime>
+        <ID>faced800-d358-11e4-a715-0002a5d5c51b-27</ID>
+    </AuctionItem>
+    <AuctionItem>
+        <Title>FireTruck Toy</Title>
+        <Category>Kids Toys</Category>
+        <Picture>http://www.officeplayground.com/Assets/ProductImages/pi4000-4199/4109_FireTruckFoamStressToy_1a_i.jpg</Picture>
+        <Description>Used condition but works great.</Description>
+        <PostalAddress>
+            <streetAddress>10 Eastern st</streetAddress>
+            <city>Sydney</city>
+            <state>NSW</state>
+            <country>Australia</country>
+            <postalCode>2000</postalCode>
+        </PostalAddress>
+        <ReservePrice currency="AUD">39.00</ReservePrice>
+        <BiddingStartPrice currency="AUD">5.00</BiddingStartPrice>
+        <BiddingIncrements>5</BiddingIncrements>
+        <EndTime>2015-04-24-16:00</EndTime>
+        <ID>f3fefea6-d443-11e4-b9d6-1861e6b88ec1-28</ID>
+    </AuctionItem>
+    <AuctionItem>
+        <Title>Printing Papers</Title>
+        <Category>Office Works</Category>
+        <Picture>http://ecx.images-amazon.com/images/I/410GWriJ-mL._SL75_SS50_.jpg</Picture>
+        <Description>Brand New Papers</Description>
+        <PostalAddress>
+            <streetAddress>5 Noth Cr</streetAddress>
+            <city>Sydney</city>
+            <state>NSW</state>
+            <country>Australia</country>
+            <postalCode>2146</postalCode>
+        </PostalAddress>
+        <ReservePrice currency="AUD">10.00</ReservePrice>
+        <BiddingStartPrice currency="AUD">1.00</BiddingStartPrice>
+        <BiddingIncrements>1</BiddingIncrements>
+        <EndTime>2015-06-24-05:00</EndTime>
+        <ID>falz5r70-pe18-12e4-a715-0002a5d5a51b-26</ID>
+    </AuctionItem>
+    <AuctionItem>
+        <Title>Electronic Fan</Title>
+        <Category>Electronics</Category>
+        <Picture>http://www.appliance411.com/faq/fan-icon.50x50.gif</Picture>
+        <Description>It is a very fast fan</Description>
+        <PostalAddress>
+            <streetAddress>3 Nookford Rd</streetAddress>
+            <city>Sydney</city>
+            <state>NSW</state>
+            <country>Australia</country>
+            <postalCode>2016</postalCode>
+        </PostalAddress>
+        <ReservePrice currency="AUD">200.00</ReservePrice>
+        <BiddingStartPrice currency="AUD">50.00</BiddingStartPrice>
+        <BiddingIncrements>40</BiddingIncrements>
+        <EndTime>2015-09-24-06:00</EndTime>
+        <ID>t4fef5t6-d443-u1e4-c3d6-1681e6b88ec1-26</ID>
+    </AuctionItem>
+    <AuctionItem>
+        <Title>Sony Viao 2012</Title>
+        <Category>Computers</Category>
+        <Picture>http://www.avcj.com/IMG/852/281852/sonyvaio.jpg</Picture>
+        <Description>awesome notebook, you must buy it</Description>
+        <PostalAddress>
+            <streetAddress>78 Little St</streetAddress>
+            <city>Glenwood</city>
+            <state>NSW</state>
+            <country>Australia</country>
+            <postalCode>2768</postalCode>
+        </PostalAddress>
+        <ReservePrice currency="AUD">800.00</ReservePrice>
+        <BiddingStartPrice currency="AUD">100.00</BiddingStartPrice>
+        <BiddingIncrements>10</BiddingIncrements>
+        <EndTime>2015-04-24-7:00</EndTime>
+        <ID>byred800-d358-0894-a715-jhgba5d5c51b-26</ID>
+    </AuctionItem>
+    <AuctionItem>
+        <Title>Iphone 6</Title>
+        <Category>Mobiles</Category>
+        <Picture>http://cdn.macrumors.com/article-new/2014/04/iphone-6-side.jpg</Picture>
+        <Description>Brand New SmartPhones</Description>
+        <PostalAddress>
+            <streetAddress>4 Harington St</streetAddress>
+            <city>Stratfield</city>
+            <state>NSW</state>
+            <country>Australia</country>
+            <postalCode>2310</postalCode>
+        </PostalAddress>
+        <ReservePrice currency="AUD">1000.00</ReservePrice>
+        <BiddingStartPrice currency="AUD">100.00</BiddingStartPrice>
+        <BiddingIncrements>100</BiddingIncrements>
+        <EndTime>2015-09-01-2:00</EndTime>
+        <ID>jg56fea6-uh53-11e4-b9d6-1681e6b88ec1-26</ID>
+    </AuctionItem>
+    <AuctionItem>
+        <Title>Samsung Galaxy S4</Title>
+        <Category>Mobiles</Category>
+        <Picture>http://cdn.theunlockr.com/wp-content/uploads/2014/04/Flash-Recovery-Samsung-Galaxy-S4-Canadian.jpg</Picture>
+        <Description>Used but Very nice phone</Description>
+        <PostalAddress>
+            <streetAddress>1 Hurley Dr</streetAddress>
+            <city>Burwood</city>
+            <state>NSW</state>
+            <country>Australia</country>
+            <postalCode>2435</postalCode>
+        </PostalAddress>
+        <ReservePrice currency="AUD">250.00</ReservePrice>
+        <BiddingStartPrice currency="AUD">50.00</BiddingStartPrice>
+        <BiddingIncrements>10</BiddingIncrements>
+        <EndTime>2015-04-24-7:00</EndTime>
+        <ID>67th5rdj-6y58-34e4-a715-7002a5d5cu8b-26</ID>
+    </AuctionItem>
+    <AuctionItem>
+        <Title>Office Shirt</Title>
+        <Category>Clothes</Category>
+        <Picture>http://www.scottevest.com/mm5/graphics/00000001/p_camp_shirt_mango_zm.jpg</Picture>
+        <Description>Its a brand new shirt, I am selling it as it does not fit me</Description>
+        <PostalAddress>
+            <streetAddress>7 High St</streetAddress>
+            <city>Kensington</city>
+            <state>NSW</state>
+            <country>Australia</country>
+            <postalCode>2800</postalCode>
+        </PostalAddress>
+        <ReservePrice currency="AUD">80.00</ReservePrice>
+        <BiddingStartPrice currency="AUD">45.00</BiddingStartPrice>
+        <BiddingIncrements>10</BiddingIncrements>
+        <EndTime>2015-09-24-06:00</EndTime>
+        <ID>hu67rt6g-d443-7ug4-9iy6-1ik7e6b88901-26</ID>
+    </AuctionItem>
+    <AuctionItem>
+        <Title>Study Lamp</Title>
+        <Category>Electronics</Category>
+        <Picture>http://homesdir.net/wp-content/uploads/2014/12/black-desk-lamp-lamp.jpg</Picture>
+        <Description>It works great</Description>
+        <PostalAddress>
+            <streetAddress>8 East Rd</streetAddress>
+            <city>Lidcombe</city>
+            <state>NSW</state>
+            <country>Australia</country>
+            <postalCode>2178</postalCode>
+        </PostalAddress>
+        <ReservePrice currency="AUD">15.00</ReservePrice>
+        <BiddingStartPrice currency="AUD">1.00</BiddingStartPrice>
+        <BiddingIncrements>1</BiddingIncrements>
+        <EndTime>2015-09-24-06:00</EndTime>
+        <ID>u7c8ug50-d8i8-1k84-y715-8i02a5d5ik1b-26</ID>
+    </AuctionItem>
+    <AuctionItem>
+        <Title>HSC Maths Textbook</Title>
+        <Category>Education</Category>
+        <Picture>http://upload.wikimedia.org/wikipedia/commons/6/63/Textbook.JPG</Picture>
+        <Description>Super Dooper Phone</Description>
+        <PostalAddress>
+            <streetAddress>7 sad St</streetAddress>
+            <city>Wentworthville</city>
+            <state>NSW</state>
+            <country>Australia</country>
+            <postalCode>2146</postalCode>
+        </PostalAddress>
+        <ReservePrice currency="AUD">50.00</ReservePrice>
+        <BiddingStartPrice currency="AUD">10.00</BiddingStartPrice>
+        <BiddingIncrements>10</BiddingIncrements>
+        <EndTime>2015-10-1-06:00</EndTime>
+        <ID>7u6ef076-j743-y6e4-b9d6-7881e6b88ec1-26</ID>
+    </AuctionItem>
+    <AuctionItem>
+        <Title>HTC Desire 510</Title>
+        <Category>Mobile Phones</Category>
+        <Picture>http://www.htc.com/managed-assets/shared/desktop/smartphones/htc-desire-eye/htc-desire-eye-global-sketchfab-white.png</Picture>
+        <Description>Best Phone</Description>
+        <PostalAddress>
+            <streetAddress>7 Udle Rd</streetAddress>
+            <city>Melbourne</city>
+            <state>Vic</state>
+            <country>Australia</country>
+            <postalCode>2543</postalCode>
+        </PostalAddress>
+        <ReservePrice currency="AUD">1000.00</ReservePrice>
+        <BiddingStartPrice currency="AUD">100.00</BiddingStartPrice>
+        <BiddingIncrements>10</BiddingIncrements>
+        <EndTime>2015-09-24-06:00</EndTime>
+        <ID>ujhyd800-d358-11e4-a715-0002a5d5c51b-26</ID>
+    </AuctionItem>
+    <AuctionItem>
+        <Title>Wine Glass</Title>
+        <Category>Homeware</Category>
+        <Picture>https://foodservice.libbey.com/var/libbey/storage/images/libbey-foodservice-home/product-repository/burgundy-wine-glass7/88452-1-eng-US/Burgundy-Wine-Glass.jpg</Picture>
+        <Description>selling six of these wine glasses</Description>
+        <PostalAddress>
+            <streetAddress>67 Phillips St</streetAddress>
+            <city>Lidcombe</city>
+            <state>NSW</state>
+            <country>Australia</country>
+            <postalCode>2345</postalCode>
+        </PostalAddress>
+        <ReservePrice currency="AUD">25.00</ReservePrice>
+        <BiddingStartPrice currency="AUD">1.00</BiddingStartPrice>
+        <BiddingIncrements>10</BiddingIncrements>
+        <EndTime>2015-04-24-7:00</EndTime>
+        <ID>ik7hfea6-d443-11e4-b9d6-1681e6b88ec1-26</ID>
+    </AuctionItem>
+    <AuctionItem>
+        <Title>Hp Pavillion</Title>
+        <Category>Computers</Category>
+        <Picture>http://core0.staticworld.net/images/article/2013/08/pavilion-11-ts_1-100050433-orig.png</Picture>
+        <Description>Very High Preformance</Description>
+        <PostalAddress>
+            <streetAddress>5 Gilba Rd</streetAddress>
+            <city>Pendle Hill</city>
+            <state>NSW</state>
+            <country>Australia</country>
+            <postalCode>2145</postalCode>
+        </PostalAddress>
+        <ReservePrice currency="AUD">800.00</ReservePrice>
+        <BiddingStartPrice currency="AUD">100.00</BiddingStartPrice>
+        <BiddingIncrements>10</BiddingIncrements>
+        <EndTime>2015-04-24-7:00</EndTime>
+        <ID>8uh50r70-pe18-12e4-a715-0002a5d5c51b-26</ID>
+    </AuctionItem>
+    <AuctionItem>
+        <Title>Apple Earpods</Title>
+        <Category>Accessories</Category>
+        <Picture>http://cdn.shopclues.net/images/detailed/5937/EARPHONES_1406113713.jpg</Picture>
+        <Description>Buy them please</Description>
+        <PostalAddress>
+            <streetAddress>4 Northern Rd</streetAddress>
+            <city>Sydney</city>
+            <state>NSW</state>
+            <country>Australia</country>
+            <postalCode>2000</postalCode>
+        </PostalAddress>
+        <ReservePrice currency="AUD">5.00</ReservePrice>
+        <BiddingStartPrice currency="AUD">1.00</BiddingStartPrice>
+        <BiddingIncrements>1</BiddingIncrements>
+        <EndTime>2015-04-24-7:00</EndTime>
+        <ID>6y5ef5t6-d443-u1e4-c3d6-1681e6b88ec1-26</ID>
+    </AuctionItem>
+    <AuctionItem>
+        <Title>Galaxy s6 Edge</Title>
+        <Category>Mobile Phones</Category>
+        <Picture>http://blogs-images.forbes.com/ianmorris/files/2015/03/DSC_1827.jpg</Picture>
+        <Description>Brand new mobile phone</Description>
+        <PostalAddress>
+            <streetAddress>9 Hillston Rd</streetAddress>
+            <city>Greenacre</city>
+            <state>NSW</state>
+            <country>Australia</country>
+            <postalCode>6745</postalCode>
+        </PostalAddress>
+        <ReservePrice currency="AUD">1000.00</ReservePrice>
+        <BiddingStartPrice currency="AUD">100.00</BiddingStartPrice>
+        <BiddingIncrements>10</BiddingIncrements>
+        <EndTime>2015-04-24-7:00</EndTime>
+        <ID>ujujd800-d358-9ie4-8915-96o9a5d5c51b-26</ID>
+    </AuctionItem>
+    <AuctionItem>
+        <Title>Tobisha </Title>
+        <Category>Computers</Category>
+        <Picture>http://onetechcomputers.com/wp-content/uploads/2013/08/Toshiba-laptops.jpg</Picture>
+        <Description>Simple laptop that you can use word in</Description>
+        <PostalAddress>
+            <streetAddress>45 Tyrell Rd</streetAddress>
+            <city>Stratfield</city>
+            <state>NSW</state>
+            <country>Australia</country>
+            <postalCode>2310</postalCode>
+        </PostalAddress>
+        <ReservePrice currency="AUD">120.00</ReservePrice>
+        <BiddingStartPrice currency="AUD">50.00</BiddingStartPrice>
+        <BiddingIncrements>10</BiddingIncrements>
+        <EndTime>2015-04-24-7:00</EndTime>
+        <ID>jgiu76a6-di43-11e4-oky5-1681eui76ec1-26</ID>
+    </AuctionItem>
+    <AuctionItem>
+        <Title>Samsung Galaxy S5</Title>
+        <Category>Mobiles</Category>
+        <Picture>http://blogs-images.forbes.com/gordonkelly/files/2014/10/14.png</Picture>
+        <Description>Best phone ever</Description>
+        <PostalAddress>
+            <streetAddress>17 Girraween Rd</streetAddress>
+            <city>Girraween</city>
+            <state>NSW</state>
+            <country>Australia</country>
+            <postalCode>2145</postalCode>
+        </PostalAddress>
+        <ReservePrice currency="AUD">600.00</ReservePrice>
+        <BiddingStartPrice currency="AUD">120.00</BiddingStartPrice>
+        <BiddingIncrements>10</BiddingIncrements>
+        <EndTime>2015-04-24-7:00</EndTime>
+        <ID>7yh5643w-d358-11e4-1ug5-0002a5d5c51b-26</ID>
+    </AuctionItem>
+    <AuctionItem>
+        <Title>MacBook Pro 2012</Title>
+        <Category>Computers</Category>
+        <Picture>http://cdn.slashgear.com/wp-content/uploads/2012/06/new-macbook-pro-2012-13-SlashGear.jpg</Picture>
+        <Description>Really Top quality notebook</Description>
+        <PostalAddress>
+            <streetAddress>76 Randwick Rd</streetAddress>
+            <city>Sydney</city>
+            <state>NSW</state>
+            <country>Australia</country>
+            <postalCode>2000</postalCode>
+        </PostalAddress>
+        <ReservePrice currency="AUD">2000.00</ReservePrice>
+        <BiddingStartPrice currency="AUD">600.00</BiddingStartPrice>
+        <BiddingIncrements>20</BiddingIncrements>
+        <EndTime>2015-04-24-7:00</EndTime>
+        <ID>7ug5fea6-d443-11e4-b9d6-1681e6b88ec1-26</ID>
+    </AuctionItem>
+    <AuctionItem>
+        <Title>MacBook Pro 2011</Title>
+        <Category>Computers</Category>
+        <Picture>http://www.blogcdn.com/www.engadget.com/media/2011/02/2011-02-24mbpp.jpg</Picture>
+        <Description>Really nice notebook</Description>
+        <PostalAddress>
+            <streetAddress>8 Pepper St</streetAddress>
+            <city>Sydney</city>
+            <state>NSW</state>
+            <country>Australia</country>
+            <postalCode>2000</postalCode>
+        </PostalAddress>
+        <ReservePrice currency="AUD">645.00</ReservePrice>
+        <BiddingStartPrice currency="AUD">100.00</BiddingStartPrice>
+        <BiddingIncrements>10</BiddingIncrements>
+        <EndTime>2015-04-24-7:00</EndTime>
+        <ID>faced800-d358-11e4-a715-0002a5d5c51b-26</ID>
+    </AuctionItem>
+    <AuctionItem>
+        <Title>MacBook Pro 2008</Title>
+        <Category>Computers</Category>
+        <Picture>http://origin.arstechnica.com/images/2008-macbookpro-review/General%20Shots/thumbs/macbookpro-20.jpg</Picture>
+        <Description>Old notebook</Description>
+        <PostalAddress>
+            <streetAddress>770 Eastern Parkway</streetAddress>
+            <city>Sydney</city>
+            <state>NSW</state>
+            <country>Australia</country>
+            <postalCode>2000</postalCode>
+        </PostalAddress>
+        <ReservePrice currency="AUD">613.00</ReservePrice>
+        <BiddingStartPrice currency="AUD">100.00</BiddingStartPrice>
+        <BiddingIncrements>10</BiddingIncrements>
+        <EndTime>2015-04-24-7:00</EndTime>
+        <ID>f3fefea6-d443-11e4-b9d6-1681e6b88ec1-26</ID>
+    </AuctionItem>
+    <AuctionItem>
+        <Title>MacBook Pro 2015</Title>
+        <Category>Computers</Category>
+        <Picture>https://farm4.staticflickr.com/3920/15058792925_498948aa35_b.jpg</Picture>
+        <Description>Cool notebook</Description>
+        <PostalAddress>
+            <streetAddress>770 Eastern Parkway</streetAddress>
+            <city>Sydney</city>
+            <state>NSW</state>
+            <country>Australia</country>
+            <postalCode>2000</postalCode>
+        </PostalAddress>
+        <ReservePrice currency="AUD">1026.00</ReservePrice>
+        <BiddingStartPrice currency="AUD">100.00</BiddingStartPrice>
+        <BiddingIncrements>10</BiddingIncrements>
+        <EndTime>2015-04-24-7:00</EndTime>
+        <ID>faced800-d358-11e4-a715-0002a5d5c51b-26</ID>
+    </AuctionItem>
+    <AuctionItem>
+        <Title>Juicer</Title>
+        <Category>Electronics</Category>
+        <Picture>https://www.juicemaster.com/media/upload/image/philips-advance-avance-juicer-white2.jpg</Picture>
+        <Description>New Juicer</Description>
+        <PostalAddress>
+            <streetAddress>770 Eastern Parkway</streetAddress>
+            <city>Sydney</city>
+            <state>NSW</state>
+            <country>Australia</country>
+            <postalCode>2000</postalCode>
+        </PostalAddress>
+        <ReservePrice currency="AUD">613.00</ReservePrice>
+        <BiddingStartPrice currency="AUD">100.00</BiddingStartPrice>
+        <BiddingIncrements>10</BiddingIncrements>
+        <EndTime>2015-04-24-7:00</EndTime>
+        <ID>f3fefea6-d443-11e4-b9d6-1681e6b88ec1-26</ID>
+    </AuctionItem>
+    <AuctionItem>
+        <Title>USB Flash Drive</Title>
+        <Category>Electronics</Category>
+        <Picture>http://upload.wikimedia.org/wikipedia/commons/8/86/SanDisk_Cruzer_Micro.png</Picture>
+        <Description>Reliable Laptop</Description>
+        <PostalAddress>
+            <streetAddress>63 Farwest Cr</streetAddress>
+            <city>Toongabbie</city>
+            <state>NSW</state>
+            <country>Australia</country>
+            <postalCode>2146</postalCode>
+        </PostalAddress>
+        <ReservePrice currency="AUD">700.00</ReservePrice>
+        <BiddingStartPrice currency="AUD">100.00</BiddingStartPrice>
+        <BiddingIncrements>10</BiddingIncrements>
+        <EndTime>2015-04-24-7:00</EndTime>
+        <ID>falz5r70-pe18-12e4-a715-0002a5d5c51b-26</ID>
+    </AuctionItem>
+    <AuctionItem>
+        <Title>iPhone 6 USB Cable</Title>
+        <Category>Accessories</Category>
+        <Picture>https://9to5mac.files.wordpress.com/2014/08/reversible-usb.png</Picture>
+        <Description>Charge your phone with this cable</Description>
+        <PostalAddress>
+            <streetAddress>3 Nookford Rd</streetAddress>
+            <city>Sydney</city>
+            <state>NSW</state>
+            <country>Australia</country>
+            <postalCode>2000</postalCode>
+        </PostalAddress>
+        <ReservePrice currency="AUD">200.00</ReservePrice>
+        <BiddingStartPrice currency="AUD">50.00</BiddingStartPrice>
+        <BiddingIncrements>10</BiddingIncrements>
+        <EndTime>2015-04-24-7:00</EndTime>
+        <ID>t4fef5t6-d443-u1e4-c3d6-1681e6b88ec1-26</ID>
+    </AuctionItem>
+    <AuctionItem>
+        <Title>Sony Viao 2012</Title>
+        <Category>Computers</Category>
+        <Picture>http://www.mswhs.com/wp-content/uploads/2012/01/Sony-Vaio-F-Series-Laptop.png</Picture>
+        <Description>awesome notebook</Description>
+        <PostalAddress>
+            <streetAddress>78 Little St</streetAddress>
+            <city>Glenwood</city>
+            <state>NSW</state>
+            <country>Australia</country>
+            <postalCode>2768</postalCode>
+        </PostalAddress>
+        <ReservePrice currency="AUD">800.00</ReservePrice>
+        <BiddingStartPrice currency="AUD">100.00</BiddingStartPrice>
+        <BiddingIncrements>10</BiddingIncrements>
+        <EndTime>2015-04-24-7:00</EndTime>
+        <ID>faced800-d358-0pe4-a715-9672a5d5c51b-26</ID>
+    </AuctionItem>
+    <AuctionItem>
+        <Title>Tobisha laptop</Title>
+        <Category>Computers</Category>
+        <Picture>http://wscont1.apps.microsoft.com/winstore/1x/a14c3995-34d7-454c-82e2-0c192e48b91a/Icon.173718.png</Picture>
+        <Description>Old notebook</Description>
+        <PostalAddress>
+            <streetAddress>4 Harington St</streetAddress>
+            <city>Stratfield</city>
+            <state>NSW</state>
+            <country>Australia</country>
+            <postalCode>2310</postalCode>
+        </PostalAddress>
+        <ReservePrice currency="AUD">400.00</ReservePrice>
+        <BiddingStartPrice currency="AUD">100.00</BiddingStartPrice>
+        <BiddingIncrements>10</BiddingIncrements>
+        <EndTime>2015-04-24-7:00</EndTime>
+        <ID>jg56fea6-di43-11e4-b9d6-1681e6b88ec1-26</ID>
+    </AuctionItem>
+    <AuctionItem>
+        <Title>Samsung Galaxy S4</Title>
+        <Category>Mobiles</Category>
+        <Picture>http://wscont1.apps.microsoft.com/winstore/1x/a14c3995-34d7-454c-82e2-0c192e48b91a/Icon.173718.png</Picture>
+        <Description>Cool notebook</Description>
+        <PostalAddress>
+            <streetAddress>1 Hurley Dr</streetAddress>
+            <city>Burwood</city>
+            <state>NSW</state>
+            <country>Australia</country>
+            <postalCode>2435</postalCode>
+        </PostalAddress>
+        <ReservePrice currency="AUD">250.00</ReservePrice>
+        <BiddingStartPrice currency="AUD">50.00</BiddingStartPrice>
+        <BiddingIncrements>10</BiddingIncrements>
+        <EndTime>2015-04-24-7:00</EndTime>
+        <ID>faced800-d358-11e4-a715-0002a5d5c51b-26</ID>
+    </AuctionItem>
+    <AuctionItem>
+        <Title>MacBook Pro 2008</Title>
+        <Category>Computers</Category>
+        <Picture>http://wscont1.apps.microsoft.com/winstore/1x/a14c3995-34d7-454c-82e2-0c192e48b91a/Icon.173718.png</Picture>
+        <Description>Old notebook</Description>
+        <PostalAddress>
+            <streetAddress>770 Eastern Parkway</streetAddress>
+            <city>Sydney</city>
+            <state>NSW</state>
+            <country>Australia</country>
+            <postalCode>2000</postalCode>
+        </PostalAddress>
+        <ReservePrice currency="AUD">613.00</ReservePrice>
+        <BiddingStartPrice currency="AUD">100.00</BiddingStartPrice>
+        <BiddingIncrements>10</BiddingIncrements>
+        <EndTime>2015-04-24-7:00</EndTime>
+        <ID>f3fefea6-d443-11e4-b9d6-1681e6b88ec1-26</ID>
+    </AuctionItem>
+    <AuctionItem>
+        <Title>MacBook Pro 2015</Title>
+        <Category>Computers</Category>
+        <Picture>http://wscont1.apps.microsoft.com/winstore/1x/a14c3995-34d7-454c-82e2-0c192e48b91a/Icon.173718.png</Picture>
+        <Description>Cool notebook</Description>
+        <PostalAddress>
+            <streetAddress>770 Eastern Parkway</streetAddress>
+            <city>Sydney</city>
+            <state>NSW</state>
+            <country>Australia</country>
+            <postalCode>2000</postalCode>
+        </PostalAddress>
+        <ReservePrice currency="AUD">1026.00</ReservePrice>
+        <BiddingStartPrice currency="AUD">100.00</BiddingStartPrice>
+        <BiddingIncrements>10</BiddingIncrements>
+        <EndTime>2015-04-24-7:00</EndTime>
+        <ID>faced800-d358-11e4-a715-0002a5d5c51b-26</ID>
+    </AuctionItem>
+    <AuctionItem>
+        <Title>MacBook</Title>
+        <Category>Computers</Category>
+        <Picture>http://wscont1.apps.microsoft.com/winstore/1x/a14c3995-34d7-454c-82e2-0c192e48b91a/Icon.173718.png</Picture>
+        <Description>Old notebook</Description>
+        <PostalAddress>
+            <streetAddress>770 Eastern Parkway</streetAddress>
+            <city>Sydney</city>
+            <state>NSW</state>
+            <country>Australia</country>
+            <postalCode>2000</postalCode>
+        </PostalAddress>
+        <ReservePrice currency="AUD">613.00</ReservePrice>
+        <BiddingStartPrice currency="AUD">100.00</BiddingStartPrice>
+        <BiddingIncrements>10</BiddingIncrements>
+        <EndTime>2015-04-24-7:00</EndTime>
+        <ID>f3fefea6-d443-11e4-b9d6-1681e6b88ec1-26</ID>
+    </AuctionItem>
+</AuctionItems>

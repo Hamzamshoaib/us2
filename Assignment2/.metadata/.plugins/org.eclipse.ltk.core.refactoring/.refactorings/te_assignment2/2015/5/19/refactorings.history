@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move 6 elements to &apos;te_assignment2/src/edu.unsw.comp9321&apos;&#x0A;- Original project: &apos;te_assignment2&apos;&#x0A;- Destination element: &apos;te_assignment2/src/edu.unsw.comp9321&apos;&#x0A;- Original elements:&#x0A;     Journey.java&#x0A;     SearchFile.java&#x0A;     RandomFunc.java&#x0A;     AdvanceSearch.java&#x0A;     AuctionItems.java&#x0A;     ReadXMLFile.java&#x0A;- Update references to refactored element" description="Move files" destination="/src&lt;edu.unsw.comp9321" element1="Journey.java" element2="SearchFile.java" element3="RandomFunc.java" element4="AdvanceSearch.java" element5="AuctionItems.java" element6="ReadXMLFile.java" files="6" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1430799123952" units="0" version="1.0"/>
+</session>

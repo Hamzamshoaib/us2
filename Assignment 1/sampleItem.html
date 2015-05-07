@@ -1,0 +1,115 @@
+
+<!-- saved from url=(0068)http://www.cse.unsw.edu.au/~cs9321/15s1/assignments/AuctionItem.html -->
+<html hola_ext_inject="ready"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<title>PrettyXML</title>
+	<script src="./sampleItem_files/vkbeautify.js"></script> <!-- just to indent the xml-->
+	<!-- now we load all the styles for coloring languages-->
+	<script src="./sampleItem_files/prettify.js"></script>
+
+	<link rel="stylesheet" href="http://www.cse.unsw.edu.au/~cs9321/15s1/assignments/prettify.css">
+	<script>
+	  // Define regexps here so that the interpreter doesn't have to create an
+	  // object each time the function containing them is called.
+	  // The language spec requires a new object created even if you don't access
+	  // the $1 members.
+		var pr_amp = /&/g;
+		var pr_lt = /</g;
+		var pr_gt = />/g;
+		var pr_quot = /\"/g;
+		/** escapest html special characters to html. */
+		function textToHtml(str) {
+		return str.replace(pr_amp, '&amp;')
+		.replace(pr_lt, '&lt;')
+		.replace(pr_gt, '&gt;');
+		};
+
+	   function updateText() {
+	   		var text = textToHtml(vkbeautify.xml(document.getElementById('xml2').innerHTML));
+	   		document.getElementById('xml').innerHTML=text;
+		}
+	</script>
+	<script type="text/xml" id="xml2">
+<AuctionItems>	
+<AuctionItem>
+    <Title>MacBook Pro 2015</Title>
+    <Category>Computers</Category>
+    <Picture>http://www.w3schools.com/images/smiley.gif</Picture>
+    <Description>Cool notebook</Description>
+    <PostalAddress>
+        <streetAddress>770 Eastern Parkway</streetAddress>
+        <city>Sydney</city>
+        <state>NSW</state>
+        <country>Australia</country>
+        <postalCode>2000</postalCode>
+    </PostalAddress>
+    <ReservePrice currency="AUD">1026.00</ReservePrice>
+    <BiddingStartPrice currency="AUD">100.00</BiddingStartPrice>
+    <BiddingIncrements>10</BiddingIncrements>
+    <EndTime>2002-09-24-06:00</EndTime>
+    <ID>faced800-d358-11e4-a715-0002a5d5c51b-26</ID>
+</AuctionItem>
+<AuctionItem>
+    <Title>MacBook Pro 2008</Title>
+    <Category>Computers</Category>
+    <Picture>http://www.w3schools.com/images/smiley.gif</Picture>
+    <Description>Old notebook</Description>
+    <PostalAddress>
+        <streetAddress>770 Eastern Parkway</streetAddress>
+        <city>Sydney</city>
+        <state>NSW</state>
+        <country>Australia</country>
+        <postalCode>2000</postalCode>
+    </PostalAddress>
+    <ReservePrice currency="AUD">613.00</ReservePrice>
+    <BiddingStartPrice currency="AUD">100.00</BiddingStartPrice>
+    <BiddingIncrements>10</BiddingIncrements>
+    <EndTime>2002-09-24-06:00</EndTime>
+    <ID>f3fefea6-d443-11e4-b9d6-1681e6b88ec1-26</ID>
+</AuctionItem>
+	</AuctionItems>
+	</script>
+</head>
+<body onload="updateText(),prettyPrint()" bgcolor="white" hola-ext-player="1">
+<pre class="prettyprint" id="xml"><span class="pln">
+</span><span class="tag">&lt;AuctionItems&gt;</span><span class="pln">
+    </span><span class="tag">&lt;AuctionItem&gt;</span><span class="pln">
+        </span><span class="tag">&lt;Title&gt;</span><span class="pln">MacBook Pro 2015</span><span class="tag">&lt;/Title&gt;</span><span class="pln">
+        </span><span class="tag">&lt;Category&gt;</span><span class="pln">Computers</span><span class="tag">&lt;/Category&gt;</span><span class="pln">
+        </span><span class="tag">&lt;Picture&gt;</span><span class="pln">http://www.w3schools.com/images/smiley.gif</span><span class="tag">&lt;/Picture&gt;</span><span class="pln">
+        </span><span class="tag">&lt;Description&gt;</span><span class="pln">Cool notebook</span><span class="tag">&lt;/Description&gt;</span><span class="pln">
+        </span><span class="tag">&lt;PostalAddress&gt;</span><span class="pln">
+            </span><span class="tag">&lt;streetAddress&gt;</span><span class="pln">770 Eastern Parkway</span><span class="tag">&lt;/streetAddress&gt;</span><span class="pln">
+            </span><span class="tag">&lt;city&gt;</span><span class="pln">Sydney</span><span class="tag">&lt;/city&gt;</span><span class="pln">
+            </span><span class="tag">&lt;state&gt;</span><span class="pln">NSW</span><span class="tag">&lt;/state&gt;</span><span class="pln">
+            </span><span class="tag">&lt;country&gt;</span><span class="pln">Australia</span><span class="tag">&lt;/country&gt;</span><span class="pln">
+            </span><span class="tag">&lt;postalCode&gt;</span><span class="pln">2000</span><span class="tag">&lt;/postalCode&gt;</span><span class="pln">
+        </span><span class="tag">&lt;/PostalAddress&gt;</span><span class="pln">
+        </span><span class="tag">&lt;ReservePrice</span><span class="pln"> </span><span class="atn">currency</span><span class="pun">=</span><span class="atv">"AUD"</span><span class="tag">&gt;</span><span class="pln">1026.00</span><span class="tag">&lt;/ReservePrice&gt;</span><span class="pln">
+        </span><span class="tag">&lt;BiddingStartPrice</span><span class="pln"> </span><span class="atn">currency</span><span class="pun">=</span><span class="atv">"AUD"</span><span class="tag">&gt;</span><span class="pln">100.00</span><span class="tag">&lt;/BiddingStartPrice&gt;</span><span class="pln">
+        </span><span class="tag">&lt;BiddingIncrements&gt;</span><span class="pln">10</span><span class="tag">&lt;/BiddingIncrements&gt;</span><span class="pln">
+        </span><span class="tag">&lt;EndTime&gt;</span><span class="pln">2002-09-24-06:00</span><span class="tag">&lt;/EndTime&gt;</span><span class="pln">
+        </span><span class="tag">&lt;ID&gt;</span><span class="pln">faced800-d358-11e4-a715-0002a5d5c51b-26</span><span class="tag">&lt;/ID&gt;</span><span class="pln">
+    </span><span class="tag">&lt;/AuctionItem&gt;</span><span class="pln">
+    </span><span class="tag">&lt;AuctionItem&gt;</span><span class="pln">
+        </span><span class="tag">&lt;Title&gt;</span><span class="pln">MacBook Pro 2008</span><span class="tag">&lt;/Title&gt;</span><span class="pln">
+        </span><span class="tag">&lt;Category&gt;</span><span class="pln">Computers</span><span class="tag">&lt;/Category&gt;</span><span class="pln">
+        </span><span class="tag">&lt;Picture&gt;</span><span class="pln">http://www.w3schools.com/images/smiley.gif</span><span class="tag">&lt;/Picture&gt;</span><span class="pln">
+        </span><span class="tag">&lt;Description&gt;</span><span class="pln">Old notebook</span><span class="tag">&lt;/Description&gt;</span><span class="pln">
+        </span><span class="tag">&lt;PostalAddress&gt;</span><span class="pln">
+            </span><span class="tag">&lt;streetAddress&gt;</span><span class="pln">770 Eastern Parkway</span><span class="tag">&lt;/streetAddress&gt;</span><span class="pln">
+            </span><span class="tag">&lt;city&gt;</span><span class="pln">Sydney</span><span class="tag">&lt;/city&gt;</span><span class="pln">
+            </span><span class="tag">&lt;state&gt;</span><span class="pln">NSW</span><span class="tag">&lt;/state&gt;</span><span class="pln">
+            </span><span class="tag">&lt;country&gt;</span><span class="pln">Australia</span><span class="tag">&lt;/country&gt;</span><span class="pln">
+            </span><span class="tag">&lt;postalCode&gt;</span><span class="pln">2000</span><span class="tag">&lt;/postalCode&gt;</span><span class="pln">
+        </span><span class="tag">&lt;/PostalAddress&gt;</span><span class="pln">
+        </span><span class="tag">&lt;ReservePrice</span><span class="pln"> </span><span class="atn">currency</span><span class="pun">=</span><span class="atv">"AUD"</span><span class="tag">&gt;</span><span class="pln">613.00</span><span class="tag">&lt;/ReservePrice&gt;</span><span class="pln">
+        </span><span class="tag">&lt;BiddingStartPrice</span><span class="pln"> </span><span class="atn">currency</span><span class="pun">=</span><span class="atv">"AUD"</span><span class="tag">&gt;</span><span class="pln">100.00</span><span class="tag">&lt;/BiddingStartPrice&gt;</span><span class="pln">
+        </span><span class="tag">&lt;BiddingIncrements&gt;</span><span class="pln">10</span><span class="tag">&lt;/BiddingIncrements&gt;</span><span class="pln">
+        </span><span class="tag">&lt;EndTime&gt;</span><span class="pln">2002-09-24-06:00</span><span class="tag">&lt;/EndTime&gt;</span><span class="pln">
+        </span><span class="tag">&lt;ID&gt;</span><span class="pln">f3fefea6-d443-11e4-b9d6-1681e6b88ec1-26</span><span class="tag">&lt;/ID&gt;</span><span class="pln">
+    </span><span class="tag">&lt;/AuctionItem&gt;</span><span class="pln">
+</span><span class="tag">&lt;/AuctionItems&gt;</span><span class="pln">
+	</span></pre>
+
+
+</body></html>

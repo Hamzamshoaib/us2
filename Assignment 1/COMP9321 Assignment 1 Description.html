@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0068)http://www.cse.unsw.edu.au/~cs9321/15s1/assignments/assignment1.html -->
+<html hola_ext_inject="ready"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>COMP9321 Assignment 1 Description</title>
+
+<link rel="stylesheet" type="text/css" href="./COMP9321 Assignment 1 Description_files/proj.css">
+<style type="text/css"><!-- li{padding-top:0ex} h2.section{background-color:##99cccc} --></style>
+</head>
+<body hola-ext-player="1">
+
+
+<h1 class="heading">COMP9321 Semester 1, 2015</h1>
+<h1 class="heading">Assignment 1: Auction-Item Data Store</h1>
+
+<h2 class="section">Aims and Background</h2>
+
+<p class="instructions">
+This project aims to give students hands-on experience in designing and implementing a functional Web-Application on their own. The theme of assignment will be oriented around action sites, similar to <i>eBay</i>. Such auction sites have revolutionised consumer-to-consumer business by allowing ordinary people to easily trade with each other. 
+</p>
+
+<p class="instructions">
+This assignment will act as a <i>kick-starter</i> to Assignment 2. In the subsequent assignment you will be expected to design and implement an auction system capable of allowing users to offer items for auctions and participate in competitive bidding. It will also contain features such as user-registration and some admin functionality. However, in this assignment, you will only focus on the data-aspects of the "auction items", and implement the associated fundamental features. This component can then be integrated into your Assignment 2.
+</p>
+
+
+
+<h2 class="section">Requirements</h2>
+
+<h2 class="section2">1. Auction-Item Data Model </h2>
+<p class="instructions">
+An <i>auction-item</i> in your application will need to conform to the <a href="http://www.cse.unsw.edu.au/~cs9321/15s1/assignments/AuctionItemXSD.html">provided schema</a>. A sample AuctionItem can also be found at the following <a href="http://www.cse.unsw.edu.au/~cs9321/15s1/assignments/AuctionItem.html">XML file</a>. The database of your application will thus be in the form of an XML Database, and you will also therefore be required to apply XML parsing to manipulate the XML file.
+</p>
+
+<p>
+You will associate data such as search preferences and a "Wish List" with a user using cookies and HTTP sessions. You should not use a login (user/password) for this purpose.  
+</p>
+
+<h2 class="section2">2. The Homepage</h2>
+
+<p>The starting/welcome page of your application, should display at the minimum a search bar allowing users to search for auction-items. Additionally, you should also provide to the users the ability to perform advanced search based on more specific search preferences. </p>
+
+<p>The welcome page should also display a list (approx. 10 items) <strike>of the top-rated auction-items</strike> chosen at random.</p>
+
+<h2 class="section2">3.  Search</h2>
+
+<p>The search should be implemented to apply to keywords (word search including substrings) in the <i>title</i>, <i>category</i> or <i>description</i> of an auction-item. Clicking on search button should present the user with a list of auction-items that match the search criteria. On the search listing pages, each thumbnail of the search results should contain: (a) The title of the item; (b) A Picture of the item; and (c) Add to WishList button. </p>
+
+<p>The title should act as a hyperlink that directs to another page with more complete details about the auction-item.</p>
+
+<!--The up/down button allows users to rate up/down the item. Every up should increment the rating score of a particular auction-item. Likewise, every down should decrement the rating score.-->
+
+<p>The WishList stores a collection of items. (Note: For now this should all be maintained via cookies/session attributes. You are not required to persist user data to the database. This will be part of the next assignment.) </p>
+
+<p> The header of the search results page should also contain the search bar again, and associated options. The allows the user to conduct another search (cf. Google, etc.).</p>
+
+<h2 class="section2">4. Add a 'new' Auction-Item</h2>
+
+<p>At the header of your web application pages, you should also offer the user the ability to "Add a new auction-item". The user should be presented with a form that reflects the data-model of an auction-item. Clicking on a submit button will then add the item into the database, and confirm to the user a simple message, such as: "Thanking you for adding an item". 
+</p>
+
+<h2 class="section2">5. Populating your Database</h2>
+
+<p>You should also submit along with this application, a populated database of a variety of Auction-Items. We would expect a minimum of 25 such items.
+
+</p><p>Note: You are at liberty as to whether you generate this XML dataset manually, or utilise your implemented Web-Application to generate this file.
+
+</p><h2 class="section2">6. The WishList </h2>
+
+<p>The WishList acts similar to a "shopping cart" for items that a user has been browsing. The header of your application should thus also contain a button to the "WishList". Once clicked, the user will be presented with a list of the items that they have selected to be stored into their wish-list. (Note: Again, you do not need to persist such data to the database. The database will only be storing/retrieving auction-items. Rather the WishList can again simply be stored into Session attributes. In the next assignment, you will be required to design a complete relational database with user entities. At that point, you will then need to persist the user's wish-list into the database, so that it will be available the next time the user logs in. However, in this assignment as there is no log-in to be implemented - information such as the WishList will only live as long as the active session is alive.)</p>
+
+<p>At the WishList page, users can click on Auction-Items to see further details. They should also be able to "remove" any items from the WishList. If the user's WishList is empty, then an appropriate message such as "WishList is Empty" should be displayed to the user, followed by a "Back" button, returning the user to the previous page.</p>
+
+
+<h2 class="section"> Assignment Execution </h2>
+
+<h2 class="subsection">Submission Requirements</h2>
+
+<p> The due date for this assignment is <b>Tuesday, April 14 2015, 23:59:59</b>.</p> 
+<ol>
+<li>After testing, generate a war file from your project. In Eclipse, this is Right-Click on project name --&gt; Export --&gt; WAR file. Make sure that the "Export Sources" checkbox is checked.</li>
+<li>Run the command
+<pre>give cs9321 Assign1 &lt;war-file&gt; 
+</pre>
+</li>
+</ol>
+
+Important Notes: 
+<ol>
+<li>It is extremely important that your war file can be loaded in any Tomcat 7 in the CSE environment. Make sure you test your assignment thoroughly.</li>
+<li>Please <b>DO NOT</b> use any additional libraries or dependencies - other than the standard tomcat and/or XML processing libraries. Doing so will make it difficult to correctly deploy your assignment for marking.</li>
+<li><b>EDIT:</b> The following additional libs are accepted: JSTL. And for front-end purposes, JQuery and Bootstrap. Additionally, any other Javascript libs that are simply referenced (i.e. without having to add to the build path) in your HTML/JSP page is accepted. </li>
+</ol>
+
+
+<p></p>
+
+<p>
+
+</p><h2 class="subsection">Evaluation and Marking</h2>
+
+Your assignment will be evaluated by tutors independently. We will test the functionality of the search application as well as the handling of errors such as invalid parameters and operations.
+
+This is an individual assignment worth 10 marks. You will lose marks for any failed tests. Standard late penalties also applies.
+
+<!--
+<h2 class="subsection">Important</h2>
+<p> The answers to all these questions is NO.</p>
+<ol>
+<li> Could you extend the deadline ? </li>
+<li> Can I use XPath/XQuery/XMLBeans ? </li>
+<li> There are too many records. Can I show only a subset of the database ? </li>
+<li> Can I use an RDBMS ? </li>
+</ol>
+-->
+
+<p>
+Please use the message board for resolving other doubts.</p>
+<br>
+
+
+
+</body></html>
