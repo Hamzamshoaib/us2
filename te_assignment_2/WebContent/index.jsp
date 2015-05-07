@@ -8,5 +8,11 @@
 </head>
 <body>
 <h1>Hello World!</h1>
+<FORM ACTION='menu.jsp' METHOD='POST'>
+<br>
+<INPUT type="text" name="searchItem">
+<br>
+<INPUT TYPE='submit' VALUE='search'>
+</FORM>
 </body>
 </html>
