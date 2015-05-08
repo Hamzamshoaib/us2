@@ -8,13 +8,16 @@
 </head>
 <body>
 <FORM NAME="loginform" ACTION="login" METHOD="POST">
+${message}
 <br>
 <p>UserName: </p>
 <INPUT type="text" name="username">
 <br>
 <p>Password: </p>
 <INPUT type="password" name="password">
-<INPUT TYPE="submit">
+<INPUT TYPE="submit" name="action" value="login">
+<!--<INPUT TYPE="button" name="action" value="register">-->
+
 </FORM>
 </body>
 </html>

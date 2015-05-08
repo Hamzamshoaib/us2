@@ -8,11 +8,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class Login
@@ -29,16 +29,16 @@ public class Login extends HttpServlet {
     }
 
 	/**
-	 * @see Servlet#init(ServletConfig)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	public void init(ServletConfig config) throws ServletException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 	}
 
 	/**
-	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("We are in Service method of servlet");
 		
 		
@@ -59,9 +59,14 @@ public class Login extends HttpServlet {
 			Statement st = conn.createStatement();
 			ResultSet rs = st.executeQuery(strQuery);
 			if (rs.next()) {
-				msg="Hello " + un + "! Your login is successful";
+				/*msg="Hello " + un + "! Your login is successful";*/
+				HttpSession session = request.getSession(true);
+				session.setAttribute("username", un);
+				response.sendRedirect("welcome.jsp");
 			} else {
-				msg="Hello Your login failed";
+				request.setAttribute("message", "Invalid Username or Password");
+				request.getRequestDispatcher("index.jsp").forward(request, response);
+				/*msg="Hello Your login failed";*/
 			}
 			rs.close();
 			st.close();
@@ -78,7 +83,6 @@ public class Login extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		out.println(msg);
-	
-					
 	}
+
 }
