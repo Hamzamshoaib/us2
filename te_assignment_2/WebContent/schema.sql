@@ -5,6 +5,7 @@ DROP TABLE cast_db.Users;
 
 CREATE TABLE cast_db.Users (
 	UserName VARCHAR(255) PRIMARY KEY,
+	Password VARCHAR(255) NOT NULL,
 	FirstName VARCHAR(255) NOT NULL,
 	LastName VARCHAR(255) NOT NULL,
 	Email VARCHAR(255) NOT NULL,
@@ -29,4 +30,4 @@ CREATE TABLE cast_db.BiddingPrice (
 );
 	
 
-INSERT INTO cast_db.Users VALUES ('Hamza', 'Hamza', 'Shoaib', 'hamza@gmail.com', 'Glenwood', '2015-02-24');
+INSERT INTO cast_db.Users VALUES ('Hamza', 'password', 'Hamza', 'Shoaib', 'hamza@gmail.com', 'Glenwood', '2015-02-24');

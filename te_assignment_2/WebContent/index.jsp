@@ -7,12 +7,14 @@
 <title>	Daily Auction</title>
 </head>
 <body>
-<h1>Hello World!</h1>
-<FORM ACTION='menu.jsp' METHOD='POST'>
+<FORM NAME="loginform" ACTION="login" METHOD="POST">
 <br>
-<INPUT type="text" name="searchItem">
+<p>UserName: </p>
+<INPUT type="text" name="username">
 <br>
-<INPUT TYPE='submit' VALUE='search'>
+<p>Password: </p>
+<INPUT type="password" name="password">
+<INPUT TYPE="submit">
 </FORM>
 </body>
 </html>
