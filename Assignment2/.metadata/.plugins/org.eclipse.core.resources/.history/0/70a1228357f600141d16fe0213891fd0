@@ -1,0 +1,94 @@
+/*
+ * ControllerServlet.java
+ *
+ * Created on 9 August 2003, 10:58
+ */
+
+package com.enterprise.web;
+
+import java.io.*;
+
+import java.util.*;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+/**
+ * Controller Servlet that accepts all client requests and performs the
+ * lookup required to process the request. This class uses the command
+ * design pattern to find the required <i>Command</i> class that will
+ * process the request.
+ * 
+ * @author $author
+ * @version
+ */
+public class ControllerServlet extends HttpServlet {
+	
+	private Map commands;
+	
+	/** 
+	 * Initializes the servlet.
+	 */
+	public void init(ServletConfig config) throws ServletException {
+
+		super.init(config);
+
+		commands = new HashMap();
+
+		commands.put("add", new AddCommand());
+		commands.put("delete", new DeleteCommand());
+		commands.put("list", new ListCommand());
+		commands.put("login", new LoginCommand());
+		commands.put("logout", new LogoutCommand());
+		commands.put("PAGE_NOT_FOUND", new ErrorCommand());
+
+	}
+
+	/** 
+	 * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
+	 * @param request servlet request
+	 * @param response servlet response
+	 */
+	protected void resolveCommand(
+		HttpServletRequest request, HttpServletResponse response)
+		throws ServletException, IOException {
+
+
+		// TODO: find the command that was requested by 
+		// the client and then call the execute method
+		Command cmd = (Command) commands.get(request.getParameter("operation"));
+		if (cmd == null) {
+	        cmd = (Command) commands.get("PAGE_NOT_FOUND");
+		}
+		cmd.execute(request, response);
+
+	}
+
+	/** 
+	 * Handles the HTTP <code>GET</code> method.
+	 * @param request servlet request
+	 * @param response servlet response
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	throws ServletException, IOException {
+
+	    resolveCommand(request, response);
+	}
+	
+	/** 
+	 * Handles the HTTP <code>POST</code> method.
+	 * @param request servlet request
+	 * @param response servlet response
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	throws ServletException, IOException {
+
+	    resolveCommand(request, response);
+	}
+	
+	/** Returns a short description of the servlet.
+	 */
+	public String getServletInfo() {
+		return "Controller for the application";
+	}
+}

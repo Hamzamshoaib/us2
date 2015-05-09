@@ -1,0 +1,10 @@
+127.0.0.1 - - [10/May/2015:00:34:08 +1000] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1%0 - - [10/May/2015:00:34:10 +1000] "GET /phonebook1/ HTTP/1.1" 200 1120
+0:0:0:0:0:0:0:1%0 - - [10/May/2015:00:34:10 +1000] "GET /phonebook1/images/pg_imagelogo05.jpg HTTP/1.1" 404 1023
+0:0:0:0:0:0:0:1%0 - - [10/May/2015:00:34:10 +1000] "GET /phonebook1/images/background.gif HTTP/1.1" 404 1015
+127.0.0.1 - - [10/May/2015:00:36:44 +1000] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1%0 - - [10/May/2015:00:36:45 +1000] "GET /phonebook1/ HTTP/1.1" 200 1120
+0:0:0:0:0:0:0:1%0 - - [10/May/2015:00:36:45 +1000] "GET /phonebook1/images/pg_imagelogo05.jpg HTTP/1.1" 200 250658
+0:0:0:0:0:0:0:1%0 - - [10/May/2015:00:36:45 +1000] "GET /phonebook1/images/background.gif HTTP/1.1" 200 214959
+0:0:0:0:0:0:0:1%0 - - [10/May/2015:00:36:54 +1000] "GET /phonebook1/dispatcher?operation=login HTTP/1.1" 200 28
+0:0:0:0:0:0:0:1%0 - - [10/May/2015:00:37:20 +1000] "GET /phonebook1/dispatcher?operation=add HTTP/1.1" 200 -

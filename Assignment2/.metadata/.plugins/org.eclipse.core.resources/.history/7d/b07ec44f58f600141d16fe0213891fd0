@@ -1,0 +1,14 @@
+package com.enterprise.web;
+
+import java.io.IOException;
+
+/**
+ * Generic interface for a command
+ * @author  yunki
+ */
+public interface Command {
+	
+	String execute(HttpServletRequest request, HttpServletResponse response)
+	throws ServletException, IOException;
+	
+}

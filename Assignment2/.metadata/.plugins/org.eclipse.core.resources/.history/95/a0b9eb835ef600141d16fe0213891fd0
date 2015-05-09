@@ -1,0 +1,89 @@
+package com.enterprise.business.support;
+
+import java.util.List;
+
+import com.enterprise.beans.ContactBean;
+import com.enterprise.beans.UserBean;
+import com.enterprise.business.ContactService;
+import com.enterprise.business.exception.ContactServiceException;
+import com.enterprise.business.exception.UserLoginFailedException;
+import com.enterprise.dao.DAOFactory;
+import com.enterprise.dao.DataAccessException;
+import com.enterprise.dao.ContactDAO;
+import com.enterprise.dao.UserDAO;
+
+/**
+ * @author $author
+ */
+public class ContactServiceImpl implements ContactService {
+
+	/**
+	 * The ContactDAO
+	 */
+	private ContactDAO contactDao;
+	
+	/**
+	 * The userDAO
+	 */
+	private UserDAO userDao;
+
+	/**
+	 * 
+	 */
+	public ContactServiceImpl() {
+        //TODO: create references to the implementation of contactDAO and userDAO.
+	}
+
+	/**
+	 * @see com.enterprise.business.PhonebookService#login(java.lang.String, java.lang.String)
+	 */
+	public UserBean login(String username, String password)
+		throws UserLoginFailedException {
+
+		UserBean user = null;
+
+          //TODO: this should try to find a UserBean using the UserDAO  
+          //TODO: throw LoginFailedException if the user is not found or the operation fails.
+          //TODO: if the user is found, return the user
+        return user;
+	}
+
+	/**
+	 * @see com.enterprise.business.ContactService#addRecord(com.enterprise.beans.ContactBean)
+	 */
+	public void addRecord(ContactBean bean) throws ContactServiceException {
+
+		//TODO: this should just call the insert() method of the contactDAO
+	}
+
+
+	/**
+	 * @see com.enterprise.business.ContactService#deleteRecord(int)
+	 */
+	public ContactBean deleteRecord(int id) throws ContactServiceException {
+
+		//TODO: this should first retrieve the ContactBean with the given 
+		//TODO: then, call on the delete method from the contactDAO. 
+		//TODO: You should also return the bean.
+      return null;
+	}
+
+
+	public ContactBean getContact(int phoneId) throws ContactServiceException {
+		//TODO: this should just retrieve a contact with the given id from the contactDAO
+      return null;
+	}
+
+	/**
+	 * @see com.enterprise.business.PhonebookService#getPhonebookRecords(int)
+	 */
+	public List getContacts(int userId) throws ContactServiceException {
+		
+		try {
+			return contactDao.findAllByUser(userId);
+		} catch (DataAccessException e) {
+			throw new ContactServiceException("Unable to find records", e);
+		}
+	}
+
+}

@@ -1,0 +1,163 @@
+package com.enterprise.beans;
+
+/**
+ * Represents a contact entry in the database
+ * @author  $author
+ */
+public class ContactBean {
+	/**
+	 * The id of the contact in the database
+	 */
+	private int id;
+	
+	/**
+	 * The person who owns the contact
+	 */
+	private int owner;
+	
+	/**
+	 * The short name which this entry can be known such as
+	 * a nick name
+	 */
+	private String shortName;
+	
+	/**
+	 * The full name by which this entry can be known
+	 */
+	private String fullName;
+	
+	/**
+	 * The email which this entry can be contacted
+	 */
+	private String email;
+	
+	/**
+	 * The phone number which this email can be emailed
+	 */
+	private String contactNumber;
+
+	/**
+	 * Some notes for the user
+	 */
+	private String notes;
+
+	/** 
+	 * Creates a new instance of ContactBean 
+	 */
+	public ContactBean() {
+	}
+	
+	/** 
+	 * Getter for property id.
+	 * @return Value of property id.
+	 */
+	public int getId() {
+		return id;
+	}
+	
+	/** Setter for property id.
+	 * @param id New value of property id.
+	 *
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	/** Getter for property owner.
+	 * @return Value of property owner.
+	 *
+	 */
+	public int getOwner() {
+		return owner;
+	}
+	
+	/** Setter for property owner.
+	 * @param owner New value of property owner.
+	 *
+	 */
+	public void setOwner(int owner) {
+		this.owner = owner;
+	}
+	
+	/** Getter for property shortName.
+	 * @return Value of property shortName.
+	 *
+	 */
+	public java.lang.String getShortName() {
+		return shortName;
+	}
+	
+	/** Setter for property shortName.
+	 * @param shortName New value of property shortName.
+	 *
+	 */
+	public void setShortName(java.lang.String shortName) {
+		this.shortName = shortName;
+	}
+	
+	/** Getter for property fullName.
+	 * @return Value of property fullName.
+	 *
+	 */
+	public java.lang.String getFullName() {
+		return fullName;
+	}
+	
+	/** Setter for property fullName.
+	 * @param fullName New value of property fullName.
+	 *
+	 */
+	public void setFullName(java.lang.String fullName) {
+		this.fullName = fullName;
+	}
+	
+	/** Getter for property email.
+	 * @return Value of property email.
+	 *
+	 */
+	public java.lang.String getEmail() {
+		return email;
+	}
+	
+	/** Setter for property email.
+	 * @param email New value of property email.
+	 *
+	 */
+	public void setEmail(java.lang.String email) {
+		this.email = email;
+	}
+	
+	/** Getter for property contactNumber.
+	 * @return Value of property contactNumber.
+	 *
+	 */
+	public java.lang.String getContactNumber() {
+		return contactNumber;
+	}
+	
+	/** Setter for property contactNumber.
+	 * @param contactNumber New value of property contactNumber.
+	 *
+	 */
+	public void setContactNumber(java.lang.String contactNumber) {
+		this.contactNumber = contactNumber;
+	}
+	
+	/**
+	 * @return
+	 */
+	public String getNotes() {
+		return notes;
+	}
+
+	/**
+	 * @param string
+	 */
+	public void setNotes(String string) {
+		notes = string;
+	}
+
+	public String toString() {
+		return id + "; " + shortName + ";" + fullName + ";" + email + ";" + notes;
+	}
+}

@@ -1,0 +1,146 @@
+package com.enterprise.beans;
+
+import java.io.Serializable;
+
+/**
+ * Class that represents a user of the system
+ *
+ * @author  $author
+ */
+public class UserBean implements Serializable {
+
+	/**
+	 * The user's id in the database
+	 */
+	private int id;
+	
+	/**
+	 * The firstname of the user
+	 */
+	private String firstname;
+	
+	/**
+	 * The lastname of the user
+	 */
+	private String lastname;
+	
+	/**
+	 * The access level that a user has. The lower the number, the more permissions
+	 * they have. This will allow for more permissions to be added since we
+	 * always have a super user with accesslevel = 1
+	 */
+	private int accessLevel;
+	/**
+	 * The username that is used to log in
+	 */
+	private String username;
+	
+	/**
+	 * The current password of the user
+	 */
+	private String password;
+
+	/** Creates a new instance of User */
+	public UserBean() {
+	}
+	
+	/** Getter for property id.
+	 * @return Value of property id.
+	 *
+	 */
+	public int getId() {
+		return id;
+	}
+	
+	/** Setter for property id.
+	 * @param id New value of property id.
+	 *
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	/** Getter for property firstname.
+	 * @return Value of property firstname.
+	 *
+	 */
+	public java.lang.String getFirstname() {
+		return firstname;
+	}
+	
+	/** Setter for property firstname.
+	 * @param firstname New value of property firstname.
+	 *
+	 */
+	public void setFirstname(java.lang.String firstname) {
+		this.firstname = firstname;
+	}
+	
+	/** Getter for property lastname.
+	 * @return Value of property lastname.
+	 *
+	 */
+	public java.lang.String getLastname() {
+		return lastname;
+	}
+	
+	/** Setter for property lastname.
+	 * @param lastname New value of property lastname.
+	 *
+	 */
+	public void setLastname(java.lang.String lastname) {
+		this.lastname = lastname;
+	}
+	
+	/** Getter for property accessLevel.
+	 * @return Value of property accessLevel.
+	 *
+	 */
+	public int getAccessLevel() {
+		return accessLevel;
+	}
+	
+	/** Setter for property accessLevel.
+	 * @param accessLevel New value of property accessLevel.
+	 *
+	 */
+	public void setAccessLevel(int accessLevel) {
+		this.accessLevel = accessLevel;
+	}
+	
+	/** Getter for property username.
+	 * @return Value of property username.
+	 *
+	 */
+	public java.lang.String getUsername() {
+		return username;
+	}
+	
+	/** Setter for property username.
+	 * @param username New value of property username.
+	 *
+	 */
+	public void setUsername(java.lang.String username) {
+		this.username = username;
+	}
+	
+	/** Getter for property password.
+	 * @return Value of property password.
+	 *
+	 */
+	public java.lang.String getPassword() {
+		return password;
+	}
+	
+	/** Setter for property password.
+	 * @param password New value of property password.
+	 *
+	 */
+	public void setPassword(java.lang.String password) {
+		this.password = password;
+	}
+	
+	public String toString() {
+		return "[USER]" + firstname + " " + lastname + " (" + username+ ") #" + hashCode();
+	}
+}

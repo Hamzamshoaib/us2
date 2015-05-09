@@ -1,0 +1,58 @@
+package edu.unsw.comp9321;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Login
+ */
+public class Login extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Login() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see Servlet#init(ServletConfig)
+	 */
+	public void init(ServletConfig config) throws ServletException {
+		// TODO Auto-generated method stub
+	}
+
+	/**
+	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("We are in Service method of servlet");
+		String userName = "user";
+		String password = "root";
+		
+		String un = request.getParameter("username");
+		String pw = request.getParameter("password");
+		
+		String msg = " ";
+		
+		if(un.equals(userName) && pw.equals(password)){
+			msg="Hello " + un + "! Your login is successful";
+		} else {
+			msg="Hello Your login failed";
+		}
+		
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		out.println(msg);
+	
+					
+	}
+}

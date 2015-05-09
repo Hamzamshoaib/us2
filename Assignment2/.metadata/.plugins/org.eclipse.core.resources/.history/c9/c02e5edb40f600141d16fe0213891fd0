@@ -1,0 +1,36 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+ <%@ page import="java.util.ArrayList" %>
+ <%@ page import="java.util.Iterator" %>
+ <%@ page import="edu.unsw.comp9321.*"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Welcome!</title>
+</head>
+<body>
+<CENTER>
+<% 
+if(isEmpty.session.getAttribute("username")) {
+	response.sendRedirect("index.jsp");
+}
+%>
+<h1>Welcome ${username}</h1>
+Session ID: <%=session.getId()%>
+<FORM ACTION='detail.jsp'>
+	<input type="submit" value="detail">
+</FORM>
+<H1>Daily Auction</H1>
+Search for an item
+<FORM ACTION='menu.jsp' METHOD='POST'>
+<br>
+<INPUT type="text" name="searchItem">
+<br>
+<INPUT TYPE='submit' VALUE='search'>
+</FORM><br>
+<a href="advance.jsp">Advanced Search</a><br>
+
+</CENTER>
+</body>
+</html>

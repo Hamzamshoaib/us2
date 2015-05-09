@@ -5,6 +5,7 @@
 		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID"/>
 		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
 			<item value="/Users/Hamza/Downloads/cast-exercise"/>
+			<item value="/Users/Hamza/Google Drive/COMP9321/Assignments/Assignment 1/Assignment_1_337453/WebContent"/>
 			<item value="/Users/Hamza/Google Drive/COMP9321/Assignments/Assignment 1/Assignment_1_337453/src/edu/unsw/comp9321"/>
 		</list>
 	</section>
@@ -12,12 +13,16 @@
 		<item value="900" key="dialogWidth"/>
 		<item value="563" key="dialogHeight"/>
 		<list key="orderedProviders">
+			<item value="org.eclipse.ui.preferences"/>
 		</list>
 		<list key="textArray">
+			<item value="context"/>
 		</list>
 		<list key="orderedElements">
+			<item value="org.eclipse.mylyn.context.ui.preferences"/>
 		</list>
 		<list key="textEntries">
+			<item value="1"/>
 		</list>
 	</section>
 	<section name="WorkbenchPreferenceDialogSettings">

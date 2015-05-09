@@ -1,0 +1,29 @@
+package com.enterprise.web;
+
+import java.io.*;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * This command adds a new contact
+ * @author  yunki
+ */
+public class AddCommand implements Command {
+	
+	/** Creates a new instance of AddCommand */
+	public AddCommand() {
+	}
+	
+	public String execute(HttpServletRequest request, HttpServletResponse response) 
+       throws ServletException, IOException {
+
+        //TODO: set the response content type to "text/html" here
+        //TODO: You'll have to use getWriter() to output some HTML texts 
+        //TODO: close the output stream
+
+	    return null;
+	     
+	}
+	
+}

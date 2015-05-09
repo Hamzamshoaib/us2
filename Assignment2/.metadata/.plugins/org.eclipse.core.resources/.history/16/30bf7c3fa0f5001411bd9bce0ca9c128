@@ -1,0 +1,85 @@
+package edu.unsw.comp9321;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Login
+ */
+public class Login extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Login() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see Servlet#init(ServletConfig)
+	 */
+	public void init(ServletConfig config) throws ServletException {
+		// TODO Auto-generated method stub
+	}
+
+	/**
+	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("We are in Service method of servlet");
+		
+		
+		String un = request.getParameter("username");
+		String pw = request.getParameter("password");
+		
+		String msg = " ";
+		Connection conn = null;
+		String url = "jdbc:derby://localhost:1527/cast;create=true";
+		String dbUserName = "Hamza";
+		String dbPassword = "hamza";
+		String driver = "com.mysql.jdbc.Driver";
+				/*"org.apache.derby.jdbc.EmbeddedDriver";*/
+		
+		try {
+			Class.forName(driver).newInstance();
+			conn = DriverManager.getConnection(url, dbUserName, dbPassword);
+			String strQuery = "select * from Users where UserName='" + un +"' and  Password='" + pw + "'";
+			Statement st = conn.createStatement();
+			ResultSet rs = st.executeQuery(strQuery);
+			if (rs.next()) {
+				msg="Hello " + un + "! Your login is successful";
+			} else {
+				msg="Hello Your login failed";
+			}
+			rs.close();
+			st.close();
+		} catch (InstantiationException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		out.println(msg);
+	
+					
+	}
+}
