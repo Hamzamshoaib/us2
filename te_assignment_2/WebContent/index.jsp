@@ -7,7 +7,7 @@
 <title>	Daily Auction</title>
 </head>
 <body>
-<FORM NAME="loginform" ACTION="login" METHOD="POST">
+<FORM NAME="loginform" ACTION="delegate" METHOD="POST">
 ${message}
 <br>
 <p>UserName: </p>
@@ -16,7 +16,7 @@ ${message}
 <p>Password: </p>
 <INPUT type="password" name="password">
 <INPUT TYPE="submit" name="action" value="login">
-<!--<INPUT TYPE="button" name="action" value="register">-->
+<INPUT TYPE="submit" name="action" value="register">
 
 </FORM>
 </body>

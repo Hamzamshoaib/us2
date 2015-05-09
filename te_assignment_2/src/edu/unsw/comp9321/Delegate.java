@@ -27,12 +27,16 @@ public class Delegate extends HttpServlet {
 		System.out.println("in the delegate");
 		String formDelegate = request.getParameter("action");
 		String user = request.getParameter("username");
+		String pass = request.getParameter("password");
+		request.setAttribute("username", user);
+		request.setAttribute("password", pass);
 		if ("login".equals(formDelegate)){
-			response.sendRedirect("login");
+			System.out.println("in the delegate if statement");
+			getServletContext().getRequestDispatcher("/login").forward(request,response);
 		} else {
-			request.setAttribute("username", user);
+			System.out.println("in the else statement");
+			/*response.sendRedirect("register.jsp");*/
 			request.getRequestDispatcher("register.jsp").forward(request, response);
-			
 		}
 	}
 

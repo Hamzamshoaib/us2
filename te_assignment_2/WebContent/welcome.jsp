@@ -12,6 +12,10 @@
 <body>
 <CENTER>
 <h1>Welcome ${username}</h1>
+Session ID: <%=session.getId()%>
+<FORM ACTION='detail.jsp'>
+	<input type="submit" value="detail">
+</FORM>
 <H1>Daily Auction</H1>
 Search for an item
 <FORM ACTION='menu.jsp' METHOD='POST'>
