@@ -7,6 +7,14 @@
 <title>Details</title>
 </head>
 <body>
+<!-- Code between the tags check whether a session exists or not -->
+<% 
+	String name = (String) session.getAttribute("username");
+	if (name == null){
+		response.sendRedirect("index.jsp");
+	}
+%>
+<!-- This is basically testing that sessions are working properly -->
         <% 
         Integer counter = (Integer)session.getAttribute("counter");
         if (counter == null) {

@@ -24,20 +24,19 @@ public class Delegate extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("in the delegate");
+		//System.out.println("in the delegate");
 		String formDelegate = request.getParameter("action");
 		String user = request.getParameter("username");
 		String pass = request.getParameter("password");
 		request.setAttribute("username", user);
 		request.setAttribute("password", pass);
 		if ("login".equals(formDelegate)){
-			System.out.println("in the delegate if statement");
+			//System.out.println("in the delegate if statement");
 			getServletContext().getRequestDispatcher("/login").forward(request,response);
-		} else {
-			System.out.println("in the else statement");
+		} else if ("register".equals(formDelegate)){
+			//System.out.println("in the else statement");
 			/*response.sendRedirect("register.jsp");*/
 			request.getRequestDispatcher("register.jsp").forward(request, response);
 		}
 	}
-
 }

@@ -7,8 +7,8 @@
 <title>	Daily Auction</title>
 </head>
 <body>
-<FORM NAME="loginform" ACTION="delegate" METHOD="POST">
 ${message}
+<FORM NAME="loginform" ACTION="delegate" METHOD="POST">
 <br>
 <p>UserName: </p>
 <INPUT type="text" name="username">
