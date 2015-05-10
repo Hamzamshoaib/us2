@@ -26,9 +26,14 @@ CREATE TABLE cast_db.BiddingPrice (
 	UserName VARCHAR(255) REFERENCES cast_db.Users(UserName),
 	HighestBidder VARCHAR(255) REFERENCES cast_db.Users(UserName),
 	Item_ID INT REFERENCES cast_db.Items(Item_ID),
-	PRIMARY KEY (Username, Item_ID)
+	PRIMARY KEY (UserName, Item_ID)
 );
-	
+
+CREATE TABLE cast_db.WishList (
+	UserName VARCHAR(255) REFERENCES cast_db.Users(UserName),
+	Item_ID INT REFERENCES cast_db.Items(Item_ID),
+	PRIMARY KEY (UserName, Item_ID)
+)
 
 INSERT INTO cast_db.Users VALUES ('Hamza', 'password', 'Hamza', 'Shoaib', 'hamza@gmail.com', 'Glenwood', '2015-02-24');
 INSERT INTO cast_db.Users VALUES ('Godlin', 'password', 'Godlin', 'Raja', 'godyraja@gmail.com', 'Glenwood', '2015-02-24');
