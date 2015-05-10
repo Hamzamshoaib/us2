@@ -24,7 +24,7 @@ CREATE TABLE cast_db.Items (
 	StartingPrice INT DEFAULT 1,
 	Duration INT DEFAULT 600,
 	Increments INT DEFAULT 1,
-	Address VARCHAR(255) REFERENCES cast_db.Users(Address)
+	Address VARCHAR(255)
 );
 
 CREATE TABLE cast_db.BiddingPrice (
