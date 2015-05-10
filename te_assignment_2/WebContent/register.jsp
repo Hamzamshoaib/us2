@@ -7,6 +7,7 @@
 		<title>Daily Auction - Registration</title>
 	</head>
 <body>
+<h1>User Registration</h1>
 	<FORM NAME="registrationform" ACTION="register" METHOD="POST">
 		<br>
 		<p>UserName: </p>

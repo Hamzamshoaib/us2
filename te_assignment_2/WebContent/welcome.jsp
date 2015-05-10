@@ -17,8 +17,10 @@
 	String name = (String) session.getAttribute("username");
 	if (name == null){
 		response.sendRedirect("index.jsp");
+		session.invalidate();
 	}
 %>
+<a href="http://localhost:8080/te_assignment_2/additem.jsp">Add Item</a>
 <h1>Welcome ${username}</h1>
 Session ID: <%=session.getId()%>
 <FORM ACTION='detail.jsp'>

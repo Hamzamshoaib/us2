@@ -34,4 +34,14 @@
     <servlet-name>Register</servlet-name>
     <url-pattern>/register</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddItem</display-name>
+    <servlet-name>AddItem</servlet-name>
+    <servlet-class>edu.unsw.comp9321.AddItem</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddItem</servlet-name>
+    <url-pattern>/additem</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -15,7 +15,7 @@ CREATE TABLE cast_db.Users (
 );
 	
 CREATE TABLE cast_db.Items (
-	Item_ID INT PRIMARY KEY,
+	Item_ID INT NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
 	Name VARCHAR(255) NOT NULL,
 	Owner VARCHAR(255) REFERENCES cast_db.Users(UserName),
 	Description VARCHAR(2000),
@@ -24,7 +24,8 @@ CREATE TABLE cast_db.Items (
 	StartingPrice INT DEFAULT 1,
 	Duration INT DEFAULT 600,
 	Increments INT DEFAULT 1,
-	Address VARCHAR(255)
+	Address VARCHAR(255),
+	PRIMARY KEY(Item_ID)
 );
 
 CREATE TABLE cast_db.BiddingPrice (
@@ -45,3 +46,5 @@ INSERT INTO cast_db.Users VALUES ('Hamza', 'password', 'Hamza', 'Shoaib', 'hamza
 INSERT INTO cast_db.Users VALUES ('Godlin', 'password', 'Godlin', 'Raja', 'godyraja@gmail.com', 'Glenwood', '2015-02-24');
 INSERT INTO cast_db.Users VALUES ('Shariq', 'password', 'Shariq', 'Nabi', 'shazza92@gmail.com', 'Glenwood', '2015-02-24');
 INSERT INTO cast_db.Users VALUES ('Karn', 'password', 'Karn', 'Agrawal', 'karn@gmail.com', 'Glenwood', '2015-02-24');
+INSERT INTO cast_db.Items (Name, Owner, Description, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('Iphone 6','Hamza','Black 32 Gb','www',1000,300, 500,'123');

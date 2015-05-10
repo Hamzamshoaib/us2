@@ -60,7 +60,7 @@ public class Register extends HttpServlet {
 				conn = DriverManager.getConnection(url, dbUserName, dbPassword);
 				Statement st = conn.createStatement();
 				//String strQuery = "select * from Users where UserName='" + un +"' and  Password='" + pw + "'";
-				String strQuery = "INSERT INTO Users VALUES('" + un +"','" + pw + "','" + firstname + "','" + lastname + "','" + email + "','" + address + "','" + "1993-02-24" + "')";
+				String strQuery = "INSERT INTO cast_db.Users VALUES('" + un +"','" + pw + "','" + firstname + "','" + lastname + "','" + email + "','" + address + "','" + "1993-02-24" + "')";
 				System.out.println(strQuery);
 				st.executeUpdate(strQuery);
 				System.out.println("did something");

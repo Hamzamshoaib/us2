@@ -8,7 +8,7 @@
 </head>
 <body>
 ${message}
-<%request.setAttribute("message", ""); %>
+
 <FORM NAME="loginform" ACTION="delegate" METHOD="POST">
 <br>
 <p>UserName: </p>

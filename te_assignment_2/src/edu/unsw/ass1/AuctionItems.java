@@ -1,4 +1,4 @@
-package edu.unsw.comp9321;
+package edu.unsw.ass1;
 
 
 public class AuctionItems {

@@ -1,4 +1,4 @@
-package edu.unsw.comp9321;
+package edu.unsw.ass1;
 
 import java.util.ArrayList;
 import java.util.Arrays;
