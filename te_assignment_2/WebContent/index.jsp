@@ -7,6 +7,12 @@
 <title>	Daily Auction</title>
 </head>
 <body>
+<% 
+	String name = (String) session.getAttribute("username");
+	if (name != null){
+		response.sendRedirect("welcome.jsp");
+	}
+%>
 ${message}
 
 <FORM NAME="loginform" ACTION="delegate" METHOD="POST">
