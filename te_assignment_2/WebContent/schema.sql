@@ -11,7 +11,8 @@ CREATE TABLE cast_db.Users (
 	LastName VARCHAR(255) NOT NULL,
 	Email VARCHAR(255) NOT NULL,
 	Address VARCHAR(255),/*Constraint NOT NULL*/
-	DOB DATE NOT NULL
+	DOB DATE NOT NULL,
+	Verified VARCHAR(1000)
 );
 	
 CREATE TABLE cast_db.Items (
@@ -42,9 +43,10 @@ CREATE TABLE cast_db.WishList (
 	PRIMARY KEY (UserName, Item_ID)
 );
 
-INSERT INTO cast_db.Users VALUES ('Hamza', 'password', 'Hamza', 'Shoaib', 'hamza@gmail.com', 'Glenwood', '2015-02-24');
-INSERT INTO cast_db.Users VALUES ('Godlin', 'password', 'Godlin', 'Raja', 'godyraja@gmail.com', 'Glenwood', '2015-02-24');
-INSERT INTO cast_db.Users VALUES ('Shariq', 'password', 'Shariq', 'Nabi', 'shazza92@gmail.com', 'Glenwood', '2015-02-24');
-INSERT INTO cast_db.Users VALUES ('Karn', 'password', 'Karn', 'Agrawal', 'karn@gmail.com', 'Glenwood', '2015-02-24');
+INSERT INTO cast_db.Users VALUES ('Hamza', 'password', 'Hamza', 'Shoaib', 'hamza@gmail.com', 'Glenwood', '2015-02-24', 'verified');
+INSERT INTO cast_db.Users VALUES ('Godlin', 'password', 'Godlin', 'Raja', 'godyraja@gmail.com', 'Glenwood', '2015-02-24', 'verified');
+INSERT INTO cast_db.Users VALUES ('Shariq', 'password', 'Shariq', 'Nabi', 'shazza92@gmail.com', 'Glenwood', '2015-02-24', 'verified');
+INSERT INTO cast_db.Users VALUES ('Karn', 'password', 'Karn', 'Agrawal', 'karn@gmail.com', 'Glenwood', '2015-02-24', 'F218FBBF65BC');
 INSERT INTO cast_db.Items (Name, Owner, Description, Picture, ReservePrice, StartingPrice, Duration, Address)
 VALUES('Iphone 6','Hamza','Black 32 Gb','www',1000,300, 500,'123');
+SELECT UserName FROM cast_db.Users WHERE Verified='4D678EA3296AFC870458E591F8929E3C';

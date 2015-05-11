@@ -44,4 +44,24 @@
     <servlet-name>AddItem</servlet-name>
     <url-pattern>/additem</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ItemResult</display-name>
+    <servlet-name>ItemResult</servlet-name>
+    <servlet-class>edu.unsw.comp9321.ItemResult</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ItemResult</servlet-name>
+    <url-pattern>/itemresult</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Verification</display-name>
+    <servlet-name>Verification</servlet-name>
+    <servlet-class>edu.unsw.comp9321.Verification</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Verification</servlet-name>
+    <url-pattern>/verification</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -60,9 +60,21 @@ public class Login extends HttpServlet {
 			ResultSet rs = st.executeQuery(strQuery);
 			if (rs.next()) {
 				/*msg="Hello " + un + "! Your login is successful";*/
-				HttpSession session = request.getSession(true);
-				session.setAttribute("username", un);
-				response.sendRedirect("welcome.jsp");
+				String verified = rs.getString("Verified");
+				if (verified.equals("verified")){
+					HttpSession session = request.getSession(true);
+					session.setAttribute("username", un);
+					response.sendRedirect("welcome.jsp");					
+				}
+				else if (verified.equals("block")){
+					request.setAttribute("message", "Your Account has been Blocked by Admin");
+					request.getRequestDispatcher("error.jsp").forward(request, response);
+				}
+				else {
+					request.setAttribute("message", "Your Account Requires Verfication");
+					request.getRequestDispatcher("error.jsp").forward(request, response);	
+				}
+
 			} else {
 				request.setAttribute("message", "Invalid Username or Password");
 				request.getRequestDispatcher("index.jsp").forward(request, response);

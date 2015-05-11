@@ -47,6 +47,8 @@ public class Register extends HttpServlet {
 		String birthyear = request.getParameter("birthyear");
 		String address = request.getParameter("address");
 		String creditcard = request.getParameter("creditcard");
+		String session = (String)request.getSession().getId();
+		request.getSession().invalidate();
 		
 		String msg = " ";
 		Connection conn = null;
@@ -60,7 +62,8 @@ public class Register extends HttpServlet {
 				conn = DriverManager.getConnection(url, dbUserName, dbPassword);
 				Statement st = conn.createStatement();
 				//String strQuery = "select * from Users where UserName='" + un +"' and  Password='" + pw + "'";
-				String strQuery = "INSERT INTO cast_db.Users VALUES('" + un +"','" + pw + "','" + firstname + "','" + lastname + "','" + email + "','" + address + "','" + "1993-02-24" + "')";
+				String strQuery = "INSERT INTO cast_db.Users VALUES('" + un +"','" + pw + "','" + firstname + "','" + lastname + "','" 
+				+ email + "','" + address + "','" + "1993-02-24" + "','" + session + "')";
 				System.out.println(strQuery);
 				st.executeUpdate(strQuery);
 				System.out.println("did something");
