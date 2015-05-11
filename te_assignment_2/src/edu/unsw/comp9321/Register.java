@@ -66,6 +66,8 @@ public class Register extends HttpServlet {
 				+ email + "','" + address + "','" + "1993-02-24" + "','" + session + "')";
 				System.out.println(strQuery);
 				st.executeUpdate(strQuery);
+				Email emailV = new Email();
+				emailV.sendVerifyEmail(email,session);
 				System.out.println("did something");
 				/*ResultSet rs = st.executeQuery(strQuery);
 				if (rs.next()) {
