@@ -27,16 +27,18 @@ javax.xml.parsers.DocumentBuilderFactory,javax.xml.parsers.DocumentBuilder"%>
 	ArrayList<ArrayList<String>> table = new ArrayList<ArrayList<String>>();
 	table = (ArrayList<ArrayList<String>>) request.getAttribute("table");
 	
-// 	for (int i = 0; i < table.size(); i++)
-// 	{
-// 		for (int j = 0; j < table.get(i).size(); j++)
-// 		{
-// 			out.println("<tr>");
-// 			out.println("<td>" + table.get(i).get(j) + "</td><br>");
-// 			//out.println(table.get(i).get(j));
-// 		}
-// 		out.println("</tr>");
-// 	}
+	for (int i = 0; i < table.size(); i++)
+	{
+		out.println("<tr>");
+		int j = 0;
+		while (j < table.get(i).size())
+		{
+			out.println("<td>" + "<img src=\"" + table.get(i).get(j++) + "\" width = \"50\" height = \"50px\">" + "</td>");
+			out.println("<td>" +"<a href=\"itemDetails.jsp\" id=\"" + i + "\">" + table.get(i).get(j++) + "</a>" + "</td>");
+			out.println("<td>" + "<form action=\'addWishlist\' method=\'POST\'>" + "<br><INPUT TYPE=\'submit\' VALUE=\'Add Wishlist\"" +  table.get(i).get(j++) + "\"> </FORM></td>");
+		}
+		out.println("</tr><br>");
+	}
 	
 // 	String search = request.getParameter("searchItem");
 // 	String heading = request.getParameter("heading");

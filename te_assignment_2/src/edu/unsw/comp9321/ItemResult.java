@@ -34,7 +34,6 @@ public class ItemResult extends HttpServlet
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		String name = (String) request.getSession().getAttribute("username");
 		if (name == null){
 			response.sendRedirect("index.jsp");
@@ -57,38 +56,17 @@ public class ItemResult extends HttpServlet
 			Statement st = conn.createStatement();
 			ResultSet rs = st.executeQuery(strQuery);
 			ArrayList<ArrayList<String>> table = new ArrayList<ArrayList<String>>();
-			ArrayList<String> columns = new ArrayList<String>();
-			ResultSetMetaData rsmd = rs.getMetaData();
 			while (rs.next())
 			{
-				System.out.println("we are in");
-				columns.clear();
-				//System.out.println(columns.get(0));
+				ArrayList<String> columns = new ArrayList<String>();
 				String itemName = rs.getString(1);
 				String picture = rs.getString(2);
 				String itemID = Integer.toString(rs.getInt(3));
-				System.out.println(itemName);
-				System.out.println(picture);
-				System.out.println(itemID);
-				columns.add(itemName);
 				columns.add(picture);
+				columns.add(itemName);
 				columns.add(itemID);
 				table.add(columns);
 			}
-			System.out.println();
-			System.out.println(table.size());
-			System.out.println(table.get(0).get(2));
-			System.out.println(table.get(1).get(2));
-			/*for (int i = 0; i < table.size(); i++)
-			{
-				for (int j = 0; j < table.get(i).size(); j++)
-				{
-					System.out.println("<tr>");
-					System.out.println("<td>" + table.get(i).get(j) + "</td><br>");
-					//out.println(table.get(i).get(j));
-				}
-				System.out.println("</tr>");
-			}*/
 			request.setAttribute("table", table);
 			request.getRequestDispatcher("searchList.jsp").forward(request, response);
 			rs.close();
