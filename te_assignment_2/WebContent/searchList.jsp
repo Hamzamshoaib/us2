@@ -1,5 +1,5 @@
 <%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
-<%@page import="com.sun.org.apache.xerces.internal.parsers.DOMParser,org.w3c.dom.*, 
+<%@page import="com.sun.org.apache.xerces.internal.parsers.DOMParser,org.w3c.dom.*,
 javax.xml.parsers.DocumentBuilderFactory,javax.xml.parsers.DocumentBuilder"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -16,7 +16,7 @@ javax.xml.parsers.DocumentBuilderFactory,javax.xml.parsers.DocumentBuilder"%>
 <body>
 <CENTER>
 <h1>Daily Auction</h1>
-<FORM ACTION='menu.jsp' METHOD='POST'>
+<FORM ACTION='searchList.jsp' METHOD='POST'>
 <br>
 <INPUT type="text" name="searchItem">
 <br>
@@ -24,35 +24,49 @@ javax.xml.parsers.DocumentBuilderFactory,javax.xml.parsers.DocumentBuilder"%>
 </FORM><br>
 <a href="advance.jsp">Advanced Search</a><br><br><br><br>
 <%
-	String search = request.getParameter("searchItem");
-	String heading = request.getParameter("heading");
-	String category = request.getParameter("category");
-	String description = request.getParameter("description");
-	//out.println("you search for " + category);
+	ArrayList<ArrayList<String>> table = new ArrayList<ArrayList<String>>();
+	table = (ArrayList<ArrayList<String>>) request.getAttribute("table");
+	
+// 	for (int i = 0; i < table.size(); i++)
+// 	{
+// 		for (int j = 0; j < table.get(i).size(); j++)
+// 		{
+// 			out.println("<tr>");
+// 			out.println("<td>" + table.get(i).get(j) + "</td><br>");
+// 			//out.println(table.get(i).get(j));
+// 		}
+// 		out.println("</tr>");
+// 	}
+	
+// 	String search = request.getParameter("searchItem");
+// 	String heading = request.getParameter("heading");
+// 	String category = request.getParameter("category");
+// 	String description = request.getParameter("description");
+// 	//out.println("you search for " + category);
 
-	if (search != null && !search.isEmpty()) {
-		ArrayList<AuctionItems> values = SearchFile.search(search);
-		for (int i = 0; i < values.size(); i++) {
-			AuctionItems item = values.get(i);
-			out.println("<tr>");
-			out.println("<td>" + "<img src=\"" + item.getPicture() + "\" width = \"50\" height = \"50px\">" + "</td>");
-			out.println("<td>" +"<a href=\"menu.jsp\" id=\"" + i + "\">" + item.getTitle() + "</a>" + "</td>");
-			out.println("<td>" + "<form action=\'welcome.jsp\' method=\'POST\'>" + "<br><INPUT TYPE=\'submit\' VALUE=\'Add Wishlist\'></FORM>" + "</td>");
-			out.println("</tr>");
-		}
-	}
-	if ((heading != null && !heading.isEmpty()) || (category != null && !category.isEmpty()) ||
-			(description != null && !description.isEmpty())) {
-		ArrayList<AuctionItems> values = AdvanceSearch.search(heading, category, description);
-		for (int i = 0; i < values.size(); i++) {
-			AuctionItems item = values.get(i);
-			out.println("<tr>");
-			out.println("<td>" + "<img src=\"" + item.getPicture() + "\" width = \"50\" height = \"50px\">" + "</td>");
-			out.println("<td>" +"<a href=\"menu.jsp\" id=\"" + i + "\">" + item.getTitle() + "</a>" + "</td>");
-			out.println("<td>" + "<form action=\'welcome.jsp\' method=\'POST\'>" + "<br><INPUT TYPE=\'submit\' VALUE=\'Add Wishlist\'></FORM>" + "</td>");
-			out.println("</tr>");
-		}
-	}
+// 	if (search != null && !search.isEmpty()) {
+// 		ArrayList<AuctionItems> values = SearchFile.search(search);
+// 		for (int i = 0; i < values.size(); i++) {
+// 			AuctionItems item = values.get(i);
+// 			out.println("<tr>");
+// 			out.println("<td>" + "<img src=\"" + item.getPicture() + "\" width = \"50\" height = \"50px\">" + "</td>");
+// 			out.println("<td>" +"<a href=\"menu.jsp\" id=\"" + i + "\">" + item.getTitle() + "</a>" + "</td>");
+// 			out.println("<td>" + "<form action=\'welcome.jsp\' method=\'POST\'>" + "<br><INPUT TYPE=\'submit\' VALUE=\'Add Wishlist\'></FORM>" + "</td>");
+// 			out.println("</tr>");
+// 		}
+// 	}
+// 	if ((heading != null && !heading.isEmpty()) || (category != null && !category.isEmpty()) ||
+// 			(description != null && !description.isEmpty())) {
+// 		ArrayList<AuctionItems> values = AdvanceSearch.search(heading, category, description);
+// 		for (int i = 0; i < values.size(); i++) {
+// 			AuctionItems item = values.get(i);
+// 			out.println("<tr>");
+// 			out.println("<td>" + "<img src=\"" + item.getPicture() + "\" width = \"50\" height = \"50px\">" + "</td>");
+// 			out.println("<td>" +"<a href=\"menu.jsp\" id=\"" + i + "\">" + item.getTitle() + "</a>" + "</td>");
+// 			out.println("<td>" + "<form action=\'welcome.jsp\' method=\'POST\'>" + "<br><INPUT TYPE=\'submit\' VALUE=\'Add Wishlist\'></FORM>" + "</td>");
+// 			out.println("</tr>");
+// 		}
+// 	}
 	
 %>
 
