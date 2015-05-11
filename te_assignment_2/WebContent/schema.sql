@@ -71,45 +71,46 @@ INSERT INTO cast_db.Users VALUES ('Matt', 'password', 'Matt', 'Burners', 'godlin
 INSERT INTO cast_db.Users VALUES ('Homer', 'password', 'Homer', 'Simpson', 'godlin17@gmail.com', 'Westmead', '1990-05-04', 'verified');
 
 INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
-VALUES('Iphone 6','Hamza','Black 32 Gb','Mobile','www',1000,300, 500,'123');
+VALUES('Iphone 6','Hamza','Black 32 Gb','Mobile','http://store.storeimages.cdn-apple.com/8348/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone6/plus/iphone6-plus-box-gold-2014?wid=478&hei=595&fmt=png-alpha&qlt=95&.v=1411520739850',1000,300, 500,'123');
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('MacBook Pro 2015','Hamza','Cool notebook','Computers','http://www3.pcmag.com/media/images/460344-apple-macbook-pro-13-inch-retina-display-2015.jpg?thumb=y',1026,100,864000,'770 Eastern Parkway'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('MacBook Pro 2008','Godlin','Old notebook','Computers','https://d3nevzfk7ii3be.cloudfront.net/igi/5RIvmWVeAKJacKyM',613,100,864000,'770 Eastern Parkway'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('Hp Pavillion','Shariq','Reliable Laptop','Computers','http://upload.wikimedia.org/wikipedia/commons/b/bf/HP_Pavilion_dv2500se.jpg',700,100,864000,'63 Farwest Cr'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('Asus Transformer','Karn','laptop','Computers','http://www.asus.com/media/global/products/gHh4q7I8dvWJzhdV/P_500.jpg',200,50,864000,'3 Nookford Rd'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('Sony Viao 2012','Godlin','awesome notebook','Computers','http://cdn1.sbnation.com/products/large/5730/sony-vaio-z-mid2012.png?1351051106',800,100,864000,'78 Little St'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('Tobisha laptop','Hamza','Old notebook','Computers','http://www.itboys.co.za/wp-content/uploads/2015/03/toshiba-laptop-brand-price-list-in-india.jpg',400,100,864000,'4 Harington St'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('Samsung Galaxy S4','Shariq','Reliable Phone','Mobile','http://www.samsung.com/global/microsite/galaxys4/images/gal_r01.jpg',250,50,864000,'1 Hurley Dr'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('iPhone 3GS','Karn','3GS','Mobile','http://upload.wikimedia.org/wikipedia/commons/0/0c/Hook's_iPhone_front.jpg',400,50,864000,'24 george St'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('iPad','Shariq','ipad','Tablet','http://store.storeimages.cdn-apple.com/8348/as-images.apple.com/is/image/AppleInc/aos/published/images/i/pa/ipad/air/ipad-air-specs-black-2013?wid=244&hei=258&fmt=png-alpha&qlt=95&.v=1428609226966',800,150,864000,'14 george st'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('Cool Camera','Karn','Digital CameraLG TV','Camera','http://i.imgur.com/xa1DU.jpg',1200,600,864000,'3 paramatta Rd'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('LG TV','Shariq','LED Television','TV','http://plasmatvbuyingguide.com/plasmatvpics/lg/lg-pq30.jpg',2800,1000,864000,'39 George St'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('Guitar','Hamza','Them strings be good','Music','http://simonmorel.com/wp-content/uploads/2012/12/casino-jazz-guitar.jpg',600,150,864000,'51 George St'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('Sony Xperia','Godlin','Xperia phone','Mobile','http://api.sonymobile.com/files/xperia-hero-z-black-1240x840-f535888737995291dfe31cae40a6d99f.jpg',500,100,864000,'56 Gordon Rd'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('Iphone 6','Shariq','for parts - it is broken','Mobile','https://9to5mac.files.wordpress.com/2014/09/screen-shot-2014-09-18-at-8-41-20-pm.png?w=655&h=359',500,300,864000,'70 Gilba Rd'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('HTC one','Karn','great phone','Mobile','http://www.htc.com/managed-assets/shared/desktop/smartphones/htc-one/hero/HTC-One-First-look-video.jpg',600,100,864000,'45 Girraween Rd'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('Macbook pro','Shariq','great labtop 2011','Mobile','http://images.anandtech.com/doci/4192/macbook_pro_2011.jpg',700,300,864000,'21 Yarra St'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('Dell Inspiron','Hamza','super fast','Mobile','http://g-ecx.images-amazon.com/images/G/01/electronics/dell/cnet_inspiron15_rev3521_gallery_10_800.jpg',1700,500,864000,'56 Greg Rd'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('Nikon','Karn','Great Camera','Camera','http://upload.wikimedia.org/wikipedia/commons/5/5f/Nikon_D5100_18-55mm_front.jpg',600,100,864000,'5 Tron Ave'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('Samsung TV','Godlin','Very good TV','TV','http://www.dcclothesline.com/wp-content/uploads/2015/01/samsung-smart-tv-2.jpg',2000,700,864000,'34 Frazers Rd'); 
+
 /*SELECT UserName FROM cast_db.Users WHERE Verified='4D678EA3296AFC870458E591F8929E3C';*/
-INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
-VALUES('MacBook Pro 2015','Hamza','Cool notebook','Computers','www',1026,100,864000,'770 Eastern Parkway'); 
-INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
-VALUES('MacBook Pro 2008','Godlin','Old notebook','Computers','www',613,100,864000,'770 Eastern Parkway'); 
-INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
-VALUES('Hp Pavillion','Shariq','Reliable Laptop','Computers','www',700,100,864000,'63 Farwest Cr'); 
-INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
-VALUES('Asus Transformer','Karn','laptop','Computers','www',200,50,864000,'3 Nookford Rd'); 
-INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
-VALUES('Sony Viao 2012','Godlin','awesome notebook','Computers','www',800,100,864000,'78 Little St'); 
-INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
-VALUES('Tobisha laptop','Hamza','Old notebook','Computers','www',400,100,864000,'4 Harington St'); 
-INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
-VALUES('Samsung Galaxy S4','Shariq','Reliable Phone','Mobile','www',250,50,864000,'1 Hurley Dr'); 
-INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
-VALUES('iPhone 3GS','Karn','3GS','Mobile','www',400,50,864000,'24 george St'); 
-INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
-VALUES('iPad','Shariq','ipad','Tablet','www',800,150,864000,'14 george st'); 
-INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
-VALUES('Cool Camera','Karn','Digital CameraLG TV','Camera','www',1200,600,864000,'3 paramatta Rd'); 
-INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
-VALUES('LG TV','Shariq','LED Television','TV','www',2800,1000,864000,'39 George St'); 
-INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
-VALUES('Guitar','Hamza','Them strings be good','Music','www',600,150,864000,'51 George St'); 
-INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
-VALUES('Sony Xperia','Godlin','Xperia phone','Mobile','www',500,100,864000,'56 Gordon Rd'); 
-INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
-VALUES('Iphone 6','Shariq','for parts - it is broken','Mobile','www',500,300,864000,'70 Gilba Rd'); 
-INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
-VALUES('HTC one','Karn','great phone','Mobile','www',600,100,864000,'45 Girraween Rd'); 
-INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
-VALUES('Macbook pro','Shariq','great labtop 2011','Mobile','www',700,300,864000,'21 Yarra St'); 
-INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
-VALUES('Dell Inspiron','Hamza','super fast','Mobile','www',1700,500,864000,'56 Greg Rd'); 
-INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
-VALUES('Nikon','Karn','Great Camera','Camera','www',600,100,864000,'5 Tron Ave'); 
-INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
-VALUES('Samsung TV','Godlin','Very good TV','Mobile','www',2000,700,864000,'34 Frazers Rd'); 
 
 
