@@ -73,3 +73,43 @@ INSERT INTO cast_db.Users VALUES ('Homer', 'password', 'Homer', 'Simpson', 'godl
 INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
 VALUES('Iphone 6','Hamza','Black 32 Gb','Mobile','www',1000,300, 500,'123');
 /*SELECT UserName FROM cast_db.Users WHERE Verified='4D678EA3296AFC870458E591F8929E3C';*/
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('MacBook Pro 2015','Hamza','Cool notebook','Computers','www',1026,100,864000,'770 Eastern Parkway'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('MacBook Pro 2008','Godlin','Old notebook','Computers','www',613,100,864000,'770 Eastern Parkway'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('Hp Pavillion','Shariq','Reliable Laptop','Computers','www',700,100,864000,'63 Farwest Cr'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('Asus Transformer','Karn','laptop','Computers','www',200,50,864000,'3 Nookford Rd'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('Sony Viao 2012','Godlin','awesome notebook','Computers','www',800,100,864000,'78 Little St'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('Tobisha laptop','Hamza','Old notebook','Computers','www',400,100,864000,'4 Harington St'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('Samsung Galaxy S4','Shariq','Reliable Phone','Mobile','www',250,50,864000,'1 Hurley Dr'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('iPhone 3GS','Karn','3GS','Mobile','www',400,50,864000,'24 george St'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('iPad','Shariq','ipad','Tablet','www',800,150,864000,'14 george st'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('Cool Camera','Karn','Digital CameraLG TV','Camera','www',1200,600,864000,'3 paramatta Rd'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('LG TV','Shariq','LED Television','TV','www',2800,1000,864000,'39 George St'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('Guitar','Hamza','Them strings be good','Music','www',600,150,864000,'51 George St'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('Sony Xperia','Godlin','Xperia phone','Mobile','www',500,100,864000,'56 Gordon Rd'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('Iphone 6','Shariq','for parts - it is broken','Mobile','www',500,300,864000,'70 Gilba Rd'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('HTC one','Karn','great phone','Mobile','www',600,100,864000,'45 Girraween Rd'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('Macbook pro','Shariq','great labtop 2011','Mobile','www',700,300,864000,'21 Yarra St'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('Dell Inspiron','Hamza','super fast','Mobile','www',1700,500,864000,'56 Greg Rd'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('Nikon','Karn','Great Camera','Camera','www',600,100,864000,'5 Tron Ave'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('Samsung TV','Godlin','Very good TV','Mobile','www',2000,700,864000,'34 Frazers Rd'); 
+
+
