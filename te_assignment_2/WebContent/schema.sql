@@ -49,6 +49,27 @@ INSERT INTO cast_db.Users VALUES ('Hamza', 'password', 'Hamza', 'Shoaib', 'hamza
 INSERT INTO cast_db.Users VALUES ('Godlin', 'password', 'Godlin', 'Rajendran', 'godyraja@gmail.com', 'Girraween', '1989-08-17', 'verified');
 INSERT INTO cast_db.Users VALUES ('Shariq', 'password', 'Shariq', 'Nabi', 'shazza92@gmail.com', 'Bankstown', '1992-05-21', 'verified');
 INSERT INTO cast_db.Users VALUES ('Karn', 'password', 'Karn', 'Agrawal', 'karn@gmail.com', 'Epping', '1991-10-07', 'verified');
-INSERT INTO cast_db.Items (Name, Owner, Description, Picture, ReservePrice, StartingPrice, Duration, Address)
-VALUES('Iphone 6','Hamza','Black 32 Gb','www',1000,300, 500,'123');
+INSERT INTO cast_db.Users VALUES ('Sam', 'password', 'Sam', 'Jackson', 'godlin17@gmail.com', 'Parramatta', '1994-09-05', 'F218FYHF65BC');
+INSERT INTO cast_db.Users VALUES ('Denzel', 'password', 'Denzel', 'Washington', 'godlin17@gmail.com', 'Parramatta', '1994-10-05', 'A218FBBF65BC');
+INSERT INTO cast_db.Users VALUES ('Leo', 'password', 'Leo', 'Decapri', 'godlin17@gmail.com', 'Parramatta', '1994-02-05', 'H618FBBF65BC');
+INSERT INTO cast_db.Users VALUES ('Keith', 'password', 'Keith', 'Bar', 'godlin17@gmail.com', 'Parramatta', '1991-12-07', 'verified');
+INSERT INTO cast_db.Users VALUES ('Roger', 'password', 'Roger', 'David', 'godlin17@gmail.com', 'Parramatta', '1990-09-05', 'UJ18FBBF65BC');
+INSERT INTO cast_db.Users VALUES ('Jerry', 'password', 'Jerry', 'Spring', 'godlin17@gmail.com', 'Parramatta', '1986-11-13', 'F21J5BBF65BC');
+INSERT INTO cast_db.Users VALUES ('Nick', 'password', 'Nick', 'Cage', 'godlin17@gmail.com', 'Parramatta', '1994-09-14', 'verified');
+INSERT INTO cast_db.Users VALUES ('Scarlet', 'password', 'Scarlet', 'Jo', 'godlin17@gmail.com', 'Parramatta', '1989-09-24', 'verified');
+INSERT INTO cast_db.Users VALUES ('Sarah', 'password', 'Sarah', 'Stock', 'godlin17@gmail.com', 'Parramatta', '1981-09-10', 'verified');
+INSERT INTO cast_db.Users VALUES ('Gary', 'password', 'Gary', 'Smith', 'godlin17@gmail.com', 'Parramatta', '1985-09-11', 'verified');
+INSERT INTO cast_db.Users VALUES ('Will', 'password', 'Will', 'Smith', 'godlin17@gmail.com', 'Westmead', '1993-12-05', 'verified');
+INSERT INTO cast_db.Users VALUES ('Henry', 'password', 'Henry', 'Peters', 'godlin17@gmail.com', 'Westmead', '1994-11-23', 'F218FBBF65BC');
+INSERT INTO cast_db.Users VALUES ('Peter', 'password', 'Peter', 'Jackson', 'godlin17@gmail.com', 'Westmead', '1993-01-25', 'verified');
+INSERT INTO cast_db.Users VALUES ('Michael', 'password', 'Michael', 'Jordan', 'godlin17@gmail.com', 'Westmead', '1989-09-12', 'verified');
+INSERT INTO cast_db.Users VALUES ('Greg', 'password', 'Greg', 'Hurley', 'godlin17@gmail.com', 'Westmead', '1990-07-14', 'verified');
+INSERT INTO cast_db.Users VALUES ('Dean', 'password', 'Dean', 'Downer', 'godlin17@gmail.com', 'Westmead', '1994-08-17', 'verified');
+INSERT INTO cast_db.Users VALUES ('France', 'password', 'France', 'Cheel', 'godlin17@gmail.com', 'Westmead', '1987-04-03', 'U618FBBF65BC');
+INSERT INTO cast_db.Users VALUES ('Jesse', 'password', 'Jesse', 'Jack', 'godlin17@gmail.com', 'Westmead', '1990-03-06', 'verified');
+INSERT INTO cast_db.Users VALUES ('Matt', 'password', 'Matt', 'Burners', 'godlin17@gmail.com', 'Westmead', '1994-09-05', 'verified');
+INSERT INTO cast_db.Users VALUES ('Homer', 'password', 'Homer', 'Simpson', 'godlin17@gmail.com', 'Westmead', '1990-05-04', 'verified');
+
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
+VALUES('Iphone 6','Hamza','Black 32 Gb','Mobile','www',1000,300, 500,'123');
 /*SELECT UserName FROM cast_db.Users WHERE Verified='4D678EA3296AFC870458E591F8929E3C';*/
