@@ -87,7 +87,7 @@ VALUES('Tobisha laptop','Hamza','Old notebook','Computers','http://www.itboys.co
 INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
 VALUES('Samsung Galaxy S4','Shariq','Reliable Phone','Mobile','http://www.samsung.com/global/microsite/galaxys4/images/gal_r01.jpg',250,50,864000,'1 Hurley Dr'); 
 INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
-VALUES('iPhone 3GS','Karn','3GS','Mobile','http://upload.wikimedia.org/wikipedia/commons/0/0c/Hook's_iPhone_front.jpg',400,50,864000,'24 george St'); 
+VALUES('iPhone 3GS','Karn','3GS','Mobile','http://upload.wikimedia.org/wikipedia/commons/0/0c/Hook''s_iPhone_front.jpg',400,50,864000,'24 george St'); 
 INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
 VALUES('iPad','Shariq','ipad','Tablet','http://store.storeimages.cdn-apple.com/8348/as-images.apple.com/is/image/AppleInc/aos/published/images/i/pa/ipad/air/ipad-air-specs-black-2013?wid=244&hei=258&fmt=png-alpha&qlt=95&.v=1428609226966',800,150,864000,'14 george st'); 
 INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
