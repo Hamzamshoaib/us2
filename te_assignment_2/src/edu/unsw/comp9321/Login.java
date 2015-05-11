@@ -55,7 +55,7 @@ public class Login extends HttpServlet {
 		try {
 			Class.forName(driver).newInstance();
 			conn = DriverManager.getConnection(url, dbUserName, dbPassword);
-			String strQuery = "select * from Users where UserName='" + un +"' and  Password='" + pw + "'";
+			String strQuery = "select * from cast_db.Users where UserName='" + un +"' and  Password='" + pw + "'";
 			Statement st = conn.createStatement();
 			ResultSet rs = st.executeQuery(strQuery);
 			if (rs.next()) {

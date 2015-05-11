@@ -14,15 +14,15 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class ItemResult
+ * Servlet implementation class Verification
  */
-public class ItemResult extends HttpServlet {
+public class Verification extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ItemResult() {
+    public Verification() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,31 +31,40 @@ public class ItemResult extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		String name = (String) request.getSession().getAttribute("username");
-		if (name == null){
-			response.sendRedirect("index.jsp");
-			request.getSession().invalidate();
-		}
-		String search = request.getParameter("searchItem");
-
-		
+		//System.out.println("Its working");
+		String uniqueID = request.getParameter("verification_token");
+		//System.out.println("your token is " + uniqueID);
 		Connection conn = null;
 		String url = "jdbc:derby://localhost:1527/cast;create=true";
 		String dbUserName = "cast_db";
 		String dbPassword = "hamza";
 		String driver = "org.apache.derby.jdbc.ClientDriver";
-		
 		try {
 			Class.forName(driver).newInstance();
 			conn = DriverManager.getConnection(url, dbUserName, dbPassword);
-			String strQuery = "select * from cast_db.Items where Name = '" + search  +"' OR Category='" + search + "'OR Description LIKE '%" + search + "%'"  ;
+			String strQuery = "select UserName from cast_db.Users where Verified='" + uniqueID + "'";
 			Statement st = conn.createStatement();
 			ResultSet rs = st.executeQuery(strQuery);
-			while (rs.next()) {
-				System.out.println("Title = " + rs.getString("Name"));
-				//System.out.println("searched for " + search );
+			String username = null;
+			if (rs.next()){
+				username = rs.getString("UserName");
+				//System.out.println("username is " + username);
+				/*msg="Hello " + un + "! Your login is successful";*/
+				/*HttpSession session = request.getSession(true);
+				session.setAttribute("username", un);
+				response.sendRedirect("welcome.jsp");*/
 			}
+			rs.close();
+			if (!username.isEmpty()){
+				strQuery = "update cast_db.Users set Verified='verified' where UserName= '" + username + "'";
+				st.executeUpdate(strQuery);
+				//System.out.println("it is coming");
+				HttpSession session = request.getSession(true);
+				session.setAttribute("username", username);
+				response.sendRedirect("welcome.jsp");
+			}
+			st.close();
+			//System.out.println("it is working");
 		} catch (InstantiationException e) {
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {
@@ -65,14 +74,9 @@ public class ItemResult extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		
+		/*response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		out.println(msg);*/
 	}
-
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	}
-
 }

@@ -20,6 +20,7 @@ CREATE TABLE cast_db.Items (
 	Name VARCHAR(255) NOT NULL,
 	Owner VARCHAR(255) REFERENCES cast_db.Users(UserName),
 	Description VARCHAR(2000),
+	Category VARCHAR(255),
 	Picture VARCHAR(2000) DEFAULT 'https://abs.twimg.com/sticky/default_profile_images/default_profile_0_400x400.png',
 	ReservePrice INT NOT NULL,
 	StartingPrice INT DEFAULT 1,
@@ -49,4 +50,4 @@ INSERT INTO cast_db.Users VALUES ('Shariq', 'password', 'Shariq', 'Nabi', 'shazz
 INSERT INTO cast_db.Users VALUES ('Karn', 'password', 'Karn', 'Agrawal', 'karn@gmail.com', 'Glenwood', '2015-02-24', 'F218FBBF65BC');
 INSERT INTO cast_db.Items (Name, Owner, Description, Picture, ReservePrice, StartingPrice, Duration, Address)
 VALUES('Iphone 6','Hamza','Black 32 Gb','www',1000,300, 500,'123');
-SELECT UserName FROM cast_db.Users WHERE Verified='4D678EA3296AFC870458E591F8929E3C';
+/*SELECT UserName FROM cast_db.Users WHERE Verified='4D678EA3296AFC870458E591F8929E3C';*/

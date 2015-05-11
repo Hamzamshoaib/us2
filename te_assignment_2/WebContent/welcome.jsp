@@ -28,7 +28,7 @@ Session ID: <%=session.getId()%>
 </FORM>
 <H1>Daily Auction</H1>
 Search for an item
-<FORM ACTION='itemresult' METHOD='POST'>
+<FORM ACTION='itemresult' METHOD='GET'>
 <br>
 <INPUT type="text" name="searchItem">
 <br>
