@@ -143,4 +143,9 @@ public class Email {
 	      }		
 	      return true;  
 	}
+	
+	public void sendWinnerLoserEmails(int Item_ID){
+		sendWonBidEmail(Item_ID);
+		sendLostBidEmail(Item_ID);
+	}
 }
