@@ -4,8 +4,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-
+import java.util.ArrayList;
 
 public class BiddingController {
 	
@@ -56,10 +55,14 @@ public class BiddingController {
 		{
 			Class.forName(driver).newInstance();
 			conn = DriverManager.getConnection(url, dbUserName, dbPassword);
-			String strQuery = "select MAX(BidPrice) FROM cast_db.BiddingPrice where Item_ID = " + Item_ID;
-			Statement st = conn.createStatement();
-			ResultSet rs = st.executeQuery(strQuery);
+			
 			int winningBid = -1;
+			String strQuery = "select MAX(BidPrice) FROM cast_db.BiddingPrice where Item_ID=?";
+			PreparedStatement ps = conn.prepareStatement(strQuery);
+			ps.setInt(1,Item_ID);
+			
+			ResultSet rs = ps.executeQuery();
+
 			
 			while (rs.next()){
 				String bidString = rs.getString(1);
@@ -68,7 +71,6 @@ public class BiddingController {
 			}
 
 			rs.close();
-			st.close();
 			
 			return winningBid;
 			
@@ -99,6 +101,7 @@ public class BiddingController {
 			rs.next();
 			String userString = rs.getString(1);
 			rs.close();
+			ps.close();
 			
 			return userString;
 			
@@ -153,7 +156,8 @@ public class BiddingController {
 			} else {
 				success = 0;
 			}
-
+			
+			ps.close();
 			return success; 
 			
 		} catch (SQLException e) {
@@ -166,6 +170,71 @@ public class BiddingController {
 			e.printStackTrace();
 		}
 		return -1; //return error
+	}
+	
+	public ArrayList<String> listOfLosers(int Item_ID){
+		ArrayList<String> losers = new ArrayList<String>();
+		
+		try
+		{
+			Class.forName(driver).newInstance();
+			conn = DriverManager.getConnection(url, dbUserName, dbPassword);
+			
+			String strQuery = "select UserName from cast_db.BiddingPrice where BidPrice!=(select MAX(BidPrice) from cast_db.BiddingPrice where Item_ID=?)";
+			PreparedStatement ps = conn.prepareStatement(strQuery);
+			ps.setInt(1,Item_ID);
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()){
+				losers.add(rs.getString(1));
+			}
+			
+			rs.close();
+			ps.close();
+			
+		} catch (InstantiationException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return losers;
+	}
+	
+	public String loser(int Item_ID){
+		String loser = new String();
+		
+		try
+		{
+			Class.forName(driver).newInstance();
+			conn = DriverManager.getConnection(url, dbUserName, dbPassword);
+			
+			String strQuery = "select UserName from cast_db.BiddingPrice where BidPrice=(select MAX(BidPrice) from cast_db.BiddingPrice where BidPrice < (select MAX(BidPrice) from cast_db.BiddingPrice where Item_ID=?))";
+			PreparedStatement ps = conn.prepareStatement(strQuery);
+			ps.setInt(1,Item_ID);
+			ResultSet rs = ps.executeQuery();
+
+			rs.next();
+			loser = rs.getString(1);
+			
+			rs.close();
+			ps.close();
+			
+		} catch (InstantiationException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return loser;
 	}
 	
 }

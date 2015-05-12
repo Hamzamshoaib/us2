@@ -1,6 +1,7 @@
 package edu.unsw.comp9321;
-import java.util.Properties;
 
+
+import java.util.Properties;
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;
@@ -64,19 +65,82 @@ public class Email {
 	         System.out.println("Sent message successfully...");
 
 	      } catch (MessagingException e) {
-	            throw new RuntimeException(e);
+	    	  return false;
 	      }
 	 
 		return true;
 	}
 	
-	public Boolean sendWonBidEmail(){
-		//TO-DO
-		return null; 
+	public Boolean sendWonBidEmail(int Item_ID){
+		UserController uc = new UserController();
+		BiddingController bc = new BiddingController();
+		String user = bc.winningBidder(Item_ID);
+		String to = uc.getEmail(user);
+		String itemName = uc.getItemName(Item_ID);
+	      try {
+		         // Create a default MimeMessage object.
+		         Message message = new MimeMessage(session);
+
+		         // Set From: header field of the header.
+		         message.setFrom(new InternetAddress(from));
+
+		         // Set To: header field of the header.
+		         message.setRecipients(Message.RecipientType.TO,
+		         InternetAddress.parse(to));
+		         // Set Subject: header field
+		         message.setSubject("Congratulations " + user + "! You won a new item!");
+		         // Now set the actual message
+		         message.setText("Hi!\n\n"
+		         		+ "You hav won a brand new " + itemName + "."
+		         		+ "\n\n"
+		         		+ "Daily Auction Deals Team :)");
+
+		         // Send message
+		         Transport.send(message);
+
+		         System.out.println("Sent message successfully...");
+
+	      } catch (MessagingException e) {
+	    	  return false;
+	      }		
+	      return true; 
 	}
 	
-	public Boolean sendLostBidEmail(){
-		//TO-DO
-		return null; 
+	public Boolean sendLostBidEmail(int Item_ID){
+		UserController uc = new UserController();
+		BiddingController bc = new BiddingController();
+		
+		String user = bc.loser(Item_ID);
+		int highestBid = bc.currentWinningBid(Item_ID);
+		String to = uc.getEmail(user);
+		String itemName = uc.getItemName(Item_ID);
+	      try {
+		         // Create a default MimeMessage object.
+		         Message message = new MimeMessage(session);
+
+		         // Set From: header field of the header.
+		         message.setFrom(new InternetAddress(from));
+
+		         // Set To: header field of the header.
+		         message.setRecipients(Message.RecipientType.TO,
+		         InternetAddress.parse(to));
+		         // Set Subject: header field
+		         message.setSubject("Oh no, " + user + "! You've been outbid!");
+		         // Now set the actual message
+		         message.setText("Hi!\n\n"
+		         		+ "Unfortunately you have been outbid for your " + itemName + ".\n\n"
+		         		+ "The new highest bid is: $" + highestBid + "."
+		         		+ "\n\n"
+		         		+ "Daily Auction Deals Team :)");
+
+		         // Send message
+		         Transport.send(message);
+
+		         System.out.println("Sent message successfully...");
+
+	      } catch (MessagingException e) {
+	    	  return false;
+	      }		
+	      return true;  
 	}
 }
