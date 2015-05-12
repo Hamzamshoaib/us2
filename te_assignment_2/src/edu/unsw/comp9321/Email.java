@@ -98,7 +98,7 @@ public class Email {
 		         // Send message
 		         Transport.send(message);
 
-		         System.out.println("Sent message successfully...");
+		         System.out.println("Sent Won Bid Mail successfully...");
 
 	      } catch (MessagingException e) {
 	    	  return false;
@@ -136,7 +136,7 @@ public class Email {
 		         // Send message
 		         Transport.send(message);
 
-		         System.out.println("Sent message successfully...");
+		         System.out.println("Sent Lost Bid Mail successfully...");
 
 	      } catch (MessagingException e) {
 	    	  return false;

@@ -1,10 +1,14 @@
 package edu.unsw.comp9321;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class BiddingController {
 	
@@ -67,7 +71,6 @@ public class BiddingController {
 			while (rs.next()){
 				String bidString = rs.getString(1);
 				winningBid = Integer.parseInt(bidString);
-				System.out.println(winningBid);
 			}
 
 			rs.close();
@@ -235,6 +238,45 @@ public class BiddingController {
 		}
 		
 		return loser;
+	}
+	
+	public ArrayList<Integer> getDoneAuctions(){
+		ArrayList<Integer> doneItems = new ArrayList<Integer>();
+		try
+		{
+			Class.forName(driver).newInstance();
+			conn = DriverManager.getConnection(url, dbUserName, dbPassword);
+			
+			String strQuery = "select Item_ID, EndTime from cast_db.Items";
+			PreparedStatement ps = conn.prepareStatement(strQuery);
+			ResultSet rs = ps.executeQuery();
+			
+			SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");
+			Date rightNow = new Date();
+			
+			while (rs.next()){
+				Date endTime = dateFormat.parse(rs.getString(2));
+				if (endTime.before(rightNow)){
+					doneItems.add(Integer.parseInt(rs.getString(1)));
+				}
+			}
+			
+			rs.close();
+			ps.close();
+			
+		} catch (InstantiationException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		
+		return doneItems;
 	}
 	
 }
