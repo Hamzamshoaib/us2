@@ -64,4 +64,14 @@
     <servlet-name>Verification</servlet-name>
     <url-pattern>/verification</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Wishlist</display-name>
+    <servlet-name>Wishlist</servlet-name>
+    <servlet-class>edu.unsw.comp9321.Wishlist</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Wishlist</servlet-name>
+    <url-pattern>/wishlist</url-pattern>
+  </servlet-mapping>
 </web-app>

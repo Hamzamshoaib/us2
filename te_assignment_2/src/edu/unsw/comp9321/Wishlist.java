@@ -1,31 +1,30 @@
 package edu.unsw.comp9321;
 
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Enumeration;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class ItemResult
+ * Servlet implementation class Wishlist
  */
-public class ItemResult extends HttpServlet
-{
+public class Wishlist extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ItemResult() {
+    public Wishlist() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,13 +33,19 @@ public class ItemResult extends HttpServlet
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String name = (String) request.getSession().getAttribute("username");
-		if (name == null){
-			response.sendRedirect("index.jsp");
-			request.getSession().invalidate();
-		}
-		String search = request.getParameter("searchItem");
-		//System.out.println(search);
+		// TODO Auto-generated method stub
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+	{
+		//String formDelegate = request.getParameter("value");
+		//String Item_ID =  request.getParameter("Add to Wishlist");
+		String user = (String) request.getSession().getAttribute("username");
+		String formDelegate = request.getParameter("action");
+		int Item_ID =  Integer.parseInt(request.getParameter("id"));
 		
 		Connection conn = null;
 		String url = "jdbc:derby://localhost:1527/cast;create=true";
@@ -48,27 +53,39 @@ public class ItemResult extends HttpServlet
 		String dbPassword = "test";
 		String driver = "org.apache.derby.jdbc.ClientDriver";
 		
-		try
-		{
+		try {
 			Class.forName(driver).newInstance();
 			conn = DriverManager.getConnection(url, dbUserName, dbPassword);
-			String strQuery = "select Name, Picture, Item_ID FROM cast_db.Items where Name LIKE '%" + search  +"%' OR Category LIKE '%" + search + "%' OR Description LIKE '%" + search + "%'";
 			Statement st = conn.createStatement();
+			String strQuery = new String();
+			if ("Add to Wishlist".equals(formDelegate))
+			{
+				strQuery = "INSERT INTO cast_db.WishList VALUES ('"+ user +"',"+ Item_ID +")";
+				st.executeUpdate(strQuery);
+			}
+			else if ("Delete".equals(formDelegate))
+			{
+				strQuery = "DELETE FROM cast_db.WishList WHERE Item_ID = "+ Item_ID +" and UserName = '"+ user +"'";
+				st.executeUpdate(strQuery);
+			}
+			//System.out.println(strQuery);
+			
+			strQuery = "SELECT cast_db.Items.Name, cast_db.WishList.Item_ID FROM cast_db.WishList JOIN cast_db.Items ON "
+					+ "cast_db.WishList.UserName = '"+ user +"' AND cast_db.Items.Owner = '"+ user +"' AND cast_db.WishList.Item_ID = cast_db.Items.Item_ID";
+			System.out.println(strQuery);
 			ResultSet rs = st.executeQuery(strQuery);
 			ArrayList<ArrayList<String>> table = new ArrayList<ArrayList<String>>();
 			while (rs.next())
 			{
 				ArrayList<String> columns = new ArrayList<String>();
 				String itemName = rs.getString(1);
-				String picture = rs.getString(2);
-				String itemID = Integer.toString(rs.getInt(3));
-				columns.add(picture);
+				String itemID = Integer.toString(rs.getInt(2));
 				columns.add(itemName);
 				columns.add(itemID);
 				table.add(columns);
 			}
 			request.setAttribute("table", table);
-			request.getRequestDispatcher("searchList.jsp").forward(request, response);
+			request.getRequestDispatcher("wishlist.jsp").forward(request, response);
 			rs.close();
 			st.close();
 		} catch (InstantiationException e) {
@@ -80,14 +97,6 @@ public class ItemResult extends HttpServlet
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-	}
-
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 	}
 
 }
