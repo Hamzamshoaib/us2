@@ -93,7 +93,7 @@ public class UserController {
 		
 		try
 		{
-			String strQuery = "select UserName FROM cast_db.Username";
+			String strQuery = "select UserName FROM cast_db.Users";
 			PreparedStatement ps = conn.prepareStatement(strQuery);
 			ResultSet rs = ps.executeQuery();
 			
