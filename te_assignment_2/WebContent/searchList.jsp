@@ -1,6 +1,4 @@
 <%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
-<%@page import="com.sun.org.apache.xerces.internal.parsers.DOMParser,org.w3c.dom.*,
-javax.xml.parsers.DocumentBuilderFactory,javax.xml.parsers.DocumentBuilder"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="edu.unsw.comp9321.*"%>
