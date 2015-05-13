@@ -1,4 +1,5 @@
 DROP TABLE cast_db.WishList;
+DROP TABLE cast_db.Halted;
 DROP TABLE cast_db.BiddingPrice;
 DROP TABLE cast_db.Items;
 DROP TABLE cast_db.Users;
@@ -42,6 +43,12 @@ CREATE TABLE cast_db.WishList (
 	UserName VARCHAR(255) REFERENCES cast_db.Users(UserName),
 	Item_ID INT REFERENCES cast_db.Items(Item_ID),
 	PRIMARY KEY (UserName, Item_ID)
+);
+
+CREATE TABLE cast_db.Halted (
+	Item_ID INT REFERENCES cast_db.Items(Item_ID),
+	Halt INT DEFAULT 0,
+	PRIMARY KEY (Item_ID)
 );
 
 
