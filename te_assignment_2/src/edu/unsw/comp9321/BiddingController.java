@@ -65,10 +65,13 @@ public class BiddingController {
 			ResultSet rs = ps.executeQuery();
 
 			
-			String bidString;
-			while (rs.next() && (bidString = rs.getString(1)) != null){
-//				String bidString = rs.getString(1);
-				winningBid = Integer.parseInt(bidString);
+			while (rs.next()){
+				String bidString = rs.getString(1);
+				if(bidString == null){
+					winningBid = getStartingPrice(Item_ID);
+				} else {
+					winningBid = Integer.parseInt(bidString);
+				}
 			}
 
 			rs.close();
@@ -284,6 +287,27 @@ public class BiddingController {
 		try
 		{
 			String strQuery = "select ReservePrice from cast_db.Items where Item_ID=?";
+			PreparedStatement ps = conn.prepareStatement(strQuery);
+			ResultSet rs = ps.executeQuery();
+			ps.setInt(1,Item_ID);
+
+			rs.next();
+			retVal = Integer.parseInt(rs.getString(1));
+			
+			rs.close();
+			ps.close();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return retVal;
+	}
+	
+	public int getStartingPrice(int Item_ID){
+		int retVal = 0;
+		try
+		{
+			String strQuery = "select StartingPrice from cast_db.Items where Item_ID=?";
 			PreparedStatement ps = conn.prepareStatement(strQuery);
 			ResultSet rs = ps.executeQuery();
 			ps.setInt(1,Item_ID);
