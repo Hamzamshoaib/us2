@@ -375,6 +375,11 @@ public class BiddingController {
 		}
 		
 		return done;
-		
 	}
+	
+	public void acceptOffer(){
+		//send email of winning
+		//delete item
+	}
+	
 }

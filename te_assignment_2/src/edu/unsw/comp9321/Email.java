@@ -235,17 +235,19 @@ public class Email {
 		         message.setRecipients(Message.RecipientType.TO,
 		         InternetAddress.parse(to));
 		         // Set Subject: header field
-		         message.setSubject("Congratulations " + user + "! Your item has been sold!");
+		         message.setSubject(user + ", your item has not reached its reserve price");
 		         // Now set the actual message
 		         message.setText("Hi!\n\n"
-		         		+ "You have sold your item " + itemName + " for $" + highestBid + "! :)"
+		         		+ "Your item, " + itemName + " has an offer of $" + highestBid 
+		         		+ " which is below your reserve price of $" + bc.getReservePrice(Item_ID) + ".\n\n"
+		         		+ "Log into your account to accept or reject this offer."
 		         		+ "\n\n"
 		         		+ "Daily Auction Deals Team :)");
 
 		         // Send message
 		         Transport.send(message);
 
-		         System.out.println("Sent owner email successfully...");
+		         System.out.println("Sent reserved price notification email successfully...");
 
 	      } catch (MessagingException e) {
 	    	  return false;

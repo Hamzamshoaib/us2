@@ -21,16 +21,13 @@ public class CheckAuctions implements Runnable {
 			if (!ignored.contains(i) && !bc.bidLessThanReserved(i)){
 				//send winning/losing emails
 				email.endAuctionEmails(i);
+				bc.deleteItem(i);
+//				ignored.add(i);
+			} else if (!ignored.contains(i) && bc.bidLessThanReserved(i)){
+				email.lessThanReserved(i);
 				ignored.add(i);
-			} else if (bc.bidLessThanReserved(i)){
-				//DO ME! DO ME REAL NICE!
 			}
 		}
-			
-		//if highest bid < reserve price -> email owner asking if it's ok?
-			//delete the item from Items
-			//delte all bids in BiddingPrice
-		
 	}
 
 }
