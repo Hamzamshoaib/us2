@@ -67,6 +67,7 @@ public class BiddingController {
 			
 			while (rs.next()){
 				String bidString = rs.getString(1);
+				System.out.println("BIDSTRING IS: "+bidString);
 				winningBid = Integer.parseInt(bidString);
 			}
 
