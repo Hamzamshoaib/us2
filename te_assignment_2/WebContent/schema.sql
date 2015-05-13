@@ -25,7 +25,6 @@ CREATE TABLE cast_db.Items (
 	Picture VARCHAR(2000) DEFAULT 'https://abs.twimg.com/sticky/default_profile_images/default_profile_0_400x400.png',
 	ReservePrice INT NOT NULL,
 	StartingPrice INT DEFAULT 1,
-	Duration INT DEFAULT 600,
 	EndTime VARCHAR (255) NOT NULL,
 	Increments INT DEFAULT 1,
 	Address VARCHAR(255),
@@ -77,14 +76,14 @@ INSERT INTO cast_db.Users VALUES ('Jesse', 'password', 'Jesse', 'Jack', 'godlin1
 INSERT INTO cast_db.Users VALUES ('Matt', 'password', 'Matt', 'Burners', 'godlin17@gmail.com', 'Westmead', '1994-09-05', 'verified');
 INSERT INTO cast_db.Users VALUES ('Homer', 'password', 'Homer', 'Simpson', 'godlin17@gmail.com', 'Westmead', '1990-05-04', 'verified');
 
-INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, EndTime, Address)
-VALUES('Iphone 6','Hamza','Black 32 Gb','Mobile','http://store.storeimages.cdn-apple.com/8348/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone6/plus/iphone6-plus-box-gold-2014?wid=478&hei=595&fmt=png-alpha&qlt=95&.v=1411520739850',1000,300, 500, '12-May-2016 23:04:22','123');
-INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, EndTime, Address)
-VALUES('MacBook Pro 2015','Hamza','Cool notebook','Computers','http://www3.pcmag.com/media/images/460344-apple-macbook-pro-13-inch-retina-display-2015.jpg?thumb=y',1026,100,864000, '12-May-2016 23:05:22','770 Eastern Parkway'); 
-INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, EndTime, Address)
-VALUES('MacBook Pro 2008','Godlin','Old notebook','Computers','https://d3nevzfk7ii3be.cloudfront.net/igi/5RIvmWVeAKJacKyM',613,100,864000, '12-May-2016 23:06:22','770 Eastern Parkway'); 
-INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, EndTime, Address)
-VALUES('Hp Pavillion','Shariq','Reliable Laptop','Computers','http://upload.wikimedia.org/wikipedia/commons/b/bf/HP_Pavilion_dv2500se.jpg',700,100,864000,'12-May-2016 23:06:22','63 Farwest Cr'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, EndTime, Address)
+VALUES('Iphone 6','Hamza','Black 32 Gb','Mobile','http://store.storeimages.cdn-apple.com/8348/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone6/plus/iphone6-plus-box-gold-2014?wid=478&hei=595&fmt=png-alpha&qlt=95&.v=1411520739850',1000,300, '12-May-2016 23:04:22','123');
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, EndTime, Address)
+VALUES('MacBook Pro 2015','Hamza','Cool notebook','Computers','http://www3.pcmag.com/media/images/460344-apple-macbook-pro-13-inch-retina-display-2015.jpg?thumb=y',1026,100, '12-May-2016 23:05:22','770 Eastern Parkway'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, EndTime, Address)
+VALUES('MacBook Pro 2008','Godlin','Old notebook','Computers','https://d3nevzfk7ii3be.cloudfront.net/igi/5RIvmWVeAKJacKyM',613,100, '12-May-2016 23:06:22','770 Eastern Parkway'); 
+INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, EndTime, Address)
+VALUES('Hp Pavillion','Shariq','Reliable Laptop','Computers','http://upload.wikimedia.org/wikipedia/commons/b/bf/HP_Pavilion_dv2500se.jpg',700,100,'12-May-2016 23:06:22','63 Farwest Cr'); 
 --INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
 --VALUES('Asus Transformer','Karn','laptop','Computers','http://www.asus.com/media/global/products/gHh4q7I8dvWJzhdV/P_500.jpg',200,50,864000,'3 Nookford Rd'); 
 --INSERT INTO cast_db.Items (Name, Owner, Description, Category, Picture, ReservePrice, StartingPrice, Duration, Address)
