@@ -65,13 +65,14 @@ public class BiddingController {
 			ResultSet rs = ps.executeQuery();
 
 			
-			while (rs.next()){
-				String bidString = rs.getString(1);
-				System.out.println("BIDSTRING IS: "+bidString);
+			String bidString;
+			while (rs.next() && (bidString = rs.getString(1)) != null){
+//				String bidString = rs.getString(1);
 				winningBid = Integer.parseInt(bidString);
 			}
 
 			rs.close();
+			ps.close();
 			
 			return winningBid;
 			
