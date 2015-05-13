@@ -39,7 +39,7 @@ public class ItemResult extends HttpServlet
 			response.sendRedirect("index.jsp");
 			request.getSession().invalidate();
 		}
-		String search = request.getParameter("searchItem");
+		String search = request.getParameter("searchItem").toLowerCase();
 		//System.out.println(search);
 		
 		Connection conn = null;
@@ -52,7 +52,7 @@ public class ItemResult extends HttpServlet
 		{
 			Class.forName(driver).newInstance();
 			conn = DriverManager.getConnection(url, dbUserName, dbPassword);
-			String strQuery = "select Name, Picture, Item_ID FROM cast_db.Items where Name LIKE '%" + search  +"%' OR Category LIKE '%" + search + "%' OR Description LIKE '%" + search + "%'";
+			String strQuery = "select Name, Picture, Item_ID FROM cast_db.Items where Lower(Name) LIKE '%" + search  +"%' OR LOWER(Category) LIKE '%" + search + "%' OR LOWER(Description) LIKE '%" + search + "%'";
 			Statement st = conn.createStatement();
 			ResultSet rs = st.executeQuery(strQuery);
 			ArrayList<ArrayList<String>> table = new ArrayList<ArrayList<String>>();
