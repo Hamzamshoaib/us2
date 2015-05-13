@@ -25,7 +25,7 @@
 			String username = table.get(i);
 			if (uscontroller.isBlocked(username) == 1) {
 				val = "unblock";
-			}
+			}//
 			out.println("<table><tr>");
 			out.println("<td>" + username + "</td>");
 			out.println("<td>" + "<form action=\'" + "block" + "\' method=\'POST\'><input type=\'submit\' name=\'action\' value = \'" + val + "\'> <input type=\'hidden\' name=\'id\' value = \'" +  username + "\'> </FORM></td>");

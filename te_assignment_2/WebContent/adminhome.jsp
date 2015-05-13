@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>Home - Admin</title>
+<title>Admin - Home</title>
 </head>
 <body>
 <form action="logout.jsp">
