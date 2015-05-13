@@ -1,19 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=US-ASCII"
+    pageEncoding="US-ASCII"%>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="edu.unsw.ass1.*"%>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Wishlist</title>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>Thou Admin</title>
 </head>
 <body>
-<a href=http://localhost:8080/te_assignment_2/index.jsp>Home</a>
-<center>
-<h1>Wishlist</h1>
-<!-- Code between the tags check whether a session exists or not -->
 <% 
 	String name = (String) session.getAttribute("username");
 	if (name == null){
@@ -35,8 +29,5 @@
 		out.println("</tr><br></table>");
 	}
 %>
-
-
-</center>
 </body>
 </html>

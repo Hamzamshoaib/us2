@@ -7,6 +7,7 @@
 <title>Let's Advance Search</title>
 </head>
 <body>
+<a href=http://localhost:8080/te_assignment_2/index.jsp>Home</a>
 <center>
 	<h1>Advance Search - Daily Auction</h1>
 	<FORM ACTION='menu.jsp' METHOD='POST'>

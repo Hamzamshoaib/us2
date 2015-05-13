@@ -4,14 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>Error</title>
+<title>Home - Admin</title>
 </head>
 <body>
-<a href=http://localhost:8080/te_assignment_2/index.jsp>Home</a>
-${message}
-<br>
-<FORM ACTION='index.jsp'>
-	<input type="submit" value="home">
-</FORM>
+<form action="logout.jsp">
+	<INPUT type="submit" value="logout">
+</form>
+<form action="admin.jsp">
+	<INPUT type="submit" value="logout">
+</form>
 </body>
 </html>

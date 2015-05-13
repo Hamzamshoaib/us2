@@ -7,8 +7,8 @@
 <title>Daily Auction - Add Item</title>
 </head>
 <body>
+<a href=http://localhost:8080/te_assignment_2/index.jsp>Home</a>
 <h1>Add an Item for Auction</h1>
-<a href=http://localhost:8080/te_assignment_2/index.jsp>Take me Home!</a>
 	<FORM NAME="additem" ACTION="additem" METHOD="POST">
 		<p>Title: </p>
 		<INPUT type="text" name="title">
