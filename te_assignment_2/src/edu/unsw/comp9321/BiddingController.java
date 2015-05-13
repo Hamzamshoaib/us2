@@ -315,7 +315,6 @@ public class BiddingController {
 		}
 		
 		return done;
-		
 	}
 	
 	public Boolean isHalted(int Item_ID){

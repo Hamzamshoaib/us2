@@ -110,6 +110,29 @@ public class UserController {
 		return allUsers;
 	}
 	
+	public ArrayList<String> getAllItems(){
+		ArrayList<String> allItems = new ArrayList<String>();
+		
+		try
+		{
+			String strQuery = "select Name FROM cast_db.Items";
+			PreparedStatement ps = conn.prepareStatement(strQuery);
+			ResultSet rs = ps.executeQuery();
+			
+			while (rs.next()){
+				allItems.add(rs.getString(1));
+			}
+
+			rs.close();
+			ps.close();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return allItems;
+		
+	}
+
 	//Returns 1 if blocked
 	//Returns 0 if verified
 	//Returns -1 if unverified
@@ -158,6 +181,101 @@ public class UserController {
 			e.printStackTrace();
 		}
 		return itemOwner;
+	}
+	
+	public Boolean updatePassword(String username, String password){
+		Boolean done = false;
+		
+		try
+		{
+			String strQuery = "update cast_db.Users SET Password=? WHERE UserName=?";
+			PreparedStatement ps = conn.prepareStatement(strQuery);
+			ps.setString(1,password);
+			ps.setString(2,username);
+			ps.executeUpdate();
+			
+			ps.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return done;
+	}
+	
+	public Boolean updateFirstName(String username, String firstName){
+		Boolean done = false;
+		
+		try
+		{
+			String strQuery = "update cast_db.Users SET FirstName=? WHERE UserName=?";
+			PreparedStatement ps = conn.prepareStatement(strQuery);
+			ps.setString(1,firstName);
+			ps.setString(2,username);
+			ps.executeUpdate();
+			
+			ps.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return done;
+	}
+	
+	public Boolean updateLastName(String username, String lastName){
+		Boolean done = false;
+		
+		try
+		{
+			String strQuery = "update cast_db.Users SET LastName=? WHERE UserName=?";
+			PreparedStatement ps = conn.prepareStatement(strQuery);
+			ps.setString(1,lastName);
+			ps.setString(2,username);
+			ps.executeUpdate();
+			
+			ps.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return done;
+	}
+	
+	public Boolean updateEmail(String username, String email){
+		Boolean done = false;
+		
+		try
+		{
+			String strQuery = "update cast_db.Users SET Email=? WHERE UserName=?";
+			PreparedStatement ps = conn.prepareStatement(strQuery);
+			ps.setString(1,email);
+			ps.setString(2,username);
+			ps.executeUpdate();
+			
+			ps.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return done;
+	}
+	
+	public Boolean updateAddress(String username, String address){
+		Boolean done = false;
+		
+		try
+		{
+			String strQuery = "update cast_db.Users SET Address=? WHERE UserName=?";
+			PreparedStatement ps = conn.prepareStatement(strQuery);
+			ps.setString(1,address);
+			ps.setString(2,username);
+			ps.executeUpdate();
+			
+			ps.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return done;
 	}
 	
 }
