@@ -47,8 +47,35 @@
 	out.println("</table>");
 	
 	int Item_ID = Integer.parseInt(table.get(0).get(7));
+	//System.out.println(Item_ID);
 	BiddingController bc = new BiddingController();
-	bc.currentWinningBid(Item_ID);
+	
+	int highBid = bc.currentWinningBid(Item_ID);
+	if (highBid == -1)
+	{
+		out.println("<br><br><br><br>No Bids yet");
+		out.println("Starting price = " + table.get(0).get(8));
+	}
+	else
+	{
+		String newBid = request.getParameter("bid");
+		if (newBid != null)
+		{
+			int result = bc.placeBid(name, Item_ID, Integer.parseInt(newBid));
+			// need to add checks if placeBid don't work
+		}
+		out.println("<br><br><br><br>Current Winning Bid: " + bc.currentWinningBid(Item_ID)+ "<br>");
+		String Owner = table.get(0).get(4);
+		//if (!(bc.isAuctionDone(Item_ID) || Owner.equals(name)))
+		//{
+			out.println("Place Bid: <form action=\'itemdetails\' method=\'POST\'><input type=\"text\" name=\"bid\"><input type=\'hidden\' name=\'id\' value = \'" +  table.get(0).get(7) + "\'><input type=\'submit\' name=\'action\' value ='Place Bid'></FORM></td>");
+		//}
+		//else
+		//{
+			
+		//}
+	}
+	//out.println("");
 %>
 </center>
 </body>

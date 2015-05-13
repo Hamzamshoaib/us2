@@ -45,6 +45,13 @@ public class ItemDetails extends HttpServlet {
 		}
 		int Item_ID =  Integer.parseInt(request.getParameter("id"));
 		
+//		//sets new bid price if there is a bid made
+//		if (request.getParameter("bid") != null)
+//		{
+//			System.out.println(request.getParameter("bid"));
+//			request.setAttribute("newBid", request.getParameter("bids"));
+//		}
+		
 		Connection conn = null;
 		String url = "jdbc:derby://localhost:1527/cast;create=true";
 		String dbUserName = "test";
@@ -65,8 +72,8 @@ public class ItemDetails extends HttpServlet {
 			EndTime
 			ReservePrice
 			*/
-			String strQuery = "select Name, Picture, Description, Category, Owner, EndTime, ReservePrice FROM cast_db.Items where Item_ID = " + Item_ID;
-			System.out.println(strQuery);
+			String strQuery = "select Name, Picture, Description, Category, Owner, EndTime, ReservePrice, Item_ID, StartingPrice FROM cast_db.Items where Item_ID = " + Item_ID;
+			//System.out.println(strQuery);
 			Statement st = conn.createStatement();
 			ResultSet rs = st.executeQuery(strQuery);
 			ArrayList<ArrayList<String>> table = new ArrayList<ArrayList<String>>();
@@ -80,6 +87,8 @@ public class ItemDetails extends HttpServlet {
 				columns.add(rs.getString(5));
 				columns.add(rs.getString(6));
 				columns.add(Integer.toString(rs.getInt(7)));
+				columns.add(Integer.toString(rs.getInt(8)));
+				columns.add(Integer.toString(rs.getInt(9)));
 				table.add(columns);
 			}
 			request.setAttribute("table", table);
