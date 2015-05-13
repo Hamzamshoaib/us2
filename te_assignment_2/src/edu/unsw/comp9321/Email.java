@@ -71,10 +71,11 @@ public class Email {
 		return true;
 	}
 	
-	public Boolean sendWonBidEmail(int Item_ID){
+	public Boolean newHighBid(int Item_ID){
 		UserController uc = new UserController();
 		BiddingController bc = new BiddingController();
 		String user = bc.winningBidder(Item_ID);
+		int highestBid = bc.currentWinningBid(Item_ID);
 		String to = uc.getEmail(user);
 		String itemName = uc.getItemName(Item_ID);
 	      try {
@@ -88,17 +89,17 @@ public class Email {
 		         message.setRecipients(Message.RecipientType.TO,
 		         InternetAddress.parse(to));
 		         // Set Subject: header field
-		         message.setSubject("Congratulations " + user + "! You won a new item!");
+		         message.setSubject("Congratulations " + user + "! You have the highest bid at the moment!");
 		         // Now set the actual message
 		         message.setText("Hi!\n\n"
-		         		+ "You hav won a brand new " + itemName + "."
+		         		+ "You have the highest bid for " + itemName + " at $" + highestBid + "."
 		         		+ "\n\n"
 		         		+ "Daily Auction Deals Team :)");
 
 		         // Send message
 		         Transport.send(message);
 
-		         System.out.println("Sent Won Bid Mail successfully...");
+		         System.out.println("Sent New High Bid Mail successfully...");
 
 	      } catch (MessagingException e) {
 	    	  return false;
@@ -144,8 +145,121 @@ public class Email {
 	      return true;  
 	}
 	
-	public void sendWinnerLoserEmails(int Item_ID){
-		sendWonBidEmail(Item_ID);
+	public Boolean emailWinner(int Item_ID){
+		UserController uc = new UserController();
+		BiddingController bc = new BiddingController();
+		String user = bc.winningBidder(Item_ID);
+		int highestBid = bc.currentWinningBid(Item_ID);
+		String to = uc.getEmail(user);
+		String itemName = uc.getItemName(Item_ID);
+	      try {
+		         // Create a default MimeMessage object.
+		         Message message = new MimeMessage(session);
+
+		         // Set From: header field of the header.
+		         message.setFrom(new InternetAddress(from));
+
+		         // Set To: header field of the header.
+		         message.setRecipients(Message.RecipientType.TO,
+		         InternetAddress.parse(to));
+		         // Set Subject: header field
+		         message.setSubject("Congratulations " + user + "! You have won an item!");
+		         // Now set the actual message
+		         message.setText("Hi!\n\n"
+		         		+ "You have won a brand new " + itemName + " for $" + highestBid + "! :)"
+		         		+ "\n\n"
+		         		+ "Daily Auction Deals Team :)");
+
+		         // Send message
+		         Transport.send(message);
+
+		         System.out.println("Sent winner email successfully...");
+
+	      } catch (MessagingException e) {
+	    	  return false;
+	      }		
+	      return true; 
+	}
+	
+	public Boolean emailOwner(int Item_ID){
+		UserController uc = new UserController();
+		BiddingController bc = new BiddingController();
+		String user = uc.getItemOwner(Item_ID);
+		int highestBid = bc.currentWinningBid(Item_ID);
+		String to = uc.getEmail(user);
+		String itemName = uc.getItemName(Item_ID);
+	      try {
+		         // Create a default MimeMessage object.
+		         Message message = new MimeMessage(session);
+
+		         // Set From: header field of the header.
+		         message.setFrom(new InternetAddress(from));
+
+		         // Set To: header field of the header.
+		         message.setRecipients(Message.RecipientType.TO,
+		         InternetAddress.parse(to));
+		         // Set Subject: header field
+		         message.setSubject("Congratulations " + user + "! Your item has been sold!");
+		         // Now set the actual message
+		         message.setText("Hi!\n\n"
+		         		+ "You have sold your item " + itemName + " for $" + highestBid + "! :)"
+		         		+ "\n\n"
+		         		+ "Daily Auction Deals Team :)");
+
+		         // Send message
+		         Transport.send(message);
+
+		         System.out.println("Sent owner email successfully...");
+
+	      } catch (MessagingException e) {
+	    	  return false;
+	      }		
+	      return true; 
+	}
+	
+	public Boolean lessThanReserved(int Item_ID){
+		UserController uc = new UserController();
+		BiddingController bc = new BiddingController();
+		String user = uc.getItemOwner(Item_ID);
+		int highestBid = bc.currentWinningBid(Item_ID);
+		String to = uc.getEmail(user);
+		String itemName = uc.getItemName(Item_ID);
+	      try {
+		         // Create a default MimeMessage object.
+		         Message message = new MimeMessage(session);
+
+		         // Set From: header field of the header.
+		         message.setFrom(new InternetAddress(from));
+
+		         // Set To: header field of the header.
+		         message.setRecipients(Message.RecipientType.TO,
+		         InternetAddress.parse(to));
+		         // Set Subject: header field
+		         message.setSubject("Congratulations " + user + "! Your item has been sold!");
+		         // Now set the actual message
+		         message.setText("Hi!\n\n"
+		         		+ "You have sold your item " + itemName + " for $" + highestBid + "! :)"
+		         		+ "\n\n"
+		         		+ "Daily Auction Deals Team :)");
+
+		         // Send message
+		         Transport.send(message);
+
+		         System.out.println("Sent owner email successfully...");
+
+	      } catch (MessagingException e) {
+	    	  return false;
+	      }		
+	      return true; 
+	}
+	
+	public void newBidEmails(int Item_ID){
+		newHighBid(Item_ID);
 		sendLostBidEmail(Item_ID);
+	}
+	
+	public void endAuctionEmails(int Item_ID){
+		emailWinner(Item_ID);
+		emailOwner(Item_ID);
 	}
 }

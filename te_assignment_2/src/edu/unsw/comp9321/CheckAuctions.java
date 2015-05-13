@@ -18,13 +18,16 @@ public class CheckAuctions implements Runnable {
 		BiddingController bc = new BiddingController();
 		Email email = new Email();
 		for(int i : bc.getDoneAuctions()){
-			if (!ignored.contains(i)){
+			if (!ignored.contains(i) && !bc.bidLessThanReserved(i)){
 				//send winning/losing emails
-				email.sendWinnerLoserEmails(i);
+				email.endAuctionEmails(i);
 				ignored.add(i);
+			} else if (bc.bidLessThanReserved(i)){
+				//DO ME! DO ME REAL NICE!
 			}
 		}
 			
+		//if highest bid < reserve price -> email owner asking if it's ok?
 			//delete the item from Items
 			//delte all bids in BiddingPrice
 		

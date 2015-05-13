@@ -44,6 +44,12 @@ CREATE TABLE cast_db.WishList (
 	PRIMARY KEY (UserName, Item_ID)
 );
 
+CREATE TABLE cast_db.Halted (
+	Item_ID INT REFERENCES cast_db.Items(Item_ID),
+	Halt INT DEFAULT 0,
+	PRIMARY KEY (Item_ID)
+);
+
 
 INSERT INTO cast_db.Users VALUES ('Hamza', 'password', 'Hamza', 'Shoaib', 'dailyauctiondeals+hamza@gmail.com', 'Glenwood', '1992-04-24', 'verified');
 INSERT INTO cast_db.Users VALUES ('Godlin', 'password', 'Godlin', 'Rajendran', 'dailyauctiondeals+godlin@gmail.com', 'Girraween', '1989-08-17', 'verified');
