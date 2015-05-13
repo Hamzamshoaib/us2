@@ -20,7 +20,7 @@ public class TimeController {
 	
 	public static String setAuctTimer(int mins){
 		Calendar cal = Calendar.getInstance();
-		return dateFormat.format(addMinutes(cal.getTime(),10));
+		return dateFormat.format(addMinutes(cal.getTime(), mins));
 	}
 	
 	
