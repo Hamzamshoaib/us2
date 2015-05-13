@@ -12,6 +12,7 @@
 <title>Search Results</title>
 </head>
 <body>
+<a href=http://localhost:8080/te_assignment_2/index.jsp>Home</a>
 <CENTER>
 <h1>Daily Auction</h1>
 Search for an item

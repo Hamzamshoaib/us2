@@ -7,6 +7,7 @@
 <title>Details</title>
 </head>
 <body>
+<a href=http://localhost:8080/te_assignment_2/index.jsp>Home</a>
 <!-- Code between the tags check whether a session exists or not -->
 <% 
 	String name = (String) session.getAttribute("username");

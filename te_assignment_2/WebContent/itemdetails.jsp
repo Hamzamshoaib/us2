@@ -10,6 +10,7 @@
 </head>
 <body>
 <center>
+<a href=http://localhost:8080/te_assignment_2/index.jsp>Home</a>
 <% 
 	String name = (String) session.getAttribute("username");
 	if (name == null){

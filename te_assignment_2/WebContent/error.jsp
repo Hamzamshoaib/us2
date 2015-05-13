@@ -7,6 +7,7 @@
 <title>Error</title>
 </head>
 <body>
+<a href=http://localhost:8080/te_assignment_2/index.jsp>Home</a>
 ${message}
 <br>
 <FORM ACTION='index.jsp'>

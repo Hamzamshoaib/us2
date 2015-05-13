@@ -10,6 +10,7 @@
 <title>Wishlist</title>
 </head>
 <body>
+<a href=http://localhost:8080/te_assignment_2/index.jsp>Home</a>
 <center>
 <h1>Wishlist</h1>
 <!-- Code between the tags check whether a session exists or not -->
