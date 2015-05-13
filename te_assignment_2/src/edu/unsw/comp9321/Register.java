@@ -50,7 +50,30 @@ public class Register extends HttpServlet {
 		String session = (String)request.getSession().getId();
 		request.getSession().invalidate();
 		
-		String msg = " ";
+		if (!InputCheck.isLetters(firstname)) {
+			request.setAttribute("message", "FirstName Can Only Contain Letters");
+			request.getRequestDispatcher("index.jsp").forward(request, response);
+		}
+		else if (!InputCheck.isLetters(lastname)) {
+			request.setAttribute("message", "LastName Can Only Contain Letters");
+			request.getRequestDispatcher("index.jsp").forward(request, response);
+		}
+		else if (!InputCheck.isLetters(nickname)) {
+			request.setAttribute("message", "NickName Can Only Contain Letters");
+			request.getRequestDispatcher("index.jsp").forward(request, response);
+		}
+		else if (!InputCheck.isNum(birthyear)) {
+			request.setAttribute("message", "Birth Year Can Only Contain Numbers");
+			request.getRequestDispatcher("index.jsp").forward(request, response);
+		}	
+		else if (!InputCheck.isEmail(email)) {
+			request.setAttribute("message", "Email Format is Incorrect!");
+			request.getRequestDispatcher("index.jsp").forward(request, response);
+		}
+		else if (!InputCheck.isNum(birthyear)) {
+			request.setAttribute("message", "Birth Year Can Only Contain Numbers!");
+			request.getRequestDispatcher("index.jsp").forward(request, response);
+		}
 		Connection conn = null;
 		String url = "jdbc:derby://localhost:1527/cast;create=true";
 		String dbUserName = "cast_db";
