@@ -35,7 +35,8 @@ Search for an item
 		while (j < table.get(i).size())
 		{
 			out.println("<td>" + "<img src=\"" + table.get(i).get(j++) + "\" width = \"50\" height = \"50px\">" + "</td>");
-			out.println("<td>" +"<a href=\"itemDetails.jsp\" id=\"" + i + "\">" + table.get(i).get(j++) + "</a>" + "</td>");
+			//out.println("<td>" +"<a href=\"http://localhost:8080/te_assignment_2/itemdetails\" name = \"ID\" value=\"" + table.get(i).get(j+1) +"\">" + table.get(i).get(j++) + "</a>" + "</td>");
+			out.println("<td>" + "<form action=\'itemdetails\' method=\'POST\'><input type=\'submit\' name=\'action\' value = \'" + table.get(i).get(j++) +"\'> <input type=\'hidden\' name=\'id\' value = \'" +  table.get(i).get(j) + "\'> </FORM></td>");
 			out.println("<td>" + "<form action=\'wishlist\' method=\'POST\'><input type=\'submit\' name=\'action\' value = \'Add to Wishlist\'> <input type=\'hidden\' name=\'id\' value = \'" +  table.get(i).get(j++) + "\'> </FORM></td>");
 		}
 		out.println("</tr><br></table>");
