@@ -64,7 +64,13 @@ public class Login extends HttpServlet {
 				if (verified.equals("verified")){
 					HttpSession session = request.getSession(true);
 					session.setAttribute("username", un);
-					response.sendRedirect("welcome.jsp");					
+					if(un.equals("Admin")) {
+						response.sendRedirect("adminhome.jsp");
+					}
+					else {
+						response.sendRedirect("welcome.jsp");
+					}
+										
 				}
 				else if (verified.equals("block")){
 					request.setAttribute("message", "Your Account has been Blocked by Admin");

@@ -10,8 +10,9 @@
 <form action="logout.jsp">
 	<INPUT type="submit" value="logout">
 </form>
-<form action="admin.jsp">
-	<INPUT type="submit" value="logout">
-</form>
+<FORM NAME="delegate" ACTION="admin.jsp" METHOD="POST">
+	<INPUT TYPE="submit" name="action" value="Users">
+	<INPUT TYPE="submit" name="action" value="Items">
+</FORM>
 </body>
 </html>

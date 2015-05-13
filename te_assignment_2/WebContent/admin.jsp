@@ -1,3 +1,4 @@
+<%@page import="edu.unsw.comp9321.UserController"%>
 <%@ page language="java" contentType="text/html; charset=US-ASCII"
     pageEncoding="US-ASCII"%>
 <%@ page import="java.util.ArrayList" %>
@@ -13,21 +14,23 @@
 	if (name == null){
 		response.sendRedirect("index.jsp");
 	}
+	ArrayList<String> table = new ArrayList<String>();
+	UserController uscontroller = new UserController();
 	
-	ArrayList<ArrayList<String>> table = new ArrayList<ArrayList<String>>();
-	table = (ArrayList<ArrayList<String>>) request.getAttribute("table");
-	
+	String formDelegate = request.getParameter("action");
+	if ("Users".equals(formDelegate)){
+		table = uscontroller.getAllUsernames();
+	} else if ("Items".equals(formDelegate)){
+		table = uscontroller.getAllItems();
+	}
 	for (int i = 0; i < table.size(); i++)
 	{
 		out.println("<table><tr>");
-		int j = 0;
-		while (j < table.get(i).size())
-		{
-			out.println("<td>" +"<a href=\"itemDetails.jsp\" id=\"" + i + "\">" + table.get(i).get(j++) + "</a>" + "</td>");
-			out.println("<td>" + "<form action=\'wishlist\' method=\'POST\'><input type=\'submit\' name=\'action\' value = \'Delete\'> <input type=\'hidden\' name=\'id\' value = \'" +  table.get(i).get(j++) + "\'> </FORM></td>");
-		}
-		out.println("</tr><br></table>");
+			out.println("<td>" +"<a href=\"itemDetails.jsp\" id=\"" + i + "\">" + table.get(i) + "</a>" + "</td>");
+			out.println("<td>" + "<form action=\'wishlist\' method=\'POST\'><input type=\'submit\' name=\'action\' value = \'Delete\'> <input type=\'hidden\' name=\'id\' value = \'" +  table.get(i) + "\'> </FORM></td>");
+			out.println("</tr><br>");
 	}
+	out.println("</table>");
 %>
 </body>
 </html>
