@@ -61,26 +61,24 @@ public class Register extends HttpServlet {
 				Class.forName(driver).newInstance();
 				conn = DriverManager.getConnection(url, dbUserName, dbPassword);
 				Statement st = conn.createStatement();
-				//String strQuery = "select * from Users where UserName='" + un +"' and  Password='" + pw + "'";
-				String strQuery = "INSERT INTO cast_db.Users VALUES('" + un +"','" + pw + "','" + firstname + "','" + lastname + "','" 
-				+ email + "','" + address + "','" + "1993-02-24" + "','" + session + "')";
-				System.out.println(strQuery);
-				st.executeUpdate(strQuery);
-				Email emailV = new Email();
-				emailV.sendVerifyEmail(email,session);
-				System.out.println("did something");
-				/*ResultSet rs = st.executeQuery(strQuery);
+				
+				//Check if the userName exists
+				String strQuery = "SELECT UserName FROM cast_db.Users WHERE UserName ='" + un + "'";
+				ResultSet rs = st.executeQuery(strQuery);
 				if (rs.next()) {
-					/*msg="Hello " + un + "! Your login is successful";
-					HttpSession session = request.getSession(true);
-					session.setAttribute("username", un);
-					response.sendRedirect("welcome.jsp");
-				} else {
-					request.setAttribute("message", "Invalid Username or Password");
+					request.setAttribute("message", "UserName Already Exists!");
 					request.getRequestDispatcher("index.jsp").forward(request, response);
-					/*msg="Hello Your login failed";
-				}*/
-				//rs.close();
+				}
+				else {
+					//String strQuery = "select * from Users where UserName='" + un +"' and  Password='" + pw + "'";
+					strQuery = "INSERT INTO cast_db.Users VALUES('" + un +"','" + pw + "','" + firstname + "','" + lastname + "','" 
+							+ email + "','" + address + "','" + "1993-02-24" + "','" + session + "')";
+					System.out.println(strQuery);
+					st.executeUpdate(strQuery);
+					Email emailV = new Email();
+					emailV.sendVerifyEmail(email,session);
+					System.out.println("did something");
+				}
 				st.close();
 			} catch (InstantiationException e) {
 				e.printStackTrace();
