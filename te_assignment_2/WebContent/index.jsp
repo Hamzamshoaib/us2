@@ -7,6 +7,8 @@
 <title>	Daily Auction</title>
 </head>
 <body>
+<CENTER>
+<h1>Daily Auction</h1>
 <% 
 	String name = (String) session.getAttribute("username");
 	if (name != null){
@@ -26,5 +28,6 @@ ${message}
 <INPUT TYPE="submit" name="action" value="register">
 
 </FORM>
+</CENTER>
 </body>
 </html>
