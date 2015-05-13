@@ -111,7 +111,7 @@ public class Email {
 		UserController uc = new UserController();
 		BiddingController bc = new BiddingController();
 		
-		String user = bc.loser(Item_ID);
+		String user = bc.secondHighestBidder(Item_ID);
 		int highestBid = bc.currentWinningBid(Item_ID);
 		String to = uc.getEmail(user);
 		String itemName = uc.getItemName(Item_ID);

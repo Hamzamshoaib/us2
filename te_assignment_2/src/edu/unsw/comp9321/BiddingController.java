@@ -52,6 +52,43 @@ public class BiddingController {
 		return this.increment;
 	}
 	
+	public Boolean deleteItem(int Item_ID){
+		Boolean done = false;
+		
+		//Delete item from wishlist
+		//Delete Item from BiddingItem
+		//Delete Item from Item_ID
+		
+		try
+		{
+			String strQuery = "DELETE FROM cast_db.Halted WHERE Item_ID=?";
+			PreparedStatement ps = conn.prepareStatement(strQuery);
+			ps.setInt(1,Item_ID);
+			ps.execute();
+			
+			strQuery = "DELETE FROM cast_db.WishList WHERE Item_ID=?";
+			ps = conn.prepareStatement(strQuery);
+			ps.setInt(1,Item_ID);
+			ps.execute();
+			
+			strQuery = "DELETE FROM cast_db.BiddingPrice WHERE Item_ID=?";
+			ps = conn.prepareStatement(strQuery);
+			ps.setInt(1,Item_ID);
+			ps.execute();
+			
+			strQuery = "DELETE FROM cast_db.Items WHERE Item_ID=?";
+			ps = conn.prepareStatement(strQuery);
+			ps.setInt(1,Item_ID);
+			ps.execute();
+			
+			ps.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return done;
+	}
+
 	//Returns current winning bid
 	//Returns -1 if error
 	public int currentWinningBid(int Item_ID){
@@ -186,6 +223,13 @@ public class BiddingController {
 		return -1; //return error
 	}
 	
+	//get done auctions
+	//for auctions with winning bid less than reserved price -> email owner with 2 bids
+	
+	public Boolean bidLessThanReserved(int Item_ID){
+		return (currentWinningBid(Item_ID) < getReservePrice(Item_ID));
+	}
+
 	public ArrayList<String> listOfLosers(int Item_ID){
 		ArrayList<String> losers = new ArrayList<String>();
 		
@@ -210,7 +254,7 @@ public class BiddingController {
 		return losers;
 	}
 	
-	public String loser(int Item_ID){
+	public String secondHighestBidder(int Item_ID){
 		String loser = new String();
 		
 		try
@@ -298,31 +342,6 @@ public class BiddingController {
 	//get done auctions
 	//for auctions with winning bid less than reserved price -> email owner with 2 bids
 	
-	public Boolean bidLessThanReserved(int Item_ID){
-		return (currentWinningBid(Item_ID) < getReservePrice(Item_ID));
-	}
-	
-	public int getReservePrice(int Item_ID){
-		int retVal = 0;
-		try
-		{
-			String strQuery = "select ReservePrice from cast_db.Items where Item_ID=?";
-			PreparedStatement ps = conn.prepareStatement(strQuery);
-			ps.setInt(1,Item_ID);
-			ResultSet rs = ps.executeQuery();
-
-			rs.next();
-			retVal = Integer.parseInt(rs.getString(1));
-			
-			rs.close();
-			ps.close();
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return retVal;
-	}
-	
 	public int getStartingPrice(int Item_ID){
 		int retVal = 0;
 		try
@@ -344,6 +363,44 @@ public class BiddingController {
 		return retVal;
 	}
 	
+	public void acceptOffer(int Item_ID){
+		Email email = new Email();
+		//send email of winning
+		email.endAuctionEmails(Item_ID);
+		//delete item
+		deleteItem(Item_ID);
+	}
+
+	//get done auctions
+	//for auctions with winning bid less than reserved price -> email owner with 2 bids
+	
+	public int getReservePrice(int Item_ID){
+		int retVal = 0;
+		try
+		{
+			String strQuery = "select ReservePrice from cast_db.Items where Item_ID=?";
+			PreparedStatement ps = conn.prepareStatement(strQuery);
+			ps.setInt(1,Item_ID);
+			ResultSet rs = ps.executeQuery();
+	
+			rs.next();
+			retVal = Integer.parseInt(rs.getString(1));
+			
+			rs.close();
+			ps.close();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return retVal;
+	}
+
+	public void rejectOffer(int Item_ID){
+		//Do nothing email-wise
+		//Delete item
+		deleteItem(Item_ID);
+	}
+
 	public Boolean haltAuction(int Item_ID){
 		Boolean done = false;
 		
@@ -386,46 +443,20 @@ public class BiddingController {
 		return isHalted;
 	}
 	
-	public Boolean deleteItem(int Item_ID){
-		Boolean done = false;
-		
-		//Delete item from wishlist
-		//Delete Item from BiddingItem
-		//Delete Item from Item_ID
+	public void setAuctionTime(int Item_ID, int mins){
 		
 		try
 		{
-			String strQuery = "DELETE FROM cast_db.Halted WHERE Item_ID=?";
+			String strQuery = "update cast_db.Items SET EndTime=?  WHERE Item_ID=?";
 			PreparedStatement ps = conn.prepareStatement(strQuery);
-			ps.setInt(1,Item_ID);
-			ps.execute();
-			
-			strQuery = "DELETE FROM cast_db.WishList WHERE Item_ID=?";
-			ps = conn.prepareStatement(strQuery);
-			ps.setInt(1,Item_ID);
-			ps.execute();
-			
-			strQuery = "DELETE FROM cast_db.BiddingPrice WHERE Item_ID=?";
-			ps = conn.prepareStatement(strQuery);
-			ps.setInt(1,Item_ID);
-			ps.execute();
-			
-			strQuery = "DELETE FROM cast_db.Items WHERE Item_ID=?";
-			ps = conn.prepareStatement(strQuery);
-			ps.setInt(1,Item_ID);
-			ps.execute();
+			ps.setString(1,TimeController.setAuctTimer(mins));
+			ps.setInt(2,Item_ID);
+			ps.executeUpdate();
 			
 			ps.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
-		return done;
-	}
-	
-	public void acceptOffer(){
-		//send email of winning
-		//delete item
 	}
 	
 }
