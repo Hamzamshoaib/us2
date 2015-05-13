@@ -4,6 +4,7 @@ package edu.unsw.comp9321;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -58,35 +59,54 @@ public class Wishlist extends HttpServlet {
 			conn = DriverManager.getConnection(url, dbUserName, dbPassword);
 			Statement st = conn.createStatement();
 			String strQuery = new String();
-			if ("Add to Wishlist".equals(formDelegate))
+			
+			ArrayList<String> itemNames = new ArrayList<String>();
+			ArrayList<Integer> itemIDs = new ArrayList<Integer>();
+
+			BiddingController bc = new BiddingController();
+			
+			strQuery = "SELECT Item_ID FROM cast_db.WishList WHERE UserName=?";
+			PreparedStatement ps = conn.prepareStatement(strQuery);
+			ps.setString(1,user);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()){
+				String itemString = rs.getString(1);
+				if(itemString != null){
+					int item = Integer.parseInt(itemString);
+					itemIDs.add(item);
+					itemNames.add(bc.getItemName(item));
+				} else {
+					break;
+				}
+			}
+			
+
+			
+			if ("Add to Wishlist".equals(formDelegate) && !itemIDs.contains(Item_ID))
 			{
 				strQuery = "INSERT INTO cast_db.WishList VALUES ('"+ user +"',"+ Item_ID +")";
 				st.executeUpdate(strQuery);
+				itemIDs.add(Item_ID);
+				itemNames.add(bc.getItemName(Item_ID));
+				
 			}
 			else if ("Delete".equals(formDelegate))
 			{
 				strQuery = "DELETE FROM cast_db.WishList WHERE Item_ID = "+ Item_ID +" and UserName = '"+ user +"'";
 				st.executeUpdate(strQuery);
-			}
-			//System.out.println(strQuery);
+				
+				int index = itemIDs.indexOf(Item_ID);
+				itemNames.remove(index);
+				itemIDs.remove(index);
+				
+			} 
 			
-			strQuery = "SELECT cast_db.Items.Name, cast_db.WishList.Item_ID FROM cast_db.WishList JOIN cast_db.Items ON "
-					+ "cast_db.WishList.UserName = '"+ user +"' AND cast_db.Items.Owner = '"+ user +"' AND cast_db.WishList.Item_ID = cast_db.Items.Item_ID";
-			System.out.println(strQuery);
-			ResultSet rs = st.executeQuery(strQuery);
-			ArrayList<ArrayList<String>> table = new ArrayList<ArrayList<String>>();
-			while (rs.next())
-			{
-				ArrayList<String> columns = new ArrayList<String>();
-				String itemName = rs.getString(1);
-				String itemID = Integer.toString(rs.getInt(2));
-				columns.add(itemName);
-				columns.add(itemID);
-				table.add(columns);
-			}
-			request.setAttribute("table", table);
-			request.getRequestDispatcher("wishlist.jsp").forward(request, response);
 			rs.close();
+			ps.close();
+			
+			request.setAttribute("itemNames", itemNames);
+			request.setAttribute("itemIDs", itemIDs);
+			request.getRequestDispatcher("wishlist.jsp").forward(request, response);
 			st.close();
 		} catch (InstantiationException e) {
 			e.printStackTrace();

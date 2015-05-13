@@ -20,20 +20,21 @@
 		response.sendRedirect("index.jsp");
 	}
 	
-	ArrayList<ArrayList<String>> table = new ArrayList<ArrayList<String>>();
-	table = (ArrayList<ArrayList<String>>) request.getAttribute("table");
+	ArrayList<String> itemNames = new ArrayList<String>();
+	ArrayList<Integer> itemIDs = new ArrayList<Integer>();
+	itemNames = (ArrayList<String>) request.getAttribute("itemNames");
+	itemIDs = (ArrayList<Integer>) request.getAttribute("itemIDs");
 	
-	for (int i = 0; i < table.size(); i++)
-	{
-		out.println("<table><tr>");
-		int j = 0;
-		while (j < table.get(i).size())
-		{
-			out.println("<td>" +"<a href=\"itemDetails.jsp\" id=\"" + i + "\">" + table.get(i).get(j++) + "</a>" + "</td>");
-			out.println("<td>" + "<form action=\'wishlist\' method=\'POST\'><input type=\'submit\' name=\'action\' value = \'Delete\'> <input type=\'hidden\' name=\'id\' value = \'" +  table.get(i).get(j++) + "\'> </FORM></td>");
-		}
-		out.println("</tr><br></table>");
+
+	out.println("<table><tr>");
+	for (String s : itemNames){
+		int ID = itemIDs.get(itemNames.indexOf(s));
+			out.println("<td>" +"<a href=\"itemDetails.jsp\" id=\"" + ID + "\">" + s + "</a>" + "</td>");
+			out.println("<tr>");
+			out.println("<td>" + "<form action=\'wishlist\' method=\'POST\'><input type=\'submit\' name=\'action\' value = \'Delete\'> <input type=\'hidden\' name=\'id\' value = \'" +  ID + "\'> </FORM></td>");
+			out.println("<tr>");
 	}
+	out.println("</tr><br></table>");
 %>
 
 

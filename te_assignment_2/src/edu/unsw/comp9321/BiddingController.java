@@ -427,8 +427,9 @@ public class BiddingController {
 		{
 			String strQuery = "select Halt from cast_db.Halted where Item_ID=?";
 			PreparedStatement ps = conn.prepareStatement(strQuery);
-			ResultSet rs = ps.executeQuery();
 			ps.setInt(1,Item_ID);
+			ResultSet rs = ps.executeQuery();
+
 
 			rs.next();
 			isHalted = (Integer.parseInt(rs.getString(1)) == 1) ? true : false;
@@ -457,6 +458,28 @@ public class BiddingController {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public String getItemName(int Item_ID){
+		String name = null;
+		
+		try
+		{
+			String strQuery = "select Name from cast_db.Items where Item_ID=?";
+			PreparedStatement ps = conn.prepareStatement(strQuery);
+			ps.setInt(1,Item_ID);
+			ResultSet rs = ps.executeQuery();
+
+			rs.next();
+			name = rs.getString(1);
+			
+			rs.close();
+			ps.close();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return name;
 	}
 	
 }
