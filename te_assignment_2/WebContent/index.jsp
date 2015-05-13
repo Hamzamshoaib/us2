@@ -24,6 +24,7 @@ ${message}
 <br>
 <p>Password: </p>
 <INPUT type="password" name="password">
+<br><br>
 <INPUT TYPE="submit" name="action" value="login">
 <INPUT TYPE="submit" name="action" value="register">
 

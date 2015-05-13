@@ -16,16 +16,16 @@
 <% 
 	String name = (String) session.getAttribute("username");
 	if (name == null){
-		response.sendRedirect("index.jsp");
 		session.invalidate();
+		response.sendRedirect("index.jsp");
 	}
 %>
 <a href="http://localhost:8080/te_assignment_2/additem.jsp">Add Item</a>
 <h1>Welcome ${username}</h1>
 Session ID: <%=session.getId()%>
-<FORM ACTION='detail.jsp'>
-	<input type="submit" value="detail">
-</FORM>
+<form action="logout.jsp">
+	<INPUT type="submit" value="logout">
+</form>
 <H1>Daily Auction</H1>
 Search for an item
 <FORM ACTION='itemresult' METHOD='GET'>
