@@ -138,15 +138,14 @@ public class UserController {
 	//Returns -1 if unverified
 	public int isBlocked(String username){
 		int isBlocked = -1;
-		
 		try
 		{
-			String strQuery = "select Verified FROM cast_db.Users where UserName=?";
+			String strQuery = "select Verified FROM cast_db.Users where UserName='" + username + "'";
 			PreparedStatement ps = conn.prepareStatement(strQuery);
 			ResultSet rs = ps.executeQuery();
 			
 			rs.next();
-			String verField = rs.getString(1);
+			String verField = rs.getString("Verified");
 			if (verField.equals("blocked")){
 				isBlocked = 1;
 			} else if (verField.equals("verified")){

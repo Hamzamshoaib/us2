@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class AdminController {
 	
@@ -16,8 +17,8 @@ public class AdminController {
 	public AdminController(){
 		conn = null;
 		url = "jdbc:derby://localhost:1527/cast;create=true";
-		dbUserName = "user";
-		dbPassword = "test";
+		dbUserName = "cast_db";
+		dbPassword = "hamza";
 		driver = "org.apache.derby.jdbc.ClientDriver";
 
 		try
@@ -40,14 +41,11 @@ public class AdminController {
 		
 		try
 		{
-			String strQuery = "update cast_db.Users SET Verified=?  WHERE UserName=?";
-			PreparedStatement ps = conn.prepareStatement(strQuery);
-			String banned = "blocked";
-			ps.setString(1,banned);
-			ps.setString(2,username);
-			
-			ps.executeUpdate();
-			ps.close();
+			Statement st = conn.createStatement();
+			String strQuery = new String();
+			strQuery = "update cast_db.Users SET Verified='blocked'  WHERE UserName='" + username + "'";
+			st.executeUpdate(strQuery);
+			st.close();
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -58,14 +56,11 @@ public class AdminController {
 		
 		try
 		{
-			String strQuery = "update cast_db.Users SET Verified=?  WHERE UserName=?";
-			PreparedStatement ps = conn.prepareStatement(strQuery);
-			String unban = "verified";
-			ps.setString(1,unban);
-			ps.setString(2,username);
-			
-			ps.executeUpdate();
-			ps.close();
+			Statement st = conn.createStatement();
+			String strQuery = new String();
+			strQuery = "update cast_db.Users SET Verified='verified'  WHERE UserName='" + username + "'";
+			st.executeUpdate(strQuery);
+			st.close();
 
 		} catch (SQLException e) {
 			e.printStackTrace();

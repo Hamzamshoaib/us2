@@ -72,7 +72,7 @@ public class Login extends HttpServlet {
 					}
 										
 				}
-				else if (verified.equals("block")){
+				else if (verified.equals("blocked")){
 					request.setAttribute("message", "Your Account has been Blocked by Admin");
 					request.getRequestDispatcher("error.jsp").forward(request, response);
 				}

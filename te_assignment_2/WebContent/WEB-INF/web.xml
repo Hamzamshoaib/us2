@@ -84,4 +84,14 @@
     <servlet-name>ItemDetails</servlet-name>
     <url-pattern>/itemdetails</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Block</display-name>
+    <servlet-name>Block</servlet-name>
+    <servlet-class>edu.unsw.comp9321.Block</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Block</servlet-name>
+    <url-pattern>/block</url-pattern>
+  </servlet-mapping>
 </web-app>

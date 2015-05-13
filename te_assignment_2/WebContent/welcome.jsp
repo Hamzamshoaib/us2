@@ -19,6 +19,9 @@
 		session.invalidate();
 		response.sendRedirect("index.jsp");
 	}
+	else if (name.equals("Admin")) {
+		response.sendRedirect("adminhome.jsp");
+	}
 %>
 <a href="http://localhost:8080/te_assignment_2/additem.jsp">Add Item</a>
 <h1>Welcome ${username}</h1>
