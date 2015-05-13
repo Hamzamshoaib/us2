@@ -51,7 +51,7 @@ CREATE TABLE cast_db.Halted (
 	PRIMARY KEY (Item_ID)
 );
 
-
+INSERT INTO cast_db.Users VALUES ('Admin', 'imadmin'', 'Admin', 'Te', 'dailyauctiondeals+hamza@gmail.com', 'Glenwood', '1992-04-24', 'verified');
 INSERT INTO cast_db.Users VALUES ('Hamza', 'password', 'Hamza', 'Shoaib', 'dailyauctiondeals+hamza@gmail.com', 'Glenwood', '1992-04-24', 'verified');
 INSERT INTO cast_db.Users VALUES ('Godlin', 'password', 'Godlin', 'Rajendran', 'dailyauctiondeals+godlin@gmail.com', 'Girraween', '1989-08-17', 'verified');
 INSERT INTO cast_db.Users VALUES ('Shariq', 'password', 'Shariq', 'Nabi', 'dailyauctiondeals+shariq@gmail.com', 'Bankstown', '1992-05-21', 'verified');

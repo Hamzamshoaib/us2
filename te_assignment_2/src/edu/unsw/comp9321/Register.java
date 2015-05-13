@@ -101,6 +101,8 @@ public class Register extends HttpServlet {
 					Email emailV = new Email();
 					emailV.sendVerifyEmail(email,session);
 					System.out.println("did something");
+					request.getRequestDispatcher("index.jsp").forward(request, response);
+					
 				}
 				st.close();
 			} catch (InstantiationException e) {
