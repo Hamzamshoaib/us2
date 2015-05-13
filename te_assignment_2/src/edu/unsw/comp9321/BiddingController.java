@@ -136,28 +136,48 @@ public class BiddingController {
 			PreparedStatement ps = conn.prepareStatement(strQuery);
 			ps.setInt(1,Item_ID);
 			ResultSet rs = ps.executeQuery();
+			Email email = new Email();
 			
 			rs.next();
 			String bidString = rs.getString(1);
-			int highestBid = Integer.parseInt(bidString);
-			rs.close();
 			
-			//If bid is valid then update, otherwise return 0
-			if (bid >= (highestBid + increment)){
-				strQuery = "update cast_db.BiddingPrice SET BidPrice=?  WHERE Item_ID =? AND UserName=?";
+			if(bidString != null){
 				
-				ps = conn.prepareStatement(strQuery);
-				ps.setInt(1,bid);
-				ps.setInt(2,Item_ID);
-				ps.setString(3, user);
-				ps.executeUpdate();
+				int highestBid = Integer.parseInt(bidString);
+				rs.close();
+				
+				//If bid is valid then update, otherwise return 0
+				if (bid >= (highestBid + increment)){
+					strQuery = "update cast_db.BiddingPrice SET BidPrice=?  WHERE Item_ID =? AND UserName=?";
+					
+					ps = conn.prepareStatement(strQuery);
+					ps.setInt(1,bid);
+					ps.setInt(2,Item_ID);
+					ps.setString(3, user);
+					ps.executeUpdate();
+					email.newBidEmails(Item_ID);
+				} else {
+					success = 0;
+				}
 			} else {
-				success = 0;
+				int startingBid = getStartingPrice(Item_ID);
+				
+				if (bid >= (startingBid + increment)){
+					strQuery = "insert into cast_db.BiddingPrice Values (?,?,?)";
+					UserController uc = new UserController();
+					
+					ps = conn.prepareStatement(strQuery);
+					ps.setInt(1,bid);
+					ps.setString(2,uc.getItemOwner(Item_ID));
+					ps.setInt(3, Item_ID);
+					ps.executeUpdate();
+					email.newBidEmails(Item_ID);
+				} else {
+					success = 0;
+				}
+				
 			}
-			
 			ps.close();
-			Email email = new Email();
-			email.newBidEmails(Item_ID);
 			return success; 
 			
 		} catch (SQLException e) {
