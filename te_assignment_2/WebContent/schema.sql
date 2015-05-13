@@ -1,4 +1,5 @@
 DROP TABLE cast_db.WishList;
+DROP TABLE cast_db.Halted;
 DROP TABLE cast_db.BiddingPrice;
 DROP TABLE cast_db.Items;
 DROP TABLE cast_db.Users;
