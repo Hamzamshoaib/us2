@@ -19,8 +19,8 @@ h1   {color:#000099}
 	if (name != null){
 		response.sendRedirect("welcome.jsp");
 	}
-	Notifications n = new Notifications();
-	n.acceptOffer(100, 10, "iphone");
+	//Notifications n = new Notifications();
+	//n.acceptOffer(100, 10, "iphone");
 %>
 ${message}
 

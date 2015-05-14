@@ -66,12 +66,13 @@ public class AddItem extends HttpServlet {
 			request.setAttribute("message", "Category Can Only Contain Letters!");
 			request.getRequestDispatcher("additem.jsp").forward(request, response);
 		}
-				
-		UserController uc = new UserController();
-		int itemID = uc.addItem(title,owner,description,category,picture,resprice,startprice,duration,address);
-		request.setAttribute("id", itemID);
-		request.getRequestDispatcher("/itemdetails").forward(request, response);
-				
+		else
+		{
+			UserController uc = new UserController();
+			int itemID = uc.addItem(title,owner,description,category,picture,resprice,startprice,duration,address);
+			request.setAttribute("id", itemID);
+			request.getRequestDispatcher("/itemdetails").forward(request, response);
+		}					
 	}
 		
 
