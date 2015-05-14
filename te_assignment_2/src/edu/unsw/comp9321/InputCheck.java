@@ -31,4 +31,10 @@ public class InputCheck {
 		}
 		return false;
 	}
+	public static boolean isURL (String url) {
+		if (Pattern.matches( ".+\\..+\\.com", url)) {
+			return true;
+		}
+		return false;
+	}
 }

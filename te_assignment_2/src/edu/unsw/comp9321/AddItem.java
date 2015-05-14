@@ -47,9 +47,28 @@ public class AddItem extends HttpServlet {
 		String address = request.getParameter("address");
 		String category = request.getParameter("category");
 //		System.out.println("connecting to database");
+		
+
+
+		if (!InputCheck.isURL(picture)) {
+			request.setAttribute("message", "Incorret URL");
+			request.getRequestDispatcher("additem.jsp").forward(request, response);
+		}
+		else if (!InputCheck.isNum(resprice)) {
+			request.setAttribute("message", "Reserve Price Can Only Contain Numbers");
+			request.getRequestDispatcher("additem.jsp").forward(request, response);
+		}	
+		else if (!InputCheck.isNum(startprice)) {
+			request.setAttribute("message", "Start Price Can Only Contain Numbers");
+			request.getRequestDispatcher("additem.jsp").forward(request, response);
+		}
+		else if (!InputCheck.isLetters(category)) {
+			request.setAttribute("message", "Category Can Only Contain Letters!");
+			request.getRequestDispatcher("additem.jsp").forward(request, response);
+		}
 				
 		UserController uc = new UserController();
-		uc.addItem(title,owner,description,category,picture,resprice,startprice,duration,address);
+		uc.addItem(title,owner,description,category,picture,resprice,startprice,duration, address);
 				
 	}
 		
