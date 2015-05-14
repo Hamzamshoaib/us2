@@ -277,5 +277,37 @@ public class UserController {
 		return done;
 	}
 	
+	public int addItem(String name, String owner, String desc, String category, String pic, String resp, String startp, String duration, String address){
+		int itemID = 0;
+		
+		try
+		{
+			String strQuery = "insert into cast_db.Items values (DEFAULT,?,?,?,?,?,?,?,?,DEFAULT,?)";
+			PreparedStatement ps = conn.prepareStatement(strQuery,PreparedStatement.RETURN_GENERATED_KEYS);
+			ps.setString(1,name);
+			ps.setString(2,owner);
+			ps.setString(3, desc);
+			ps.setString(4,category);
+			ps.setString(5,pic);
+			ps.setInt(6,Integer.parseInt(resp));
+			ps.setInt(7,Integer.parseInt(startp));
+			ps.setString(8, TimeController.setAuctTimer(Integer.parseInt(duration)));
+			ps.setString(9,address);
+			
+			ps.execute();
+			
+			ResultSet rs = ps.getGeneratedKeys();  
+		    rs.next();  
+			itemID = rs.getInt(1);  
+			
+			ps.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return itemID;
+		
+	}
+	
 }
 	
