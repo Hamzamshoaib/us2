@@ -48,7 +48,7 @@ public class BiddingController {
 		}
 	}
 	
-	public float getIncrement(){
+	public int getIncrement(){
 		return this.increment;
 	}
 	
@@ -411,7 +411,7 @@ public class BiddingController {
 			ps.setInt(1,Item_ID);
 			ps.setInt(2,1);
 
-			ps.executeUpdate();
+			ps.execute();
 			
 			ps.close();
 		} catch (SQLException e) {
