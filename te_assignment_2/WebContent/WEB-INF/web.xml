@@ -104,4 +104,14 @@
     <servlet-name>Halt</servlet-name>
     <url-pattern>/halt</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Edit</display-name>
+    <servlet-name>Edit</servlet-name>
+    <servlet-class>edu.unsw.comp9321.Edit</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Edit</servlet-name>
+    <url-pattern>/edit</url-pattern>
+  </servlet-mapping>
 </web-app>

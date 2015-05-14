@@ -20,12 +20,11 @@ p	 {color:#000099}
 <title>Welcome!</title>
 </head>
 <body>
-
+<a href="edit">Account</a>
 <!-- Code between the tags check whether a session exists or not -->
 <% 
 	String name = (String) session.getAttribute("username");
 	if (name == null){
-		session.invalidate();
 		response.sendRedirect("index.jsp");
 	}
 	else if (name.equals("Admin")) {
