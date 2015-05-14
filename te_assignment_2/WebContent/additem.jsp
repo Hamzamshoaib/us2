@@ -31,8 +31,8 @@ h1   {color:blue}
 		<br>
 		<p>Duration of Auction (In Minutes): </p>
 		<!--<INPUT type="text" name="duration">-->
-		<select>
-  		<option value="default">Default (10)</option>
+		<select name = "duration">
+  		<option value="10">Default (10)</option>
   		<%
   		int i = 3;
   		while (i <= 60)
