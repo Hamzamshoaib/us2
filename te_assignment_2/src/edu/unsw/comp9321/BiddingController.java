@@ -348,8 +348,8 @@ public class BiddingController {
 		{
 			String strQuery = "select StartingPrice from cast_db.Items where Item_ID=?";
 			PreparedStatement ps = conn.prepareStatement(strQuery);
-			ResultSet rs = ps.executeQuery();
 			ps.setInt(1,Item_ID);
+			ResultSet rs = ps.executeQuery();
 
 			rs.next();
 			retVal = Integer.parseInt(rs.getString(1));
