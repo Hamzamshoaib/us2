@@ -64,7 +64,6 @@ h1   {color:#000099}
 	{
 		out.println("<td> Reserve Price: " + table.get(0).get(6) + "</td><br>");
 	}
-	out.println("</tr>");
 	out.println("</table>");
 	
 	int Item_ID = Integer.parseInt(table.get(0).get(7));
