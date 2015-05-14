@@ -48,7 +48,7 @@ public class BiddingController {
 		}
 	}
 	
-	public float getIncrement(){
+	public int getIncrement(){
 		return this.increment;
 	}
 	
@@ -105,7 +105,7 @@ public class BiddingController {
 			while (rs.next()){
 				String bidString = rs.getString(1);
 				if(bidString == null){
-					winningBid = getStartingPrice(Item_ID);
+//					winningBid = getStartingPrice(Item_ID);
 				} else {
 					winningBid = Integer.parseInt(bidString);
 				}
@@ -348,8 +348,8 @@ public class BiddingController {
 		{
 			String strQuery = "select StartingPrice from cast_db.Items where Item_ID=?";
 			PreparedStatement ps = conn.prepareStatement(strQuery);
-			ResultSet rs = ps.executeQuery();
 			ps.setInt(1,Item_ID);
+			ResultSet rs = ps.executeQuery();
 
 			rs.next();
 			retVal = Integer.parseInt(rs.getString(1));
@@ -411,7 +411,7 @@ public class BiddingController {
 			ps.setInt(1,Item_ID);
 			ps.setInt(2,1);
 
-			ps.executeUpdate();
+			ps.execute();
 			
 			ps.close();
 		} catch (SQLException e) {

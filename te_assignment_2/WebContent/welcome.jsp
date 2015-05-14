@@ -31,6 +31,7 @@ p	 {color:#000099}
 		response.sendRedirect("adminhome.jsp");
 	}
 %>
+
 <p style="text-align:left;">
 	<a href="http://localhost:8080/te_assignment_2/additem.jsp">Add Item</a>
 	<span style="float:right;">Welcome ${username} </span>
@@ -38,6 +39,10 @@ p	 {color:#000099}
 <form action="logout.jsp" class=right>
 	<INPUT type="submit" value="logout">
 </form> 
+<form action='wishlist' method='POST'> 
+<input type='submit' name='action' value ='Wishlist'>
+</form>
+
 
 
 <!--  Session ID: <%=session.getId()%>-->

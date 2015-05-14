@@ -6,16 +6,37 @@
 <style>
 body {background-color:#F8F8F8}
 h1   {color:#000099}
+.right {
+    position: absolute;
+    right: 0px;
+}
+.left {
+    position: absolute;
+    left: 0px;
+}
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 <title>Daily Auction - Add Item</title>
 </head>
 <body>
-<a href=http://localhost:8080/te_assignment_2/index.jsp>Home</a>
-<h1>Add an Item for Auction</h1>
+<p style="text-align:left;">
+	<a href=http://localhost:8080/te_assignment_2/index.jsp>Home</a>
+	<span style="float:right;">Welcome ${username} </span>
+</p>
+<form action="logout.jsp" class=right>
+	<INPUT type="submit" value="logout">
+</form> 
+
+
+<CENTER>
+<h1>Daily Auction</h1>
+<h2>Add a Product to Sell</h2>
 	<FORM NAME="additem" ACTION="additem" METHOD="POST">
 		<p>Title: </p>
 		<INPUT type="text" name="title">
+		<br>
+		<p>Description: </p>
+		<INPUT type="text" name="category">
 		<br>
 		<p>Description: </p>
 		<INPUT type="text" name="description">
@@ -48,5 +69,6 @@ h1   {color:#000099}
 		<br>
 		<INPUT TYPE="submit" name="" value="Add Item">
 	</FORM>
+</CENTER>	
 </body>
 </html>
