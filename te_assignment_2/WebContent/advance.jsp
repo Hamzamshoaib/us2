@@ -24,7 +24,7 @@ h1   {color:#000099}
 </form> 
 
 <center>
-	<h1>Advance Search - Daily Auction</h1>
+	<h1>Daily Auction</h1>
 	<h2>Advance Search</h2>
 	<FORM ACTION='menu.jsp' METHOD='POST'>
 	<br>
