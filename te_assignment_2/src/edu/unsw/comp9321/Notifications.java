@@ -14,7 +14,7 @@ public class Notifications {
 		public String acceptOffer(int reserveprice, int offerprice, String itemname)  {
 			String message = "Offer of " + offerprice + " for item " + itemname + " is below you reserve price " + reserveprice;
 			String response = null;
-			JFrame frame = new JFrame("JOptionPane showMessageDialog example");
+			JFrame frame = new JFrame();
 			Object[] options = {"Decline",
 			"I Accept"};//
 			int n = JOptionPane.showOptionDialog(frame, message,"Accept or Reject",
@@ -35,7 +35,7 @@ public class Notifications {
 		}
 		
 		public void ok(String message) {
-			JFrame frame = new JFrame("JOptionPane showMessageDialog");
+			JFrame frame = new JFrame();
 			JOptionPane.showMessageDialog(frame, message);
 		}
 	}
