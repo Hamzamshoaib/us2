@@ -11,7 +11,7 @@ h1   {color:blue}
 <title>Admin - Home</title>
 </head>
 <body>
-<% 
+<%// 
 	String name = (String) session.getAttribute("username");
 	if (name == null){
 		response.sendRedirect("index.jsp");
