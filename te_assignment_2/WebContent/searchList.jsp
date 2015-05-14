@@ -11,15 +11,24 @@
 <style>
 body {background-color:#F8F8F8}
 h1   {color:#000099}
+.right {
+    position: absolute;
+    right: 0px;
+}
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Search Results</title>
 </head>
-<body>
-<a href=http://localhost:8080/te_assignment_2/index.jsp>Home</a>
+<p style="text-align:left;">
+	<a href=http://localhost:8080/te_assignment_2/index.jsp>Home</a>
+	<span style="float:right;">Welcome ${username} </span>
+</p>
+<form action="logout.jsp" class=right>
+	<INPUT type="submit" value="logout">
+</form> 
 <CENTER>
 <h1>Daily Auction</h1>
-Search for an item
+<h2>Product Search</h2>
 <FORM ACTION='itemresult' METHOD='GET'>
 <br>
 <INPUT type="text" name="searchItem">

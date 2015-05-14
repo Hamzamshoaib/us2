@@ -10,6 +10,10 @@ h1   {color:#000099}
     position: absolute;
     right: 0px;
 }
+.left {
+    position: absolute;
+    left: 0px;
+}
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 <title>Daily Auction - Add Item</title>
@@ -22,6 +26,7 @@ h1   {color:#000099}
 <form action="logout.jsp" class=right>
 	<INPUT type="submit" value="logout">
 </form> 
+
 
 <CENTER>
 <h1>Daily Auction</h1>

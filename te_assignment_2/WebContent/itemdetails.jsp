@@ -9,13 +9,25 @@
 <style>
 body {background-color:#F8F8F8}
 h1   {color:#000099}
+.right {
+    position: absolute;
+    right: 0px;
+}
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Item Details</title>
 </head>
 <body>
+<p style="text-align:left;">
+	<a href=http://localhost:8080/te_assignment_2/index.jsp>Home</a>
+	<span style="float:right;">Welcome ${username} </span>
+</p>
+<form action="logout.jsp" class=right>
+	<INPUT type="submit" value="logout">
+</form> 
+
 <center>
-<a href=http://localhost:8080/te_assignment_2/index.jsp>Home</a>
+<h1>Daily Auction</h1>
 <% 
 	String name = (String) session.getAttribute("username");
 	if (name == null){
@@ -36,7 +48,7 @@ h1   {color:#000099}
 	ReservePrice
 	*/
 	
-	out.println("<h1>" + table.get(0).get(0) + "</h1>");
+	out.println("<h2>" + table.get(0).get(0) + "</h2>");
 	out.println("<table>");
 	out.println("<tr><td>" + "<img src=\"" + table.get(0).get(1) + "\" width = \"150\" height = \"150px\">" + "</td></tr>");
 	out.println("<tr><td> Description: " + table.get(0).get(2) + "</td></tr>");
