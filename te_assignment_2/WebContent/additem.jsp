@@ -35,7 +35,7 @@ h1   {color:#000099}
 		<p>Title: </p>
 		<INPUT type="text" name="title">
 		<br>
-		<p>Description: </p>
+		<p>Category: </p>
 		<INPUT type="text" name="category">
 		<br>
 		<p>Description: </p>

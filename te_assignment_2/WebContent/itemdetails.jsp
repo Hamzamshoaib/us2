@@ -48,7 +48,6 @@ h1   {color:#000099}
 	ReservePrice
 	Item_ID
 	StartingPrice
-	Increments
 	*/
 	
 	out.println("<h2>" + table.get(0).get(0) + "</h2>");
@@ -68,12 +67,13 @@ h1   {color:#000099}
 	int Item_ID = Integer.parseInt(table.get(0).get(7));
 	//System.out.println(Item_ID);
 	BiddingController bc = new BiddingController();
-	int increment = (Integer) bc.getIncrement();
+	int increment = bc.getIncrement();
 	int highBid = bc.currentWinningBid(Item_ID);
 	if (highBid == -1)
 	{
 		out.println("<br><br><br><br>No Bids yet");
 		out.println("Starting price = " + table.get(0).get(8));
+		out.println("<br>Bidding Increment: " + increment);
 	}
 	else
 	{
@@ -82,6 +82,10 @@ h1   {color:#000099}
 		{
 			int result = bc.placeBid(name, Item_ID, Integer.parseInt(newBid));
 			// need to add checks if placeBid don't work
+			if (result == 1)
+			{
+				
+			}
 		}
 		out.println("<br><br><br><br>Current Winning Bid: " + bc.currentWinningBid(Item_ID)+ "<br>");
 		String Owner = table.get(0).get(4);

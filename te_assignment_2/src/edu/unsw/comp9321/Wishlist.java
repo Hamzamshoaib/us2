@@ -49,7 +49,7 @@ public class Wishlist extends HttpServlet {
 		String itemID;
 		int Item_ID = 0;
 		if ((itemID = request.getParameter("id")) != null){
-			Item_ID =  Integer.parseInt(request.getParameter(itemID));
+			Item_ID =  Integer.parseInt(itemID);
 		}
 		Connection conn = null;
 		String url = "jdbc:derby://localhost:1527/cast;create=true";

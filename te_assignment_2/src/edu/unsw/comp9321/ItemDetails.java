@@ -71,6 +71,8 @@ public class ItemDetails extends HttpServlet {
 			Owner
 			EndTime
 			ReservePrice
+			Item_ID
+			StartingPrice
 			*/
 			String strQuery = "select Name, Picture, Description, Category, Owner, EndTime, ReservePrice, Item_ID, StartingPrice FROM cast_db.Items where Item_ID = " + Item_ID;
 			//System.out.println(strQuery);
