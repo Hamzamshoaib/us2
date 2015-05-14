@@ -151,16 +151,21 @@ public class BiddingController {
 	//Returns -3 if auction is already done
 	//Returns -4 if auction is halted
 	public int placeBid(String user, int Item_ID, int bid){
+		int debug = 0;
+		System.out.println(user + " " + Item_ID +" " +  bid);
 		//Bids MUST be greater than 0
 		if (bid <= 0){
+			if (debug ==1) System.out.println("Bid less than 0");
 			return -1;
 		}
 		//can't bid if auction is done
 		if(isAuctionDone(Item_ID)){
+			if (debug ==1) System.out.println("Auction not done");
 			return -3;
 		}
 		//Ensure item isn't halted
 		if(isHalted(Item_ID)){
+			if (debug ==1) System.out.println("Item is halted");
 			return -4;
 		}
 		
@@ -169,9 +174,10 @@ public class BiddingController {
 			int success = 1;
 
 			//Check whether bid is valid
-			String strQuery = "select MAX(BidPrice) FROM cast_db.BiddingPrice where Item_ID =?";
+			String strQuery = "select MAX(BidPrice) FROM cast_db.BiddingPrice where Item_ID =? and UserName=?";
 			PreparedStatement ps = conn.prepareStatement(strQuery);
 			ps.setInt(1,Item_ID);
+			ps.setString(2,user);
 			ResultSet rs = ps.executeQuery();
 			Email email = new Email();
 			
@@ -179,7 +185,7 @@ public class BiddingController {
 			String bidString = rs.getString(1);
 			
 			if(bidString != null){
-				
+				if (debug ==1) System.out.println("Bid string is not null");
 				int highestBid = Integer.parseInt(bidString);
 				
 				//If bid is valid then update, otherwise return 0
@@ -192,13 +198,19 @@ public class BiddingController {
 					ps.setString(3, user);
 					ps.executeUpdate();
 					email.newBidEmails(Item_ID);
+					
+					if (debug ==1) System.out.println("Finished update biddingPrice");
 				} else {
 					success = 0;
 				}
 			} else {
+				if (debug ==1) System.out.println("BidPrice is null");
 				int startingBid = getStartingPrice(Item_ID);
-				
+				if (debug ==1) System.out.println("Starting bid ($"+ startingBid+") and increment");
 				if (bid >= (startingBid + increment)){
+					
+					if (debug ==1) System.out.println("Bid is greater than startingBid ("+ startingBid+") and increment");
+					
 					strQuery = "insert into cast_db.BiddingPrice Values (?,?,?)";
 //					UserController uc = new UserController();
 					
@@ -208,6 +220,7 @@ public class BiddingController {
 					ps.setInt(3, Item_ID);
 					
 					ps.execute();
+					if (debug ==1) System.out.println("Successfully executed insert into dbase");
 					email.newBidEmails(Item_ID);
 				} else {
 					success = 0;
