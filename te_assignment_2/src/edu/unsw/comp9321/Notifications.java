@@ -15,14 +15,14 @@ public class Notifications {
 			String message = "Offer of " + offerprice + " for item " + itemname + " is below you reserve price " + reserveprice;
 			String response = null;
 			JFrame frame = new JFrame("JOptionPane showMessageDialog example");
-			Object[] options = {"I Accept",
-			"Decline"};
+			Object[] options = {"Decline",
+			"I Accept"};
 			int n = JOptionPane.showOptionDialog(frame, message,"Accept or Reject",
 					JOptionPane.YES_NO_OPTION,
 					JOptionPane.QUESTION_MESSAGE,
 					null,     //do not use a custom Icon
 					options,  //the titles of buttons
-					options[1]); //default button title
+					options[0]); //default button title
 			////System.out.println(n);
 			if (n == 1) {
 				response = "accept";
@@ -33,7 +33,11 @@ public class Notifications {
 			System.out.println(response);
 			return response;
 		}
-
+		
+		public void ok(String message) {
+			JFrame frame = new JFrame("JOptionPane showMessageDialog");
+			JOptionPane.showMessageDialog(frame, message);
+		}
 	}
 
 //}
