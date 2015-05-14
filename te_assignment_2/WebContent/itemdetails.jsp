@@ -9,13 +9,25 @@
 <style>
 body {background-color:#F8F8F8}
 h1   {color:#000099}
+.right {
+    position: absolute;
+    right: 0px;
+}
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Item Details</title>
 </head>
 <body>
+<p style="text-align:left;">
+	<a href=http://localhost:8080/te_assignment_2/index.jsp>Home</a>
+	<span style="float:right;">Welcome ${username} </span>
+</p>
+<form action="logout.jsp" class=right>
+	<INPUT type="submit" value="logout">
+</form> 
+
 <center>
-<a href=http://localhost:8080/te_assignment_2/index.jsp>Home</a>
+<h1>Daily Auction</h1>
 <% 
 	String name = (String) session.getAttribute("username");
 	if (name == null){
@@ -34,9 +46,12 @@ h1   {color:#000099}
 	Owner
 	EndTime
 	ReservePrice
+	Item_ID
+	StartingPrice
+	Increments
 	*/
 	
-	out.println("<h1>" + table.get(0).get(0) + "</h1>");
+	out.println("<h2>" + table.get(0).get(0) + "</h2>");
 	out.println("<table>");
 	out.println("<tr><td>" + "<img src=\"" + table.get(0).get(1) + "\" width = \"150\" height = \"150px\">" + "</td></tr>");
 	out.println("<tr><td> Description: " + table.get(0).get(2) + "</td></tr>");
@@ -53,7 +68,7 @@ h1   {color:#000099}
 	int Item_ID = Integer.parseInt(table.get(0).get(7));
 	//System.out.println(Item_ID);
 	BiddingController bc = new BiddingController();
-	
+	int increment = (Integer) bc.getIncrement();
 	int highBid = bc.currentWinningBid(Item_ID);
 	if (highBid == -1)
 	{
@@ -70,14 +85,14 @@ h1   {color:#000099}
 		}
 		out.println("<br><br><br><br>Current Winning Bid: " + bc.currentWinningBid(Item_ID)+ "<br>");
 		String Owner = table.get(0).get(4);
-		//if (!(bc.isAuctionDone(Item_ID) || Owner.equals(name)))
-		//{
+		if (!(bc.isAuctionDone(Item_ID) || Owner.equals(name)))
+		{
 			out.println("Place Bid: <form action=\'itemdetails\' method=\'POST\'><input type=\"text\" name=\"bid\"><input type=\'hidden\' name=\'id\' value = \'" +  table.get(0).get(7) + "\'><input type=\'submit\' name=\'action\' value ='Place Bid'></FORM></td>");
-		//}
-		//else
-		//{
+		}
+		else
+		{
 			
-		//}
+		}
 	}
 	//out.println("");
 %>

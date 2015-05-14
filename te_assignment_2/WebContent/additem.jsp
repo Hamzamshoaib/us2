@@ -10,6 +10,10 @@ h1   {color:#000099}
     position: absolute;
     right: 0px;
 }
+.left {
+    position: absolute;
+    left: 0px;
+}
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 <title>Daily Auction - Add Item</title>
@@ -23,12 +27,16 @@ h1   {color:#000099}
 	<INPUT type="submit" value="logout">
 </form> 
 
+
 <CENTER>
 <h1>Daily Auction</h1>
 <h2>Add a Product to Sell</h2>
 	<FORM NAME="additem" ACTION="additem" METHOD="POST">
 		<p>Title: </p>
 		<INPUT type="text" name="title">
+		<br>
+		<p>Description: </p>
+		<INPUT type="text" name="category">
 		<br>
 		<p>Description: </p>
 		<INPUT type="text" name="description">

@@ -11,7 +11,13 @@ h1   {color:#000099}
 <title>Details</title>
 </head>
 <body>
-<a href=http://localhost:8080/te_assignment_2/index.jsp>Home</a>
+<p style="text-align:left;">
+	<a href=http://localhost:8080/te_assignment_2/index.jsp>Home</a>
+	<span style="float:right;">Welcome ${username} </span>
+</p>
+<form action="logout.jsp" class=right>
+	<INPUT type="submit" value="logout">
+</form> 
 <!-- Code between the tags check whether a session exists or not -->
 <% 
 	String name = (String) session.getAttribute("username");
