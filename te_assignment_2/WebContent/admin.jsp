@@ -1,3 +1,4 @@
+<%@page import="edu.unsw.comp9321.BiddingController"%>
 <%@page import="edu.unsw.comp9321.UserController"%>
 <%@ page language="java" contentType="text/html; charset=US-ASCII"
     pageEncoding="US-ASCII"%>
@@ -13,18 +14,26 @@ h1   {color:blue}
 <title>Thou Admin</title>
 </head>
 <body>
+<form action="index.jsp">
+	<INPUT type="submit" value="Home">
+</form>
 <% 
 	String name = (String) session.getAttribute("username");
 	if (name == null){
 		response.sendRedirect("index.jsp");
 	}
-	ArrayList<String> table = new ArrayList<String>();
+	
 	UserController uscontroller = new UserController();
+	BiddingController bidcontrol = new BiddingController();
 	String formDelegate = request.getParameter("action");
 	if ("Users".equals(formDelegate)){
+		ArrayList<String> table = new ArrayList<String>();
 		table = uscontroller.getAllUsernames();
 		//out.println("<table>");
 		for (int i = 0; i < table.size(); i++){
+			if ("Admin".equals(table.get(i))){
+				continue;
+			}
 			String val = "block";
 			String username = table.get(i);
 			if (uscontroller.isBlocked(username) == 1) {
@@ -37,16 +46,29 @@ h1   {color:blue}
 		}
 		//out.println("</table>");
 	} else if ("Items".equals(formDelegate)){
+		ArrayList<Integer> table = new ArrayList<Integer>();
 		table = uscontroller.getAllItems();
 		//out.println("<table>");
 		for (int i = 0; i < table.size(); i++){
 			String halt = "halt";
 			String delete = "delete";
+			
+			out.println("<table><tr>");
+			out.println("<td>" + "<img src=\"" + table.get(i) + "\" width = \"50\" height = \"50px\">" + "</td>");
+			out.println("<td>" + "<form action=\'itemdetails\' method=\'POST\'><input type=\'submit\' name=\'action\' value = \'" + uscontroller.getItemName(table.get(i)) +"\'> <input type=\'hidden\' name=\'id\' value = \'" +  table.get(i) + "\'> </FORM></td>");
+			if (!bidcontrol.isHalted(table.get(i))){
+				out.println("<td>" + "<form action=\'halt\' method=\'POST\'><input type=\'submit\' name=\'action\' value = \'" + "Halt" +"\'> <input type=\'hidden\' name=\'id\' value = \'" +  table.get(i) + "\'> </FORM></td>");
+			}
+			out.println("<td>" + "<form action=\'halt\' method=\'POST\'><input type=\'submit\' name=\'action\' value = \'" + "Delete" +"\'> <input type=\'hidden\' name=\'id\' value = \'" +  table.get(i) + "\'> </FORM></td>");
+			out.println("</tr><br></table>");
+			
+		/*	
+			
 			out.println("<table><tr>");
 			out.println("<td>" +"<a href=\"itemDetails.jsp\" id=\"" + i + "\">" + table.get(i) + "</a>" + "</td>");
 			out.println("<td>" + "<form action=\'halt\' method=\'POST\'>");
 			out.println("<input type=\'submit\' name=\'action\' value = \'Delete\'> <input type=\'hidden\' name=\'id\' value = \'" +  table.get(i) + "\'> </FORM></td>");
-			out.println("</tr><br>></table");
+			out.println("</tr><br>></table");*/
 		}
 		//out.println("</table>");
 	}

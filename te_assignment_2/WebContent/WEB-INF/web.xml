@@ -94,4 +94,14 @@
     <servlet-name>Block</servlet-name>
     <url-pattern>/block</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Halt</display-name>
+    <servlet-name>Halt</servlet-name>
+    <servlet-class>edu.unsw.comp9321.Halt</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Halt</servlet-name>
+    <url-pattern>/halt</url-pattern>
+  </servlet-mapping>
 </web-app>
