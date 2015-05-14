@@ -279,7 +279,7 @@ public class Email {
 		         message.setSubject(user + ", your item wasn't sold :(");
 		         // Now set the actual message
 		         message.setText("Hi!\n\n"
-		         		+ "Your item, " + itemName + ", has not had any bids and was not sold. :( <br><br>" 
+		         		+ "Your item, " + itemName + ", has not had any bids and was not sold. :( \n\n" 
 		         		+ "Log into your account and re-add if you want."
 		         		+ "\n\n"
 		         		+ "Daily Auction Deals Team :)");
