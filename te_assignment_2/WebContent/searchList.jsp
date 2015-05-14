@@ -9,8 +9,8 @@
 <html>
 <head>
 <style>
-body {background-color:lightgrey}
-h1   {color:blue}
+body {background-color:#F8F8F8}
+h1   {color:#000099}
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Search Results</title>
