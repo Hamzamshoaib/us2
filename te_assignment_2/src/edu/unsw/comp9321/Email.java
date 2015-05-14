@@ -260,6 +260,41 @@ public class Email {
 	      return true; 
 	}
 	
+	public Boolean itemNotSold(int Item_ID){
+		UserController uc = new UserController();
+		String user = uc.getItemOwner(Item_ID);
+		String to = uc.getEmail(user);
+		String itemName = uc.getItemName(Item_ID);
+	      try {
+		         // Create a default MimeMessage object.
+		         Message message = new MimeMessage(session);
+
+		         // Set From: header field of the header.
+		         message.setFrom(new InternetAddress(from));
+
+		         // Set To: header field of the header.
+		         message.setRecipients(Message.RecipientType.TO,
+		         InternetAddress.parse(to));
+		         // Set Subject: header field
+		         message.setSubject(user + ", your item wasn't sold :(");
+		         // Now set the actual message
+		         message.setText("Hi!\n\n"
+		         		+ "Your item, " + itemName + ", has not had any bids and was not sold. :( <br><br>" 
+		         		+ "Log into your account and re-add if you want."
+		         		+ "\n\n"
+		         		+ "Daily Auction Deals Team :)");
+
+		         // Send message
+		         Transport.send(message);
+
+		         System.out.println("Sent item not sold notification email successfully...");
+
+	      } catch (MessagingException e) {
+	    	  return false;
+	      }		
+	      return true; 
+	}
+	
 	public void newBidEmails(int Item_ID){
 		newHighBid(Item_ID);
 		sendLostBidEmail(Item_ID);
