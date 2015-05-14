@@ -16,7 +16,9 @@
 <form action="index.jsp">
 	<INPUT type="submit" value="Home">
 </form>
-<h1>Account Info</h1>
+<CENTER>
+<h1>Daily Auction</h1>
+<h2>Account Info</h2>
 ${session.getAttribute("username")}
 ${message}
 	<FORM NAME="registrationform" ACTION="edit" METHOD="POST">
@@ -39,5 +41,6 @@ ${message}
 		<br>
 		<INPUT TYPE="submit" name="" value="Save">
 	</FORM>
+	</CENTER>
 </body>
 </html>

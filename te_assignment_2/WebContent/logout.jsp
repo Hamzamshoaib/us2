@@ -26,7 +26,7 @@ h1   {color:#000099}
 </form>
 <CENTER>
 <h1>Daily Auction</h1>
-You have been logged out
+<p>You have been logged out</p>
 </CENTER>
 </body>
 </html>
