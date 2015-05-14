@@ -23,7 +23,7 @@ public class Notifications {
 					null,     //do not use a custom Icon
 					options,  //the titles of buttons
 					options[1]); //default button title
-			//System.out.println(n);
+			////System.out.println(n);
 			if (n == 1) {
 				response = "accept";
 			}
