@@ -18,6 +18,9 @@ h1   {color:#000099}
 <form action="logout.jsp" class=right>
 	<INPUT type="submit" value="logout">
 </form> 
+<form action='wishlist' method='POST'> 
+<input type='submit' name='action' value ='Wishlist'>
+</form>
 <!-- Code between the tags check whether a session exists or not -->
 <% 
 	String name = (String) session.getAttribute("username");
