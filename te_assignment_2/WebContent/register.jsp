@@ -11,12 +11,13 @@ h1   {color:#000099}
 <title>Daily Auction - Registration</title>
 </head>
 <body>
-<CENTER>
-<h1>Daily Auction</h1>
-<h2>User Registration</h2>
 <form action="index.jsp">
 	<INPUT type="submit" value="Home">
 </form>
+<CENTER>
+<h1>Daily Auction</h1>
+<h2>User Registration</h2>
+
 	<FORM NAME="registrationform" ACTION="register" METHOD="POST">
 		<br>
 		<p>UserName: </p>
