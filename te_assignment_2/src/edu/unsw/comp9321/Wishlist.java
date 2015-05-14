@@ -46,8 +46,11 @@ public class Wishlist extends HttpServlet {
 		//String Item_ID =  request.getParameter("Add to Wishlist");
 		String user = (String) request.getSession().getAttribute("username");
 		String formDelegate = request.getParameter("action");
-		int Item_ID =  Integer.parseInt(request.getParameter("id"));
-		
+		String itemID;
+		int Item_ID = 0;
+		if ((itemID = request.getParameter("id")) != null){
+			Item_ID =  Integer.parseInt(request.getParameter(itemID));
+		}
 		Connection conn = null;
 		String url = "jdbc:derby://localhost:1527/cast;create=true";
 		String dbUserName = "test";

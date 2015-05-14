@@ -32,6 +32,7 @@ p	 {color:#000099}
 		response.sendRedirect("adminhome.jsp");
 	}
 %>
+<form action='wishlist' method='POST'> <input type='submit' name='action' value ='Wishlist'></form>
 <p style="text-align:left;">
 	<a href="http://localhost:8080/te_assignment_2/additem.jsp">Add Item</a>
 	<span style="float:right;">Welcome ${username} </span>
