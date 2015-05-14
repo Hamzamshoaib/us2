@@ -16,7 +16,7 @@ public class Notifications {
 			String response = null;
 			JFrame frame = new JFrame("JOptionPane showMessageDialog example");
 			Object[] options = {"Decline",
-			"I Accept"};
+			"I Accept"};//
 			int n = JOptionPane.showOptionDialog(frame, message,"Accept or Reject",
 					JOptionPane.YES_NO_OPTION,
 					JOptionPane.QUESTION_MESSAGE,
