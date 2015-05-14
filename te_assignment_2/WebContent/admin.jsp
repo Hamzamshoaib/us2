@@ -33,7 +33,7 @@ h1   {color:#000099}
 		for (int i = 0; i < table.size(); i++){
 			if ("Admin".equals(table.get(i))){
 				continue;
-			}
+			}//
 			String val = "block";
 			String username = table.get(i);
 			if (uscontroller.isBlocked(username) == 1) {
