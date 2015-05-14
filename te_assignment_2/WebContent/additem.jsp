@@ -36,6 +36,9 @@ h1   {color:#000099}
 		<INPUT type="text" name="title">
 		<br>
 		<p>Description: </p>
+		<INPUT type="text" name="category">
+		<br>
+		<p>Description: </p>
 		<INPUT type="text" name="description">
 		<br>
 		<p>Picture (URL): </p>
