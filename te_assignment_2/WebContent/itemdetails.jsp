@@ -20,7 +20,7 @@ h1   {color:#000099}
 <body>
 <p style="text-align:left;">
 	<a href=http://localhost:8080/te_assignment_2/index.jsp>Home</a>
-	<span style="float:right;">Welcome ${username} </span>
+	<span style="float:right;"><a href="edit">Welcome ${username} </a></span>
 </p>
 <form action="logout.jsp" class=right>
 	<INPUT type="submit" value="logout">
