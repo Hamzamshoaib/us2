@@ -181,7 +181,6 @@ public class BiddingController {
 			if(bidString != null){
 				
 				int highestBid = Integer.parseInt(bidString);
-				rs.close();
 				
 				//If bid is valid then update, otherwise return 0
 				if (bid >= (highestBid + increment)){
@@ -201,12 +200,13 @@ public class BiddingController {
 				
 				if (bid >= (startingBid + increment)){
 					strQuery = "insert into cast_db.BiddingPrice Values (?,?,?)";
-					UserController uc = new UserController();
+//					UserController uc = new UserController();
 					
 					ps = conn.prepareStatement(strQuery);
 					ps.setInt(1,bid);
-					ps.setString(2,uc.getItemOwner(Item_ID));
+					ps.setString(2,user);
 					ps.setInt(3, Item_ID);
+					
 					ps.execute();
 					email.newBidEmails(Item_ID);
 				} else {
@@ -214,6 +214,7 @@ public class BiddingController {
 				}
 				
 			}
+			rs.close();
 			ps.close();
 			return success; 
 			
@@ -255,18 +256,19 @@ public class BiddingController {
 	}
 	
 	public String secondHighestBidder(int Item_ID){
-		String loser = new String();
+		String loser = null;
 		
 		try
 		{
-			String strQuery = "select UserName from cast_db.BiddingPrice where BidPrice=(select MAX(BidPrice) from cast_db.BiddingPrice where BidPrice < (select MAX(BidPrice) from cast_db.BiddingPrice where Item_ID=?))";
+			String strQuery = "select UserName from cast_db.BiddingPrice where BidPrice=(select MAX(BidPrice) from cast_db.BiddingPrice where BidPrice < (select MAX(BidPrice) from cast_db.BiddingPrice where Item_ID=?)) and Item_ID=?";
 			PreparedStatement ps = conn.prepareStatement(strQuery);
 			ps.setInt(1,Item_ID);
+			ps.setInt(2,Item_ID);
 			ResultSet rs = ps.executeQuery();
 
-			rs.next();
-			loser = rs.getString(1);
-			
+			while (rs.next()){
+				loser = rs.getString(1);
+			}
 			rs.close();
 			ps.close();
 			
@@ -315,8 +317,9 @@ public class BiddingController {
 			String strQuery = "select Item_ID, EndTime from cast_db.Items where Item_ID=?";
 			
 			PreparedStatement ps = conn.prepareStatement(strQuery);
-			ResultSet rs = ps.executeQuery();
 			ps.setInt(1,Item_ID);
+			ResultSet rs = ps.executeQuery();
+
 
 			SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");
 			Date rightNow = new Date();
@@ -429,16 +432,15 @@ public class BiddingController {
 			String strQuery = "select Halt from cast_db.Halted where Item_ID=?";
 			PreparedStatement ps = conn.prepareStatement(strQuery);
 			ps.setInt(1,Item_ID);
-			ResultSet rs = ps.executeQuery();
-
-
-			rs.next();
-			if (rs.getString(1) == null){
-				isHalted = false;
-			} else {
-				isHalted = true;
-			}
 			
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()){
+				if (rs.getInt(1) == 0){
+						isHalted = false;
+				} else {
+					isHalted = true;
+				}
+			}
 			rs.close();
 			ps.close();
 			

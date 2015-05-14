@@ -112,6 +112,11 @@ public class Email {
 		BiddingController bc = new BiddingController();
 		
 		String user = bc.secondHighestBidder(Item_ID);
+		if (user == null){
+			System.out.println("He was the only bidder");
+			return false;
+		}
+		
 		int highestBid = bc.currentWinningBid(Item_ID);
 		String to = uc.getEmail(user);
 		String itemName = uc.getItemName(Item_ID);
@@ -133,11 +138,11 @@ public class Email {
 		         		+ "The new highest bid is: $" + highestBid + "."
 		         		+ "\n\n"
 		         		+ "Daily Auction Deals Team :)");
-
+		         
 		         // Send message
-		         Transport.send(message);
-
-		         System.out.println("Sent Lost Bid Mail successfully...");
+			         Transport.send(message);
+	
+			         System.out.println("Sent Lost Bid Mail successfully...");
 
 	      } catch (MessagingException e) {
 	    	  return false;
