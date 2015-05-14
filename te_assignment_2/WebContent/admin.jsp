@@ -34,15 +34,17 @@
 		//out.println("</table>");
 	} else if ("Items".equals(formDelegate)){
 		table = uscontroller.getAllItems();
-		out.println("<table>");
-		for (int i = 0; i < table.size(); i++)
-		{
-				out.println("<tr>");
-				out.println("<td>" +"<a href=\"itemDetails.jsp\" id=\"" + i + "\">" + table.get(i) + "</a>" + "</td>");
-				out.println("<td>" + "<form action=\'wishlist\' method=\'POST\'><input type=\'submit\' name=\'action\' value = \'Delete\'> <input type=\'hidden\' name=\'id\' value = \'" +  table.get(i) + "\'> </FORM></td>");
-				out.println("</tr><br>");
+		//out.println("<table>");
+		for (int i = 0; i < table.size(); i++){
+			String halt = "halt";
+			String delete = "delete";
+			out.println("<table><tr>");
+			out.println("<td>" +"<a href=\"itemDetails.jsp\" id=\"" + i + "\">" + table.get(i) + "</a>" + "</td>");
+			out.println("<td>" + "<form action=\'halt\' method=\'POST\'>");
+			out.println("<input type=\'submit\' name=\'action\' value = \'Delete\'> <input type=\'hidden\' name=\'id\' value = \'" +  table.get(i) + "\'> </FORM></td>");
+			out.println("</tr><br>></table");
 		}
-		out.println("</table>");
+		//out.println("</table>");
 	}
 %>
 </body>

@@ -7,6 +7,12 @@
 <title>Admin - Home</title>
 </head>
 <body>
+<% 
+	String name = (String) session.getAttribute("username");
+	if (name == null){
+		response.sendRedirect("index.jsp");
+	}
+%>
 <form action="logout.jsp">
 	<INPUT type="submit" value="logout">
 </form>
