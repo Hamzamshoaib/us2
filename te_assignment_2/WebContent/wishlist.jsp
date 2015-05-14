@@ -46,9 +46,8 @@ h1   {color:#000099}
 		int ID = itemIDs.get(itemNames.indexOf(s));
 			out.println("<td>" + "<form action=\'itemdetails\' method=\'POST\'><input type=\'submit\' name=\'action\' value = \'" + s +"\'> <input type=\'hidden\' name=\'id\' value = \'" +  ID + "\'> </FORM></td>");
 			//out.println("<td>" +"<p>" + s + "<a>" + "</td>");
-			out.println("<tr>");
 			out.println("<td>" + "<form action=\'wishlist\' method=\'POST\'><input type=\'submit\' name=\'action\' value = \'Delete\'> <input type=\'hidden\' name=\'id\' value = \'" +  ID + "\'> </FORM></td>");
-			out.println("<tr>");
+			out.println("</tr>");
 	}
 	out.println("</tr><br></table>");
 %>
