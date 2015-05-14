@@ -25,13 +25,24 @@
 		<p>Starting Price: </p>
 		<INPUT type="text" name="startingprice">
 		<br>
-		<p>Duration (In Seconds): </p>
-		<INPUT type="text" name="duration">
+		<p>Duration of Auction (In Minutes): </p>
+		<!--<INPUT type="text" name="duration">-->
+		<select>
+  		<option value="default">Default (10)</option>
+  		<%
+  		int i = 3;
+  		while (i <= 60)
+  		{
+  			out.println("<option value=\"" + i + "\">"+ i +"</option>");
+  			i++;
+  		}
+  		%>
+		</select> 
 		<br>
 		<p>Address: </p>
 		<INPUT type="text" name="address">
 		<br>
-		<INPUT TYPE="submit" name="" value="Add">
+		<INPUT TYPE="submit" name="" value="Add Item">
 	</FORM>
 </body>
 </html>
