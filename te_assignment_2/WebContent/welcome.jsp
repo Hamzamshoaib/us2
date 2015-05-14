@@ -59,6 +59,22 @@ Product Search:
 </FORM><br>
 <a href="advance.jsp">Advanced Search</a><br>
 
+<%
+BiddingController bc = new BiddingController();
+Notifications notify = new Notifications();
+String ownerAction = request.getParameter("ownerAction");
+if (ownerAction != null)
+	if (ownerAction.equals("accept"))
+	{
+		bc.acceptOffer(Integer.parseInt(request.getParameter("id")));
+		notify.ok("Offer has been accepted");
+	}
+	else if (ownerAction.equals("reject"))
+	{
+		bc.rejectOffer(Integer.parseInt(request.getParameter("id")));
+		notify.ok("Offer has been rejected");
+	}
+%>
 </CENTER>
 </body>
 </html>

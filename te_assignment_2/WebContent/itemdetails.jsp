@@ -73,22 +73,35 @@ h1   {color:#000099}
 	String newBid = request.getParameter("bid");
 	if (newBid != null)
 	{
+		Notifications notify = new Notifications();
 		int result = bc.placeBid(name, Item_ID, Integer.parseInt(newBid));
 		// need to add checks if placeBid don't work
 		if (result == 1)
 		{
-			
+			notify.ok("Bid has been accepted");
+		}
+		else if (result == 0 || result == -1)
+		{
+			notify.ok("Bid has not been accepted. Bid is lower than increment.");
+		}
+		else if (result == -3)
+		{
+			notify.ok("Sorry, auction has finished.");	
+		}
+		else if (result == -4)
+		{
+			notify.ok("Auction has been halted. Contact Administrator!");
 		}
 	}
 	int highBid = bc.currentWinningBid(Item_ID);
 	if (highBid == -1)
 	{
-		out.println("<br><br><br><br>No Bids yet<br>");
+		out.println("<br><br><br><br><b>No Bids yet</b><br>");
 		out.println("Starting price = " + table.get(0).get(8) + "<br>");
 	}
 	else
 	{
-		out.println("<br><br><br><br>Current Bid: " + bc.currentWinningBid(Item_ID)+ "<br>");
+		out.println("<br><br><br><br><b>Current Winning Bid: " + bc.currentWinningBid(Item_ID)+ "</b><br>");
 	}
 	out.println("<br>Bidding Increment: " + increment);
 	
@@ -97,9 +110,11 @@ h1   {color:#000099}
 	{
 		out.println("<form action=\'itemdetails\' method=\'POST\'><input type=\"text\" name=\"bid\"><input type=\'hidden\' name=\'id\' value = \'" +  table.get(0).get(7) + "\'><input type=\'submit\' name=\'action\' value ='Place Bid'></FORM>");
 	}
-	else
+	else if ((bc.isAuctionDone(Item_ID) && Owner.equals(name) && bc.bidLessThanReserved(Item_ID)))
 	{
-		// du hello
+		out.println("<form action=\'welcome.jsp\' method=\'POST\'><input type=\'hidden\' name=\'ownerAction\' value = \'accept\'><input type=\'hidden\' name=\'id\' value = \'" +  table.get(0).get(7) + "\'><input type=\'submit\' name=\'action\' value ='Accept'></FORM>");
+		out.println("<br>");
+		out.println("<form action=\'welcome.jsp\' method=\'POST\'><input type=\'hidden\' name=\'ownerAction\' value = \'reject\'><input type=\'hidden\' name=\'id\' value = \'" +  table.get(0).get(7) + "\'><input type=\'submit\' name=\'action\' value ='Reject Bid'></FORM>");
 	}
 %>
 </center>

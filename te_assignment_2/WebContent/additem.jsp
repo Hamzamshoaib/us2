@@ -41,7 +41,7 @@ h1   {color:#000099}
 		<p>Description: </p>
 		<INPUT type="text" name="description">
 		<br>
-		<p>Picture (URL): </p>
+		<p>Picture (URL: only accepts .png .jpeg and .jpg): </p>
 		<INPUT type="text" name="picture">
 		<br>
 		<p>Reserve Price: </p>
