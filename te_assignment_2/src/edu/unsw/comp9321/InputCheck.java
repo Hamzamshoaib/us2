@@ -32,7 +32,13 @@ public class InputCheck {
 		return false;
 	}
 	public static boolean isURL (String url) {
-		if (Pattern.matches( ".+\\..+\\.com", url)) {
+		if (Pattern.matches( ".+\\..+\\.png", url)) {
+			return true;
+		}
+		if (Pattern.matches( ".+\\..+\\.jpg", url)) {
+			return true;
+		}
+		if (Pattern.matches( ".+\\..+\\.jpeg", url)) {
 			return true;
 		}
 		return false;
