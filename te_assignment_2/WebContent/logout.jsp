@@ -25,5 +25,9 @@ You have been logged out
 <form action="index.jsp">
 	<INPUT type="submit" value="Home">
 </form>
+<CENTER>
+<h1>Daily Auction</h1>
+You have been logged out
+</CENTER>
 </body>
 </html>
