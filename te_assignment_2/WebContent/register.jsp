@@ -2,10 +2,14 @@
     pageEncoding="US-ASCII"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-		<title>Daily Auction - Registration</title>
-	</head>
+<head>
+<style>
+body {background-color:lightgrey}
+h1   {color:blue}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>Daily Auction - Registration</title>
+</head>
 <body>
 <h1>User Registration</h1>
 	<FORM NAME="registrationform" ACTION="register" METHOD="POST">

@@ -5,6 +5,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<style>
+body {background-color:lightgrey}
+h1   {color:blue}
+</style>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 <title>Thou Admin</title>
 </head>
@@ -34,15 +38,17 @@
 		//out.println("</table>");
 	} else if ("Items".equals(formDelegate)){
 		table = uscontroller.getAllItems();
-		out.println("<table>");
-		for (int i = 0; i < table.size(); i++)
-		{
-				out.println("<tr>");
-				out.println("<td>" +"<a href=\"itemDetails.jsp\" id=\"" + i + "\">" + table.get(i) + "</a>" + "</td>");
-				out.println("<td>" + "<form action=\'wishlist\' method=\'POST\'><input type=\'submit\' name=\'action\' value = \'Delete\'> <input type=\'hidden\' name=\'id\' value = \'" +  table.get(i) + "\'> </FORM></td>");
-				out.println("</tr><br>");
+		//out.println("<table>");
+		for (int i = 0; i < table.size(); i++){
+			String halt = "halt";
+			String delete = "delete";
+			out.println("<table><tr>");
+			out.println("<td>" +"<a href=\"itemDetails.jsp\" id=\"" + i + "\">" + table.get(i) + "</a>" + "</td>");
+			out.println("<td>" + "<form action=\'halt\' method=\'POST\'>");
+			out.println("<input type=\'submit\' name=\'action\' value = \'Delete\'> <input type=\'hidden\' name=\'id\' value = \'" +  table.get(i) + "\'> </FORM></td>");
+			out.println("</tr><br>></table");
 		}
-		out.println("</table>");
+		//out.println("</table>");
 	}
 %>
 </body>
