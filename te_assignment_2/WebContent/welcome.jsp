@@ -10,12 +10,17 @@
 <style>
 body {background-color:#F8F8F8}
 h1   {color:#000099}
+p	 {color:#000099}
+.right {
+    position: absolute;
+    right: 0px;
+}
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Welcome!</title>
 </head>
 <body>
-<CENTER>
+
 <!-- Code between the tags check whether a session exists or not -->
 <% 
 	String name = (String) session.getAttribute("username");
@@ -27,14 +32,21 @@ h1   {color:#000099}
 		response.sendRedirect("adminhome.jsp");
 	}
 %>
-<a href="http://localhost:8080/te_assignment_2/additem.jsp">Add Item</a>
-<h1>Welcome ${username}</h1>
-Session ID: <%=session.getId()%>
-<form action="logout.jsp">
+<p style="text-align:left;">
+	<a href="http://localhost:8080/te_assignment_2/additem.jsp">Add Item</a>
+	<span style="float:right;">Welcome ${username} </span>
+</p>
+<form action="logout.jsp" class=right>
 	<INPUT type="submit" value="logout">
-</form>
+</form> 
+
+
+<!--  Session ID: <%=session.getId()%>-->
+
+
+<CENTER>
 <H1>Daily Auction</H1>
-Search for an item
+Product Search:
 <FORM ACTION='itemresult' METHOD='GET'>
 <br>
 <INPUT type="text" name="searchItem">
