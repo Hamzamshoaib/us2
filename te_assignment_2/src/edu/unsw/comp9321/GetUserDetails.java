@@ -14,7 +14,7 @@ public class GetUserDetails {
 	String dbUserName;
 	String dbPassword;
 	String driver;
-	//
+	
 	public GetUserDetails(){
 		conn = null;
 		url = "jdbc:derby://localhost:1527/cast;create=true";
