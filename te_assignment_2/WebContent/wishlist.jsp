@@ -9,14 +9,25 @@
 <style>
 body {background-color:#F8F8F8}
 h1   {color:#000099}
+.right {
+    position: absolute;
+    right: 0px;
+}
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Wishlist</title>
 </head>
 <body>
-<a href=http://localhost:8080/te_assignment_2/index.jsp>Home</a>
+<p style="text-align:left;">
+	<a href=http://localhost:8080/te_assignment_2/index.jsp>Home</a>
+	<span style="float:right;">Welcome ${username} </span>
+</p>
+<form action="logout.jsp" class=right>
+	<INPUT type="submit" value="logout">
+</form> 
 <center>
-<h1>Wishlist</h1>
+<h1>Daily Auction</h1>
+<h2>Wishlist</h2>
 <!-- Code between the tags check whether a session exists or not -->
 <% 
 	String name = (String) session.getAttribute("username");
