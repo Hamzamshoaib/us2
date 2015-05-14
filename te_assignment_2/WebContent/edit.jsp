@@ -13,6 +13,9 @@
 		response.sendRedirect("index.jsp");
 	}
 %>
+<form action="index.jsp">
+	<INPUT type="submit" value="Home">
+</form>
 <h1>Account Info</h1>
 ${session.getAttribute("username")}
 	<FORM NAME="registrationform" ACTION="edit" METHOD="POST">

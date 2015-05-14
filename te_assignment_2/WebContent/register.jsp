@@ -12,6 +12,9 @@ h1   {color:#000099}
 </head>
 <body>
 <h1>User Registration</h1>
+<form action="index.jsp">
+	<INPUT type="submit" value="Home">
+</form>
 	<FORM NAME="registrationform" ACTION="register" METHOD="POST">
 		<br>
 		<p>UserName: </p>
