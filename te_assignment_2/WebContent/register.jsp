@@ -11,7 +11,9 @@ h1   {color:#000099}
 <title>Daily Auction - Registration</title>
 </head>
 <body>
-<h1>User Registration</h1>
+<CENTER>
+<h1>Daily Auction</h1>
+<h2>User Registration</h2>
 <form action="index.jsp">
 	<INPUT type="submit" value="Home">
 </form>
@@ -46,5 +48,6 @@ h1   {color:#000099}
 		<br>
 		<INPUT TYPE="submit" name="" value="Register">
 	</FORM>
+	</CENTER>
 </body>
 </html>
