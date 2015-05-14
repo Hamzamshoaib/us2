@@ -71,26 +71,32 @@ h1   {color:#000099}
 	BiddingController bc = new BiddingController();
 	int increment = bc.getIncrement();
 	String newBid = request.getParameter("bid");
-	if (newBid != null)
-	{
+	if (!InputCheck.isNum(newBid) && newBid != null) {
 		Notifications notify = new Notifications();
-		int result = bc.placeBid(name, Item_ID, Integer.parseInt(newBid));
-		// need to add checks if placeBid don't work
-		if (result == 1)
+		notify.ok("Please Enter Numbers for Bidding");
+	}
+	else {
+		if (newBid != null)
 		{
-			notify.ok("Bid has been accepted");
-		}
-		else if (result == 0 || result == -1)
-		{
-			notify.ok("Bid has not been accepted. Bid is lower than increment.");
-		}
-		else if (result == -3)
-		{
-			notify.ok("Sorry, auction has finished.");	
-		}
-		else if (result == -4)
-		{
-			notify.ok("Auction has been halted. Contact Administrator!");
+			Notifications notify = new Notifications();
+			int result = bc.placeBid(name, Item_ID, Integer.parseInt(newBid));
+			// need to add checks if placeBid don't work
+			if (result == 1)
+			{
+				notify.ok("Bid has been accepted");
+			}
+			else if (result == 0 || result == -1)
+			{
+				notify.ok("Bid has not been accepted. Bid is lower than increment.");
+			}
+			else if (result == -3)
+			{
+				notify.ok("Sorry, auction has finished.");	
+			}
+			else if (result == -4)
+			{
+				notify.ok("Auction has been halted. Contact Administrator!");
+			}
 		}
 	}
 	int highBid = bc.currentWinningBid(Item_ID);
