@@ -29,7 +29,7 @@ h1   {color:#000099}
 <center>
 	<h1>Daily Auction</h1>
 	<h2>Advance Search</h2>
-	<FORM ACTION='menu.jsp' METHOD='POST'>
+	<FORM ACTION='advancesearch' METHOD='POST'>
 	<br>
 	Title: <INPUT type="text" name="heading">
 	<br>

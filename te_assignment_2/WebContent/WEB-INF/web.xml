@@ -114,4 +114,14 @@
     <servlet-name>Edit</servlet-name>
     <url-pattern>/edit</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AdvanceSearch</display-name>
+    <servlet-name>AdvanceSearch</servlet-name>
+    <servlet-class>edu.unsw.comp9321.AdvanceSearch</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdvanceSearch</servlet-name>
+    <url-pattern>/advancesearch</url-pattern>
+  </servlet-mapping>
 </web-app>
