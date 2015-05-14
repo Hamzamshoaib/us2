@@ -105,7 +105,7 @@ public class BiddingController {
 			while (rs.next()){
 				String bidString = rs.getString(1);
 				if(bidString == null){
-					winningBid = getStartingPrice(Item_ID);
+//					winningBid = getStartingPrice(Item_ID);
 				} else {
 					winningBid = Integer.parseInt(bidString);
 				}
