@@ -46,7 +46,6 @@ public class AdvanceSearch extends HttpServlet {
 		String search = request.getParameter("heading").toLowerCase();
 		String category = request.getParameter("category").toLowerCase();
 		String description = request.getParameter("description").toLowerCase();
-		System.out.println(search + category + description);
 		
 		Connection conn = null;
 		String url = "jdbc:derby://localhost:1527/cast;create=true";
