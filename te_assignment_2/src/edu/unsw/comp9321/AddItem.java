@@ -3,6 +3,7 @@ package edu.unsw.comp9321;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -59,11 +60,18 @@ public class AddItem extends HttpServlet {
 				conn = DriverManager.getConnection(url, dbUserName, dbPassword);
 				Statement st = conn.createStatement();
 				//String strQuery = "select * from Users where UserName='" + un +"' and  Password='" + pw + "'";
-				String strQuery = "INSERT INTO cast_db.Items(Name, Owner, Description, Picture, ReservePrice, StartingPrice, Duration, Address) "
+				String strQuery = "INSERT INTO cast_db.Items(Name, Owner, Description, Picture, ReservePrice, StartingPrice, EndTime, Address) "
 						+ "VALUES('" + title +"','" + owner + "','" + description + "','" 
-						+ picture + "'," + resprice + "," + startprice + "," + duration + ",'" + address + "')";
+						+ picture + "'," + resprice + "," + startprice + ",'1','" + address + "')";
+				//strquery = insert into db values ( DEFAULT,macbook,`...)
+				// ps.executeupdate(strquery,result.getgeneratedkeys)
+				//rs.next()
 				System.out.println(strQuery);
 				st.executeUpdate(strQuery);
+				strQuery = "SELECT TOP 1 Item_ID FROM cast_db.Items ORDER BY Item_ID DESC;"; // gets the last 
+				ResultSet rs = st.executeQuery(strQuery);
+				BiddingController bc = new BiddingController();
+				bc.setAuctionTime(rs.getInt(1), Integer.parseInt(duration));
 				System.out.println("did something");
 				/*ResultSet rs = st.executeQuery(strQuery);
 				if (rs.next()) {
