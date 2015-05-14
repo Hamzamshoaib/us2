@@ -52,19 +52,38 @@ public class Edit extends HttpServlet {
 		String lastname = request.getParameter("lastname");
 		String email = request.getParameter("email");
 		String address = request.getParameter("address");
+		int error = 0;
+		if (!InputCheck.isLetters(firstname)) {
+			request.setAttribute("message", "FirstName Can Only Contain Letters");
+			//request.getRequestDispatcher("index.jsp").forward(request, response);
+			error = 1;
+		}
+		else if (!InputCheck.isLetters(lastname)) {
+			request.setAttribute("message", "LastName Can Only Contain Letters");
+			//request.getRequestDispatcher("index.jsp").forward(request, response);
+			error = 1;
+		}
+		else if (!InputCheck.isEmail(email)) {
+			request.setAttribute("message", "Email Format is Incorrect!");
+			//request.getRequestDispatcher("index.jsp").forward(request, response);
+			error = 1;
+		}
+			
+		if (error == 0) {
+			uscontrol.updatePassword(username, pw);
+			uscontrol.updateEmail(username, email);
+			uscontrol.updateFirstName(username, firstname);
+			uscontrol.updateLastName(username, lastname);
+			uscontrol.updateAddress(username, address);
+
+			request.setAttribute("password", pw);
+			request.setAttribute("firstname", firstname);
+			request.setAttribute("lastname", lastname);
+			request.setAttribute("email", email);
+			request.setAttribute("address", address);
+		}
 		
-		uscontrol.updatePassword(username, pw);
-		uscontrol.updateEmail(username, email);
-		uscontrol.updateFirstName(username, firstname);
-		uscontrol.updateLastName(username, lastname);
-		uscontrol.updateAddress(username, address);
-		
-		request.setAttribute("password", pw);
-		request.setAttribute("firstname", firstname);
-		request.setAttribute("lastname", lastname);
-		request.setAttribute("email", email);
-		request.setAttribute("address", address);
-		request.getRequestDispatcher("edit.jsp").forward(request, response);
+		request.getRequestDispatcher("welcome.jsp").forward(request, response);
 	}
 
 }

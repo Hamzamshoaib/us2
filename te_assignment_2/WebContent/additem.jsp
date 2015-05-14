@@ -19,7 +19,6 @@ h1   {color:#000099}
 <title>Daily Auction - Add Item</title>
 </head>
 <body>
-${message}
 <p style="text-align:left;">
 	<a href=http://localhost:8080/te_assignment_2/index.jsp>Home</a>
 	<span style="float:right;"><a href="edit">Welcome ${username} </a></span>

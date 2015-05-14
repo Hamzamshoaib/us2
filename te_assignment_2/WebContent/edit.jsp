@@ -18,6 +18,7 @@
 </form>
 <h1>Account Info</h1>
 ${session.getAttribute("username")}
+${message}
 	<FORM NAME="registrationform" ACTION="edit" METHOD="POST">
 		<br>
 		<p>UserName:  <% String user = (String) session.getAttribute("username"); out.println(user); %></p>

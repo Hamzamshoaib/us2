@@ -20,6 +20,7 @@ p	 {color:#000099}
 <title>Welcome!</title>
 </head>
 <body>
+${message}
 <!-- Code between the tags check whether a session exists or not -->
 <% 
 	String name = (String) session.getAttribute("username");
