@@ -52,9 +52,9 @@ h1   {color:#000099}
 		for (int i = 0; i < table.size(); i++){
 			String halt = "halt";
 			String delete = "delete";
-			
+			int itemid = table.get(i);
 			out.println("<table><tr>");
-			out.println("<td>" + "<img src=\"" + table.get(i) + "\" width = \"50\" height = \"50px\">" + "</td>");
+			out.println("<td>" + "<img src=\"" + uscontroller.geturl(itemid) + "\" width = \"50\" height = \"50px\">" + "</td>");
 			out.println("<td>" + "<form action=\'itemdetails\' method=\'POST\'><input type=\'submit\' name=\'action\' value = \'" + uscontroller.getItemName(table.get(i)) +"\'> <input type=\'hidden\' name=\'id\' value = \'" +  table.get(i) + "\'> </FORM></td>");
 			if (!bidcontrol.isHalted(table.get(i))){
 				out.println("<td>" + "<form action=\'halt\' method=\'POST\'><input type=\'submit\' name=\'action\' value = \'" + "Halt" +"\'> <input type=\'hidden\' name=\'id\' value = \'" +  table.get(i) + "\'> </FORM></td>");

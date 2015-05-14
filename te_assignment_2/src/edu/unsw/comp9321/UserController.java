@@ -83,7 +83,27 @@ public class UserController {
 		return itemName;
 	}
 	
-	
+	public String geturl(int item_ID){
+		String itemurl = new String();
+		
+		try
+		{
+			
+			String strQuery = "select Picture FROM cast_db.Items where Item_ID=?";
+			PreparedStatement ps = conn.prepareStatement(strQuery);
+			ps.setInt(1,item_ID);
+			
+			ResultSet rs = ps.executeQuery();
+			rs.next();
+			itemurl = rs.getString(1);
+
+			rs.close();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return itemurl;
+	}
 	
 	//get list of users
 	//get everyone's status
