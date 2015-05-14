@@ -68,7 +68,9 @@ public class AddItem extends HttpServlet {
 		}
 				
 		UserController uc = new UserController();
-		uc.addItem(title,owner,description,category,picture,resprice,startprice,duration, address);
+		int itemID = uc.addItem(title,owner,description,category,picture,resprice,startprice,duration,address);
+		request.setAttribute("id", itemID);
+		request.getRequestDispatcher("/itemdetails").forward(request, response);
 				
 	}
 		

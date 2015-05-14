@@ -91,17 +91,16 @@ h1   {color:#000099}
 			}
 		}
 		out.println("<br><br><br><br>Current Winning Bid: " + bc.currentWinningBid(Item_ID)+ "<br>");
-		String Owner = table.get(0).get(4);
-		if (!(bc.isAuctionDone(Item_ID) || Owner.equals(name)))
-		{
-			out.println("Place Bid: <form action=\'itemdetails\' method=\'POST\'><input type=\"text\" name=\"bid\"><input type=\'hidden\' name=\'id\' value = \'" +  table.get(0).get(7) + "\'><input type=\'submit\' name=\'action\' value ='Place Bid'></FORM></td>");
-		}
-		else
-		{
-			
-		}
 	}
-	//out.println("");
+	String Owner = table.get(0).get(4);
+	if (!(bc.isAuctionDone(Item_ID) || Owner.equals(name)))
+	{
+		out.println("Place Bid: <form action=\'itemdetails\' method=\'POST\'><input type=\"text\" name=\"bid\"><input type=\'hidden\' name=\'id\' value = \'" +  table.get(0).get(7) + "\'><input type=\'submit\' name=\'action\' value ='Place Bid'></FORM></td>");
+	}
+	else
+	{
+		// du hello
+	}
 %>
 </center>
 </body>
