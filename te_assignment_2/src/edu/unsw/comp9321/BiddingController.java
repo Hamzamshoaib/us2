@@ -207,7 +207,7 @@ public class BiddingController {
 					ps.setInt(1,bid);
 					ps.setString(2,uc.getItemOwner(Item_ID));
 					ps.setInt(3, Item_ID);
-					ps.executeUpdate();
+					ps.execute();
 					email.newBidEmails(Item_ID);
 				} else {
 					success = 0;
@@ -406,10 +406,11 @@ public class BiddingController {
 		
 		try
 		{
-			String strQuery = "update cast_db.Halted SET Halt=?  WHERE Item_ID=?";
+			String strQuery = "insert into cast_db.Halted values (?,?)";
 			PreparedStatement ps = conn.prepareStatement(strQuery);
-			ps.setInt(1,1);
-			ps.setInt(2,Item_ID);
+			ps.setInt(1,Item_ID);
+			ps.setInt(2,1);
+
 			ps.executeUpdate();
 			
 			ps.close();
@@ -432,7 +433,11 @@ public class BiddingController {
 
 
 			rs.next();
-			isHalted = (Integer.parseInt(rs.getString(1)) == 1) ? true : false;
+			if (rs.getString(1) == null){
+				isHalted = false;
+			} else {
+				isHalted = true;
+			}
 			
 			rs.close();
 			ps.close();
