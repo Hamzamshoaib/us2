@@ -68,8 +68,7 @@ public class AddItem extends HttpServlet {
 		}
 				
 		UserController uc = new UserController();
-		uc.addItem(title,owner,description,category,picture,resprice,startprice,duration, address);
-		response.sendRedirect("welcome.jsp");
+
 				
 	}
 		

@@ -43,14 +43,17 @@ public class ItemDetails extends HttpServlet {
 			response.sendRedirect("index.jsp");
 			request.getSession().invalidate();
 		}
-		int Item_ID =  Integer.parseInt(request.getParameter("id"));
 		
-//		//sets new bid price if there is a bid made
-//		if (request.getParameter("bid") != null)
-//		{
-//			System.out.println(request.getParameter("bid"));
-//			request.setAttribute("newBid", request.getParameter("bids"));
-//		}
+		String itemID = request.getParameter("id");
+		int Item_ID = 0;
+		if (itemID != null)
+		{
+			Item_ID = Integer.parseInt(itemID);
+		}
+		else
+		{
+			Item_ID = (Integer) request.getAttribute("id");
+		}
 		
 		Connection conn = null;
 		String url = "jdbc:derby://localhost:1527/cast;create=true";
