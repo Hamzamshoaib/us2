@@ -110,17 +110,17 @@ public class UserController {
 		return allUsers;
 	}
 	
-	public ArrayList<String> getAllItems(){
-		ArrayList<String> allItems = new ArrayList<String>();
+	public ArrayList<Integer> getAllItems(){
+		ArrayList<Integer> allItems = new ArrayList<Integer>();
 		
 		try
 		{
-			String strQuery = "select Name FROM cast_db.Items";
+			String strQuery = "select Item_ID FROM cast_db.Items";
 			PreparedStatement ps = conn.prepareStatement(strQuery);
 			ResultSet rs = ps.executeQuery();
 			
-			while (rs.next()){
-				allItems.add(rs.getString(1));
+			while (rs.next() && (rs.getInt(1) != 0)){
+				allItems.add(rs.getInt(1));
 			}
 
 			rs.close();
