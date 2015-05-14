@@ -21,7 +21,6 @@ h1   {color:#000099}
 	}
 %>
     <% session.invalidate(); %>
-You have been logged out
 <form action="index.jsp">
 	<INPUT type="submit" value="Home">
 </form>
