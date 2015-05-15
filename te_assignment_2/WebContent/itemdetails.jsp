@@ -25,7 +25,7 @@ h1   {color:#000099}
 <form action="logout.jsp" class=right>
 	<INPUT type="submit" value="logout">
 </form> 
-<form action='wishlist' method='POST'> 
+<form action='wishlist' method='GET'> 
 <input type='submit' name='action' value ='Wishlist'>
 </form>
 
@@ -114,7 +114,7 @@ h1   {color:#000099}
 	String Owner = table.get(0).get(4);
 	if (!(bc.isAuctionDone(Item_ID) || Owner.equals(name)))
 	{
-		out.println("<form action=\'itemdetails\' method=\'POST\'><input type=\"text\" name=\"bid\"><input type=\'hidden\' name=\'id\' value = \'" +  table.get(0).get(7) + "\'><input type=\'submit\' name=\'action\' value ='Place Bid'></FORM>");
+		out.println("<form action=\'itemdetails\' method=\'GET\'><input type=\"text\" name=\"bid\"><input type=\'hidden\' name=\'id\' value = \'" +  table.get(0).get(7) + "\'><input type=\'submit\' name=\'action\' value ='Place Bid'></FORM>");
 	}
 	else if ((bc.isAuctionDone(Item_ID) && Owner.equals(name) && bc.bidLessThanReserved(Item_ID)))
 	{

@@ -31,6 +31,13 @@ h1   {color:#000099}
 <CENTER>
 <h1>Daily Auction</h1>
 <h2>Add a Product to Sell</h2>
+<%
+String message = (String) request.getAttribute("message");
+if (message != null)
+{
+	out.println("<font size=\"3\" color=\"red\">" + message +"</font>");
+}
+%>
 	<FORM NAME="additem" ACTION="additem" METHOD="POST">
 		<p>Title: </p>
 		<INPUT type="text" name="title">
